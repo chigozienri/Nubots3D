@@ -1,0 +1,78 @@
+States:
+0 0 A
+
+Bonds:
+
+Rules:
+
+[East-growing spindle]
+A empty 0 E A* BE 1 E
+BE empty 0 E BE BE 1 E
+BE empty 0 E C empty 0 E
+BE C 1 E C empty 0 E
+A* C 1 E A empty 0 E
+A* BE 1 E CE BE 1 E
+CE BE 1 E empty CE 0 E
+CE C 1 E A empty 0 E
+CE empty 0 E A empty 0 E
+
+
+[Southeast-growing spindle]
+A empty 0 SE A* BSE 1 SE
+BSE empty 0 SE BSE BSE 1 SE
+BSE empty 0 SE C empty 0 SE
+BSE C 1 SE C empty 0 SE
+A* C 1 SE A empty 0 SE
+A* BSE 1 SE CSE BSE 1 SE
+CSE BSE 1 SE empty CSE 0 SE
+CSE C 1 SE A empty 0 SE
+CSE empty 0 SE A empty 0 SE
+
+[Southwest-growing spindle]
+A empty 0 SW A* BSW 1 SW
+BSW empty 0 SW BSW BSW 1 SW
+BSW empty 0 SW C empty 0 SW
+BSW C 1 SW C empty 0 SW
+A* C 1 SW A empty 0 SW
+A* BSW 1 SW CSW BSW 1 SW
+CSW BSW 1 SW empty CSW 0 SW
+CSW C 1 SW A empty 0 SW
+CSW empty 0 SW A empty 0 SW
+
+[West-growing spindle]
+A empty 0 W A* BW 1 W
+BW empty 0 W BW BW 1 W
+BW empty 0 W C empty 0 W
+BW C 1 W C empty 0 W
+A* C 1 W A empty 0 W
+A* BW 1 W CW BW 1 W
+CW BW 1 W empty CW 0 W
+CW C 1 W A empty 0 W
+CW empty 0 W A empty 0 W
+
+[Northwest-growing spindle]
+A empty 0 NW A* BNW 1 NW
+BNW empty 0 NW BNW BNW 1 NW
+BNW empty 0 NW C empty 0 NW
+BNW C 1 NW C empty 0 NW
+A* C 1 NW A empty 0 NW
+A* BNW 1 NW CNW BNW 1 NW
+CNW BNW 1 NW empty CNW 0 NW
+CNW C 1 NW A empty 0 NW
+CNW empty 0 NW A empty 0 NW
+
+[Northeast-growing spindle]
+A empty 0 NE A* BNE 1 NE
+BNE empty 0 NE BNE BNE 1 NE
+BNE empty 0 NE C empty 0 NE
+BNE C 1 NE C empty 0 NE
+A* C 1 NE A empty 0 NE
+A* BNE 1 NE CNE BNE 1 NE
+CNE BNE 1 NE empty CNE 0 NE
+CNE C 1 NE A empty 0 NE
+CNE empty 0 NE A empty 0 NE
+
+
+[Latch on to kinetochore]
+BE K 0 E BE K 1 E 
+

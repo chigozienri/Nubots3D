@@ -1,0 +1,103 @@
+States:
+0 0 A0
+1 0 B1
+
+Bonds:
+0 0 1 0 1
+
+Rules:
+[A0 B1 stage]
+[fill upper]
+A0 empty 0 NW A0 p 1 NW
+p empty 0 E p q 1 E
+q empty 0 E q r 1 E
+r B1 0 SW r B0 1 SW
+p p 0 E empty p 0 E
+
+[open upper]
+A0 p 1 NW A0 p 1 NE
+A0 p 1 NE A0 p 1 NW
+B0 r 1 NE B0 r 1 NW
+B0 r 1 NW B0 r 1 NE
+A0 B0 1 E A0 B0 0 E
+
+[fill middle and lower]
+A0 empty 0 E A0 C1 1 E
+C1 empty 0 SW C1 x 1 SW
+x empty 0 E x y 1 E
+y empty 0 E y z 1 E
+x x 0 E empty x 0 E
+
+B0 empty 0 W B0 D1 1 W
+z D1 0 NW z D0 1 NW
+
+[some details]
+[E1 may appear at middle]
+E1 B0 0 E empty B0 0 E
+
+[B1 may appear at middle]
+B1 D1 0 E empty D1 0 E
+
+[B0 may appear beside B0]
+B0 B0 0 E empty B0 0 E
+
+[C0 may appear beside C0]
+C0 C0 0 E empty C0 0 E
+
+[delete upper]
+D0 r 0 NE D0 empty 0 NE
+
+[open lower]
+C0 x 1 SW C0 x 1 SE
+C0 x 1 SE C0 x 1 SW
+D0 z 1 SE D0 z 1 SW
+D0 z 1 SW D0 z 1 SE
+
+[fill middle]
+C0 empty 0 E C0 E1 1 E
+D0 empty 0 W D0 F1 1 W
+E1 F1 0 E E0 F1 1 E
+
+[delete lower]
+E0 x 0 SW E0 empty 0 SW
+
+[C1 delete r]
+C1 r 0 NE C1 empty 0 NE
+
+[B1 delete s]
+B1 s 0 NE B1 empty 0 NE
+
+[A0 C1 stage]
+[upper]
+q empty 0 E q s 1 E
+s C1 0 SW s C0 1 SW
+
+[open upper]
+s C0 1 SW s C0 1 SE
+A0 C0 1 E A0 C0 0 E
+
+[fill middle]
+A0 empty 0 E A0 B1 1 E
+C0 empty 0 W C0 G1 1 W
+B1 G1 0 E B1 G0 1 E
+G0 s 0 NE G0 empty 0 NE
+
+[G1 delete C1]
+G1 z 0 SE G1 v 0 SE
+v y 1 W empty v 0 W
+v x 1 W empty v 0 W
+v C1 1 NE empty empty 0 NE
+
+[F1 D0 stage]
+[fill lower]
+y empty 0 W y x' 1 W
+x' F1 0 NE x' F0 1 NE
+
+[open middle]
+F0 D0 1 E F0 D0 0 E
+F0 x' 1 SW F0 x' 1 SE
+F0 empty 0 E F0 A1 1 E
+A1 F1 0 E A1 empty 0 E
+D0 empty 0 W D0 B1 1 W
+A1 B1 0 E A0 B1 1 E
+

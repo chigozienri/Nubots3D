@@ -1,0 +1,74 @@
+States:
+-2 1 L
+-1 0 L
+0 0 AL
+0 -1 F
+1 -1 AL
+1 -2 F
+2 -2 AL
+2 -3 F
+3 -3 AL
+3 -4 F
+4 -4 AL
+4 -5 F
+5 -5 AL
+6 -6 B
+7 -7 B
+6 -7 B
+8 -7 B
+
+
+
+Bonds:
+0 0 1 -1 1
+1 -1 2 -2 1
+2 -2 3 -3 1
+3 -3 4 -4 1
+4 -4 5 -5 1
+5 -5 6 -6 1
+6 -6 7 -7 1
+7 -7 6 -7 1
+7 -7 8 -7 1
+
+-1 0 0 0 2
+0 -1 1 -1 2
+1 -2 2 -2 2
+2 -3 3 -3 2
+3 -4 4 -4 2
+4 -5 5 -5 2
+
+-1 0 0 -1 2
+0 -1 1 -2 2
+-2 1 -1 0 2
+1 -2 2 -3 2
+2 -3 3 -4 2
+3 -4 4 -5 2
+
+Rules:
+AL L 2 W AL L 0 SW
+L AL 0 E L AR 2 E
+F AL 0 E F AR 2 E
+F AR 2 NE F AR 0 NE
+AR AR 1 NW AR AR 1 NE
+
+F F 2 NW F F 2 NE
+AR L 2 W AR L 0 NW
+L AR 0 E L AL 2 E
+L AL 2 SE L AL 0 SE
+F AR 0 E F AL 2 E
+F AL 2 SE F AL 0 SE
+AL AL 1 NE AL AL 1 NW
+
+L L 2 NE L L 2 NW
+
+
+Aliases:
+E (1,0,0)
+SE (1,-1,0)
+SW (0,-1,0)
+W (-1,0,0)
+NW (-1,1,0)
+NE (0,1,0)
+0 null
+1 rigid
+2 flexible

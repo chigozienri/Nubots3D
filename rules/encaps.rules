@@ -1,0 +1,324 @@
+States:
+-1 1 A
+-2 2 A
+-3 3 A
+0 1 A
+0 2 A
+0 3 A
+-3 0 A
+-2 0 A
+-1 0 A
+0 0 A
+1 0 A
+2 0 A
+3 0 A
+1 -1 A
+2 -2 A
+3 -3 A
+0 -1 A
+0 -2 A
+0 -3 A
+
+Bonds:
+-1 1 -2 2 1
+-2 2 -3 3 1
+-1 1 0 0 1
+0 0 0 1 1
+0 1 0 2 1
+0 2 0 3 1
+-3 0 -2 0 1
+-2 0 -1 0 1
+-1 0 0 0 1
+0 0 1 0 1
+1 0 2 0 1
+2 0 3 0 1
+0 0 1 -1 1
+1 -1 2 -2 1
+2 -2 3 -3 1
+0 -1 0 0 1
+0 -2 0 -1 1
+0 -3 0 -2 1
+
+Rules:
+[format the glues in the shape]
+A empty 0 NE A_1 empty 0 NE
+A A 0 NE A_1 A 1 NE
+A A 1 NE A_1 A 1 NE
+A A 2 NE A_1 A 1 NE
+A A_1 0 NE A_1 A_1 1 NE
+A A_1 1 NE A_1 A_1 1 NE
+A A_1 2 NE A_1 A_1 1 NE
+A A_2 0 NE A_1 A_2 1 NE
+A A_2 1 NE A_1 A_2 1 NE
+A A_2 2 NE A_1 A_2 1 NE
+A B 0 NE A_1 B 1 NE
+A B 1 NE A_1 B 1 NE
+A B 2 NE A_1 B 1 NE
+A C_l 0 NE A_1 C_l 1 NE
+A C_l 1 NE A_1 C_l 1 NE
+A C_l 2 NE A_1 C_l 1 NE
+A C_r 0 NE A_1 C_r 1 NE
+A C_r 1 NE A_1 C_r 1 NE
+A C_r 2 NE A_1 C_r 1 NE
+A C_U 0 NE A_1 C_U 1 NE
+A C_U 1 NE A_1 C_U 1 NE
+A C_U 2 NE A_1 C_U 1 NE
+A C_B 0 NE A_1 C_B 1 NE
+A C_B 1 NE A_1 C_B 1 NE
+A C_B 2 NE A_1 C_B 1 NE
+A C_lu 0 NE A_1 C_lu 1 NE
+A C_lu 1 NE A_1 C_lu 1 NE
+A C_lu 2 NE A_1 C_lu 1 NE
+A C_ru 0 NE A_1 C_ru 1 NE
+A C_ru 1 NE A_1 C_ru 1 NE
+A C_ru 2 NE A_1 C_ru 1 NE
+A C_lb 0 NE A_1 C_lb 1 NE
+A C_lb 1 NE A_1 C_lb 1 NE
+A C_lb 2 NE A_1 C_lb 1 NE
+A C_rb 0 NE A_1 C_rb 1 NE
+A C_rb 1 NE A_1 C_rb 1 NE
+A C_rb 2 NE A_1 C_rb 1 NE
+A C_L 0 NE A_1 C_L 1 NE
+A C_L 1 NE A_1 C_L 1 NE
+A C_L 2 NE A_1 C_L 1 NE
+A C_R 0 NE A_1 C_R 1 NE
+A C_R 1 NE A_1 C_R 1 NE
+A C_R 2 NE A_1 C_R 1 NE
+A LU 0 NE A_1 LU 1 NE
+A LU 1 NE A_1 LU 1 NE
+A LU 2 NE A_1 LU 1 NE
+A RU 0 NE A_1 RU 1 NE
+A RU 1 NE A_1 RU 1 NE
+A RU 2 NE A_1 RU 1 NE
+A LB 0 NE A_1 LB 1 NE
+A LB 1 NE A_1 LB 1 NE
+A LB 2 NE A_1 LB 1 NE
+A RB 0 NE A_1 RB 1 NE
+A RB 1 NE A_1 RB 1 NE
+A RB 2 NE A_1 RB 1 NE
+A -LU 0 NE A_1 -LU 1 NE
+A -LU 1 NE A_1 -LU 1 NE
+A -LU 2 NE A_1 -LU 1 NE
+A -RU 0 NE A_1 -RU 1 NE
+A -RU 1 NE A_1 -RU 1 NE
+A -RU 2 NE A_1 -RU 1 NE
+A -LB 0 NE A_1 -LB 1 NE
+A -LB 1 NE A_1 -LB 1 NE
+A -LB 2 NE A_1 -LB 1 NE
+A -RB 0 NE A_1 -RB 1 NE
+A -RB 1 NE A_1 -RB 1 NE
+A -RB 2 NE A_1 -RB 1 NE
+
+A_1 empty 0 E A_2 empty 0 E
+A_1 A 0 E A_2 A 0 E
+A_1 A 1 E A_2 A 0 E
+A_1 A 2 E A_2 A 0 E
+A_1 A_1 0 E A_2 A_1 0 E
+A_1 A_1 1 E A_2 A_1 0 E
+A_1 A_1 2 E A_2 A_1 0 E
+A_1 A_2 0 E A_2 A_2 0 E
+A_1 A_2 1 E A_2 A_2 0 E
+A_1 A_2 2 E A_2 A_2 0 E
+A_1 B 0 E A_2 B 0 E
+A_1 B 1 E A_2 B 0 E
+A_1 B 2 E A_2 B 0 E
+A_1 C_l 0 E A_2 C_l 1 E
+A_1 C_l 1 E A_2 C_l 1 E
+A_1 C_l 2 E A_2 C_l 1 E
+A_1 C_r 0 E A_2 C_r 1 E
+A_1 C_r 1 E A_2 C_r 1 E
+A_1 C_r 2 E A_2 C_r 1 E
+A_1 C_U 0 E A_2 C_U 1 E
+A_1 C_U 1 E A_2 C_U 1 E
+A_1 C_U 2 E A_2 C_U 1 E
+A_1 C_B 0 E A_2 C_B 1 E
+A_1 C_B 1 E A_2 C_B 1 E
+A_1 C_B 2 E A_2 C_B 1 E
+A_1 C_lu 0 E A_2 C_lu 1 E
+A_1 C_lu 1 E A_2 C_lu 1 E
+A_1 C_lu 2 E A_2 C_lu 1 E
+A_1 C_ru 0 E A_2 C_ru 1 E
+A_1 C_ru 1 E A_2 C_ru 1 E
+A_1 C_ru 2 E A_2 C_ru 1 E
+A_1 C_lb 0 E A_2 C_lb 1 E
+A_1 C_lb 1 E A_2 C_lb 1 E
+A_1 C_lb 2 E A_2 C_lb 1 E
+A_1 C_rb 0 E A_2 C_rb 1 E
+A_1 C_rb 1 E A_2 C_rb 1 E
+A_1 C_rb 2 E A_2 C_rb 1 E
+A_1 C_L 0 E A_2 C_L 1 E
+A_1 C_L 1 E A_2 C_L 1 E
+A_1 C_L 2 E A_2 C_L 1 E
+A_1 C_R 0 E A_2 C_R 1 E
+A_1 C_R 1 E A_2 C_R 1 E
+A_1 C_R 2 E A_2 C_R 1 E
+A_1 LU 0 E A_2 LU 1 E
+A_1 LU 1 E A_2 LU 1 E
+A_1 LU 2 E A_2 LU 1 E
+A_1 RU 0 E A_2 RU 1 E
+A_1 RU 1 E A_2 RU 1 E
+A_1 RU 2 E A_2 RU 1 E
+A_1 LB 0 E A_2 LB 1 E
+A_1 LB 1 E A_2 LB 1 E
+A_1 LB 2 E A_2 LB 1 E
+A_1 RB 0 E A_2 RB 1 E
+A_1 RB 1 E A_2 RB 1 E
+A_1 RB 2 E A_2 RB 1 E
+A_1 -LU 0 E A_2 -LU 1 E
+A_1 -LU 1 E A_2 -LU 1 E
+A_1 -LU 2 E A_2 -LU 1 E
+A_1 -RU 0 E A_2 -RU 1 E
+A_1 -RU 1 E A_2 -RU 1 E
+A_1 -RU 2 E A_2 -RU 1 E
+A_1 -LB 0 E A_2 -LB 1 E
+A_1 -LB 1 E A_2 -LB 1 E
+A_1 -LB 2 E A_2 -LB 1 E
+A_1 -RB 0 E A_2 -RB 1 E
+A_1 -RB 1 E A_2 -RB 1 E
+A_1 -RB 2 E A_2 -RB 1 E
+
+
+
+
+
+
+A_2 empty 0 SE B empty 0 SE
+A_2 A 0 SE B A 1 SE
+A_2 A 1 SE B A 1 SE
+A_2 A 2 SE B A 1 SE
+A_2 A_1 0 SE B A_1 1 SE
+A_2 A_1 1 SE B A_1 1 SE
+A_2 A_1 2 SE B A_1 1 SE
+A_2 A_2 0 SE B A_2 1 SE
+A_2 A_2 1 SE B A_2 1 SE
+A_2 A_2 2 SE B A_2 1 SE
+A_2 B 0 SE B B 1 SE
+A_2 B 1 SE B B 1 SE
+A_2 B 2 SE B B 1 SE
+A_2 C_l 0 SE B C_l 1 SE
+A_2 C_l 1 SE B C_l 1 SE
+A_2 C_l 2 SE B C_l 1 SE
+A_2 C_r 0 SE B C_r 1 SE
+A_2 C_r 1 SE B C_r 1 SE
+A_2 C_r 2 SE B C_r 1 SE
+A_2 C_U 0 SE B C_U 1 SE
+A_2 C_U 1 SE B C_U 1 SE
+A_2 C_U 2 SE B C_U 1 SE
+A_2 C_B 0 SE B C_B 1 SE
+A_2 C_B 1 SE B C_B 1 SE
+A_2 C_B 2 SE B C_B 1 SE
+A_2 C_lu 0 SE B C_lu 1 SE
+A_2 C_lu 1 SE B C_lu 1 SE
+A_2 C_lu 2 SE B C_lu 1 SE
+A_2 C_ru 0 SE B C_ru 1 SE
+A_2 C_ru 1 SE B C_ru 1 SE
+A_2 C_ru 2 SE B C_ru 1 SE
+A_2 C_lb 0 SE B C_lb 1 SE
+A_2 C_lb 1 SE B C_lb 1 SE
+A_2 C_lb 2 SE B C_lb 1 SE
+A_2 C_rb 0 SE B C_rb 1 SE
+A_2 C_rb 1 SE B C_rb 1 SE
+A_2 C_rb 2 SE B C_rb 1 SE
+A_2 C_L 0 SE B C_L 1 SE
+A_2 C_L 1 SE B C_L 1 SE
+A_2 C_L 2 SE B C_L 1 SE
+A_2 C_R 0 SE B C_R 1 SE
+A_2 C_R 1 SE B C_R 1 SE
+A_2 C_R 2 SE B C_R 1 SE
+A_2 LU 0 SE B LU 1 SE
+A_2 LU 1 SE B LU 1 SE
+A_2 LU 2 SE B LU 1 SE
+A_2 RU 0 SE B RU 1 SE
+A_2 RU 1 SE B RU 1 SE
+A_2 RU 2 SE B RU 1 SE
+A_2 LB 0 SE B LB 1 SE
+A_2 LB 1 SE B LB 1 SE
+A_2 LB 2 SE B LB 1 SE
+A_2 RB 0 SE B RB 1 SE
+A_2 RB 1 SE B RB 1 SE
+A_2 RB 2 SE B RB 1 SE
+A_2 -LU 0 SE B -LU 1 SE
+A_2 -LU 1 SE B -LU 1 SE
+A_2 -LU 2 SE B -LU 1 SE
+A_2 -RU 0 SE B -RU 1 SE
+A_2 -RU 1 SE B -RU 1 SE
+A_2 -RU 2 SE B -RU 1 SE
+A_2 -LB 0 SE B -LB 1 SE
+A_2 -LB 1 SE B -LB 1 SE
+A_2 -LB 2 SE B -LB 1 SE
+A_2 -RB 0 SE B -RB 1 SE
+A_2 -RB 1 SE B -RB 1 SE
+A_2 -RB 2 SE B -RB 1 SE
+
+
+[cover the edge of shape with C]
+B empty 0 NE B C_r 1 NE
+B empty 0 NE B C_ru 1 NE
+B empty 0 E B C_r 1 E
+B empty 0 SE B C_B 1 SE
+B empty 0 SW B C_l 1 SW
+B empty 0 W B C_l 1 W
+B empty 0 NW B C_U 1 NW
+
+[figure out the UUp BBottom RRight and LLeft]
+
+C_l B 0 SE C_U B 1 SE
+C_lu B 0 SE C_U B 1 SE
+C_l B 0 NW C_B B 1 NW
+C_lb B 0 NW C_B B 1 NW
+C_r B 0 SE C_U B 1 SE
+C_rb B 0 SE C_U B 1 SE
+C_r B 0 NW C_B B 1 NW
+C_ru B 0 NW C_B B 1 NW
+
+C_r C_r 0 SE C_ru C_rb 1 SE
+C_r C_r 0 NW C_rb C_ru 1 NW
+C_rb C_ru 0 SE C_R C_R 1 SE
+C_ru C_rb 0 NW C_R C_R 1 NW
+C_rb C_r 0 SE C_R C_rb 1 SE
+C_ru C_r 0 NW C_R C_ru 1 NW
+
+
+C_l C_l 0 SE C_lu C_lb 1 SE
+C_l C_l 0 NW C_lb C_lu 1 NW
+C_lb C_lu 0 SE C_L C_L 1 SE
+C_lu C_lb 0 NW C_L C_L 1 NW
+C_lb C_l 0 SE C_L C_lb 1 SE
+C_lu C_l 0 NW C_L C_lu 1 NW
+
+[Get the corners]
+[LU]
+C_lu C_U 0 NE LU C_U 1 NE
+
+[-LU]
+C_lu C_U 0 SE C_lu -LU 1 SE
+C_lb C_U 0 SE C_L -LU 1 SE
+C_L C_U 0 SE C_L -LU 1 SE
+LU C_U 0 SE LU -LU 1 SE
+
+[LB]
+C_lb C_B 0 E LB C_B 0 E
+
+[-LB]
+C_lb C_B 0 NW C_lb -LB 1 NW
+C_lu C_B 0 NW C_L -LB 1 NW
+C_L C_B 0 NW C_L -LB 1 NW
+LB C_B 0 NW LU -LB 1 NW
+
+[RU]
+C_ru C_U 0 W RU C_U 0 W
+
+[-RU]
+C_ru C_U 0 SE C_ru -RU 1 SE
+C_rb C_U 0 SE C_R -RU 1 SE
+C_R C_U 0 SE C_R -RU 1 SE
+RU C_U 0 SE RU -RU 1 SE
+
+[RB]
+C_rb C_B 0 SW RB C_B 1 SW
+
+[-RB]
+C_ru C_B 0 NW C_R -RB 1 NW
+C_rb C_B 0 NW C_rb -RB 1 NW
+C_R C_B 0 NW C_R -RB 1 NW
+RB C_B 0 NW RB -RB 1 NW

@@ -1,0 +1,18 @@
+States:
+0 0 A
+1 0 B
+
+Bonds:
+0 0 1 0 1
+
+Rules:
+[A to AB]
+A empty 0 NE A B 2 NE
+B B 0 SE B B* 2 SE
+A B* 1 E A B 0 E
+A B 2 NE A B 1 E
+B B 2 SE B B 1 E
+
+
+
+

@@ -1,0 +1,93 @@
+States:
+2 2 RSq
+-3 2 A
+0 1 A
+2 1 A
+-2 1 A
+-3 1 L
+1 6 USq2
+-1 6 USq2
+-1 1 A
+1 1 A
+-3 6 A
+-3 5 A
+-2 6 USqT
+2 6 CSq2
+0 6 USq2
+2 5 SSq1
+2 4 SSq1
+-3 3 A
+2 3 SSq1
+-3 4 A
+
+Bonds:
+2 2 2 3 1
+-3 2 -3 1 1
+-3 2 -3 3 1
+0 1 -1 1 1
+0 1 1 1 1
+2 1 1 1 1
+-2 1 -3 1 1
+-2 1 -1 1 1
+-3 1 -3 2 1
+-3 1 -2 1 1
+1 6 2 6 1
+1 6 0 6 1
+-1 6 -2 6 1
+-1 6 0 6 1
+-1 1 -2 1 1
+-1 1 0 1 1
+1 1 0 1 1
+1 1 2 1 1
+-3 6 -3 5 1
+-3 6 -2 6 1
+-3 5 -3 6 1
+-3 5 -3 4 1
+-2 6 -3 6 1
+-2 6 -1 6 1
+2 6 1 6 1
+2 6 2 5 1
+0 6 1 6 1
+0 6 -1 6 1
+2 5 2 6 1
+2 5 2 4 1
+2 4 2 5 1
+2 4 2 3 1
+-3 3 -3 2 1
+-3 3 -3 4 1
+2 3 2 4 1
+2 3 2 2 1
+-3 4 -3 3 1
+-3 4 -3 5 1
+
+Rules:
+[Square to Triangle]
+RSq SSq1 1 NE RTr STr 1 NW
+STr SSq1 1 NE STr STr 1 NW
+STr CSq2 1 NE STr CTr 1 NW
+CTr USq2 1 W CTr UTr 1 NW
+UTr USq2 1 W UTr UTr 1 NW
+UTr USqT 1 W UTr UTrT 1 NW
+UTrT A 1 W UTrT0 A 1 SW
+
+[Triangle to Square]
+A UTrT0 1 NE A USqT 1 E
+USqT UTr 1 SE USqT USq2 1 E
+USq2 UTr 1 SE USq2 USq2 1 E
+USq2 CTr 1 SE USq2 CSq2 1 E
+CSq2 STr 1 SE CSq2 SSq1 1 SW
+SSq1 STr 1 SE SSq1 SSq1 1 SW
+SSq1 RTr 1 SE SSq1 RSq0 1 SW
+RSq0 SSq1 1 NE RSq SSq1 1 NE
+
+
+Aliases:
+E (1,0,0)n
+SE (0.5,-0.8660254037844386,0)n
+SW (-0.5,-0.8660254037844386,0)n
+W (-1,0,0)n
+NW (-0.5,0.8660254037844386,0)n
+NE (0.5,0.8660254037844386,0)n
+0 null
+1 rigid
+2 flexible

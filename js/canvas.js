@@ -77,6 +77,7 @@ buttondiv.appendChild(frameratedisplay);
 // Rules input boxes
 
 var rulesdiv = document.getElementById("rules_div");
+rulesdiv.setAttribute("id", "rulesdiv")
 
 var rulesuploaddiv = document.createElement("div");
 rulesuploaddiv.innerHTML = 'Upload .rules file: ';
@@ -100,7 +101,8 @@ let examples = {'Default': 'default.rules', 'Sierpinski': 'sierpinski.rules',
 'Waving Arm': 'wavingarm.rules', 'Square to Triangle': 'SquaretoTriangle2.rules',
  'River Crossing': 'rivercrossing.rules', 'Turing Clear Tape': 'turing.rules',
 'Linear Line Growth': 'linen.rules', 'Log n Line Growth': 'line_logn.rules',
-'Simple Waving Arm': 'wavingarmsimple.rules', 'Demo': 'demo.rules'};
+'Simple Waving Arm': 'wavingarmsimple.rules', 'Demo': 'demo.rules',
+'Square to Triangle and back': 'LinearSquareToTri2.rules'};
 for (exampleprettyname in examples) {
 	let example = document.createElement("li");
 	let examplea = document.createElement("a");
@@ -113,6 +115,7 @@ for (exampleprettyname in examples) {
 }
 // TODO: Maybe add autoscan directory for new example files?
 
+// rulesuploaddiv.appendChild(document.createElement("br"));
 rulesdiv.appendChild(examplesdropdown);
 
 function inputbox (name_) {
@@ -539,7 +542,7 @@ function onVRDisplayConnect(e) {
 }
 //Submit default rules when we load window
 window.addEventListener('load', function() {
-	rulesfromurl('rules/rivercrossing.rules');
+	rulesfromurl('rules/default.rules');
 	submitRules();
 });
 

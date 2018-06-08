@@ -98,9 +98,7 @@ examplesdropdown.setAttribute("type", "dropdown");
 examplesdropdown.innerHTML = "Examples:";
 let examples = {'Default': 'default.rules', 'Sierpinski': 'sierpinski.rules',
 'Waving Arm': 'wavingarm.rules', 'Square to Triangle': 'SquaretoTriangle2.rules',
- 'River Crossing': 'rivercrossing.rules', 'Turing Clear Tape': 'turing.rules',
-'Linear Line Growth': 'linen.rules', 'Log n Line Growth': 'line_logn.rules',
-'Simple Waving Arm': 'wavingarmsimple.rules', 'Demo': 'demo.rules'};
+ 'River Crossing': 'rivercrossing.rules'};
 for (exampleprettyname in examples) {
 	let example = document.createElement("li");
 	let examplea = document.createElement("a");
@@ -113,7 +111,7 @@ for (exampleprettyname in examples) {
 }
 // TODO: Maybe add autoscan directory for new example files?
 
-rulesdiv.appendChild(examplesdropdown);
+rulesuploaddiv.appendChild(examplesdropdown);
 
 function inputbox (name_) {
 	let boxdiv = document.createElement("div");
@@ -270,31 +268,47 @@ var frustumSize = 1000;
 var DZOOM;
 var OX;
 var OY;
-var camera = new THREE.OrthographicCamera(
-	-DZOOM*aspect, // frustum left plane
-	DZOOM*aspect, // frustum right plane
-	DZOOM, // frustum top plane
-	-DZOOM, // frustum bottom plane
-	-1000, // frustum near plane
-	1000 // frustum far plane
-	)
 function resetcamera() {
 	// set the camera position (center)
 	OX = 2.5;
 	OY = 0;
 	DZOOM = 3;
-	camera.left = -DZOOM*aspect, // frustum left plane
-	camera.right = DZOOM*aspect, // frustum right plane
-	camera.top = DZOOM, // frustum top plane
-	camera.bottom = -DZOOM, // frustum bottom plane
-	camera.near = -1000, // frustum near plane
-	camera.far = 1000, // frustum far plane
+	camera = new THREE.OrthographicCamera(
+		-DZOOM*aspect, // frustum left plane
+		DZOOM*aspect, // frustum right plane
+	 	DZOOM, // frustum top plane
+	 	-DZOOM, // frustum bottom plane
+	 	-1000, // frustum near plane
+	 	1000 // frustum far plane
+		)
 	camera.position.set(OX,OY,20);
 	camera.up = new THREE.Vector3(0,1,0);
 	camera.lookAt(new THREE.Vector3(OX,OY,0));
 	camera.updateProjectionMatrix();
 	return renderer.render(scene, camera);
 }
+
+// function resetcamera() {
+// 	DZOOM = 3;
+// 	camera = new THREE.OrthographicCamera(
+// 		-DZOOM*aspect, // frustum left plane
+// 		DZOOM*aspect, // frustum right plane
+// 	 	DZOOM, // frustum top plane
+// 	 	-DZOOM, // frustum bottom plane
+// 	 	-1000, // frustum near plane
+// 	 	1000 // frustum far plane
+// 		)
+//
+// 		// set the camera position (center)
+// 		var OX = 2.5
+// 		var OY = 0
+// 		camera.position.set(OX,OY,20);
+// 		camera.up = new THREE.Vector3(0,1,0);
+// 		camera.lookAt(new THREE.Vector3(OX,OY,0)
+// 	);
+// 	camera.updateProjectionMatrix();
+// 	return renderer.render(scene, camera);
+// }
 resetcamera();
 
 // pan and zoom

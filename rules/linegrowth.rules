@@ -29,10 +29,10 @@ vk2.3 empty 0 NE vkb2.2 0vs2e 1 NE
 s0e empty 0 SW s0e s3s 1 SW
 s3s empty 0 SW s3s vk3.0 1 SWE
 vk3.0 empty 0 SW vk3.0 0vk3.0 1 SW
-0vk3.0 empty 0 SW 0 vkt3.0 1 SW 
-vkt3.0 empty 0 SW v.0 0vk3.1 1 SW 
-0vk3.1 empty 0 SW 0 vkt3.1 1 SW 
-vkt3.1 empty 0 SW v.1 0vk3.2 1 SW 
+0vk3.0 empty 0 SW 0 vkt3.0 1 SW
+vkt3.0 empty 0 SW v.0 0vk3.1 1 SW
+0vk3.1 empty 0 SW 0 vkt3.1 1 SW
+vkt3.1 empty 0 SW v.1 0vk3.2 1 SW
 0vk3.2 empty 0 SW s3e empty 0 SW
 vk3.2 empty 0 SW 0 vs.2 1 SW
 vs.2 empty 0 SW v.1 s3e 1 SW
@@ -105,3 +105,14 @@ v''.1 empty 0 SW v.1 0.' 1 SW
 v.1 0.' 0 NE v.1 0.'' 1 NE
 0.'' vb8 0 NW 0 empty 0 NW
 vb2 empty 0 NE empty empty 0 NE
+
+Aliases:
+E (1,0,0)n
+SE (0.5,-0.8660254037844386,0)n
+SW (-0.5,-0.8660254037844386,0)n
+W (-1,0,0)n
+NW (-0.5,0.8660254037844386,0)n
+NE (0.5,0.8660254037844386,0)n
+0 null
+1 rigid
+2 flexible

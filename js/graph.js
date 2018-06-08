@@ -35,7 +35,7 @@ function newnodematerial(state_) {
     bitmap.width = 128;
     bitmap.height = 128;
     let base_size = 80;
-    let actual_size = base_size/state_.length;
+    let actual_size = base_size/(state_.length)**0.6;
     g.font = 'Bold '+actual_size.toString()+'px Arial';
 
     g.fillStyle = 'white';
@@ -76,8 +76,10 @@ function new_rule(state1_i_, state2_i_, type_i_, dir_i_, state1_f_, state2_f_, t
 function remove_comments(text_) {
   let re = /\[[\s\S]*?\]/gi
   let text = text_.replace(re, '');
-  re = /[\s]+$|[\s]+[\n]/
+  console.log(text);
+  re = /(\s+)$|[\s]+[\n]/g
   text = text.replace(re, '\n');
+  console.log(text);
   return text;
 }
 
@@ -154,6 +156,7 @@ function interpret_bonds(bonds_text_) {
     let bond = line.split(' ');
     // console.log(bond);
     let bondis3d;
+    console.log(bond);
     if (bond.length == 7) {
       bondis3d = true;
     } else if (bond.length == 5) {
@@ -629,10 +632,10 @@ class Node {
       if (rule.state2_i != 'empty') {           // if the rule calls for an operation on an existing neighbour
         let deletenode2 = (rule.state2_f == 'empty');
         let change_direction = (rule.dir_i.distanceTo(rule.dir_f) > tolerance);
-        console.log(change_direction);
+        // console.log(change_direction);
         // console.log('rule.dir_i, rule.dir_f', rule.dir_i, rule.dir_f);
         let changenode2state = ((rule.state2_i != rule.state2_f) && (rule.state2_f != 'empty'));
-        let deleteedge = ((rule.type_f == 'null') && (deletenode2 == false));
+        let deleteedge = ((rule.type_i != 'null') && (rule.type_f == 'null') && (deletenode2 == false));
         if (typeof boundnode != 'undefined') {         // check that there is a neighbour in direction
           if (boundnode.state == rule.state2_i) { // check that neighbour in that direction is correct state
             let edgecorrect = false;
@@ -655,6 +658,8 @@ class Node {
                 }
               }
               if ((deletenode2 == true) && (rule_blocked == false)) {       // if node 2 must be deleted
+                // console.log(boundedge);
+                // boundedge.remove();
                 boundnode.remove();
                 console.log('Deleting nubot');
                 rule_applied = true;
@@ -693,18 +698,26 @@ class Node {
       } else { // rule state2_i is 'empty'\
         let createnode2 = (rules[rule_]['state2_f'] != 'empty');
         if (createnode2 == true) {
-          if (typeof boundnode == 'undefined') { // create new nubot
+           // TODO: This is terrible for performance, checking every node AGAIN, but only happens when we need to create a node.
+          let target_position = this.pos.clone().add(rule.dir_f.clone());
+          let position_occupied = false;
+          for (let node of nodes) { // check target position for collision
+            if (node.pos.distanceTo(target_position) < tolerance) {
+              position_occupied = true;
+            }
+          }
+          if ((position_occupied == false) && (typeof boundnode == 'undefined')) { // create new nubot
             this.create_node(rule.dir_f, rule.type_f, rule.state2_f); // , type_=rules[n]['type_f'], state_=rules[n][1]
             rule_applied = true;
             // console.log('rule applied true');
           } else {
-            console.log('Tried to create node in direction ' + stringdirection + ', but it is not empty');
+            console.log('Tried to create node in direction ', rule.dir_f, ', but it is not empty');
             rule_blocked = true;
           }
         }
       }
       // Do operations on node1
-      console.log(rule.state1_i, rule.state1_f, rule_blocked);
+      // console.log(rule.state1_i, rule.state1_f, rule_blocked);
       if ((rule.state1_i != rule.state1_f) && (rule.state1_f != 'empty') && (rule_blocked == false)) {
         console.log("change state 1")
         this.state = rule.state1_f;
@@ -733,23 +746,15 @@ class Node {
     // remove edges
     for (let i = this.edges.length-1; i >= 0; i--) {
       let edge = this.edges[i];
-      console.log(edge);
+      console.log('removing', edge);
       edge.remove();
     }
 
     // remove node from global list
-    for (let i = 0; i < nodes.length; i++) {
-      if (nodes[i] == this) {
-        nodes.splice( i, 1);
-      }
-    }
+    nodes.splice(nodes.indexOf(this),1);
 
     // remove model from scene
     scene.remove(this.model);
-  }
-
-  test() {
-    console.log(this.state);
   }
 
   show() {
@@ -845,35 +850,23 @@ class Edge {
   }
 
   remove() {
+    // this is really hacky but for some reason directly using scene.delete isn't working.
+    // see line in animation loop of canvas.js commented with // Delete anything marked for deletion in scene
+    this.model.userData = {delete: true};
+
     // delete edge from node1 edge list
-    console.log(this.node1.edges);
-    for (let i = this.node1.edges.length-1; i >= 0 ; i--) {
-      // console.log('node 1 edge ' + i);
-      if (this.node1.edges[i] == this) {
-        this.node1.edges.splice(i, 1);
+    this.node1.edges.splice(this.node1.edges.indexOf(this),1);
 
-          // console.log('deleted');
-      }
-    }
     // delete edge from node2 edge list
-    // console.log(this.node2.edges);
-    for (let i = this.node2.edges.length-1; i >= 0 ; i--) {
-      // console.log('node 2 edge' + i);
-      if (this.node2.edges[i] == this) {
-        this.node2.edges.splice(i, 1);
+    this.node2.edges.splice(this.node2.edges.indexOf(this),1);
 
-          // console.log('deleted');
-      }
-    }
     // delete edge from global edge list
-    for (let i = edges.length-1; i >= 0; i--) {
-      if (edges[i] == this) {
-        console.log('deleted');
-        edges.splice( i, 1);
-      }
-    }
+    edges.forEach(e=>console.log(e));
+    console.log(edges.splice(edges.indexOf(this),1));
+    console.log('Edge deleted from global edge list');
 
     // delete edge model from scene
+    console.log(scene.children.indexOf(this.model));
     scene.remove(this.model);
   }
 }

@@ -1,0 +1,43 @@
+States:
+0 -1.732 0 foot
+0.5 -0.866 0 torso
+0 0 0 hand
+-1 0 0 airport.fgh
+-1.5 -0.433 -0.7 🐔
+-1.5 0.866 0 🦊
+-1.5 -0.433 0.7 🌾
+5 0 0 barn
+
+Bonds:
+0 -1.732 0 0.5 -0.866 0 rigid [foot to torso]
+0.5 -0.866 0 0 0 0 flexible [torso to hand]
+0 0 0 -1 0 0 rigid [hand to airport]
+
+[animals in airport]
+-1 0 0 -1.5 -0.433 -0.7 rigid
+-1 0 0 -1.5 0.866 0 rigid
+-1 0 0 -1.5 -0.433 0.7 rigid
+
+Rules:
+hand airport.fgh rigid (-1,0,0) hand.c' airport.fgh' rigid (-1,0,0)
+airport.fgh' 🐔 rigid (-0.5,-0.433,-0.7) airport.fgh' 🐔 rigid (0.5,0.866,0)
+hand.c' 🐔 null (-0.5,0.866,0) hand.c'' 🐔 rigid (-0.5,0.866,0)
+hand.c'' airport.fgh' rigid (-1,0,0) hand.c'' airport.fgh'' rigid (-1,0,0)
+airport.fgh'' 🐔 rigid (0.5,0.866,0) airport.fg 🐔 null (0.5,0.866,0)
+airport.fg hand.c'' rigid (1,0,0) airport.fg hand.c''.r null (1,0,0)
+hand.c''.r torso flexible (0.5,-0.866,0) hand.c''.r torso.r flexible (0.5,-0.866,0)
+torso.pause hand.c''.r flexible (-0.5,0.866,0) torso hand.c'' flexible (-0.5,0.866,0)
+torso.r foot rigid (-0.5,-0.866,0) torso.r foot rigid (0.5,-0.866,0)
+foot torso.r rigid (-0.5,0.866,0) foot torso.r rigid (0.5,0.866,0)
+torso.r barn null (0.5,0.866,0) torso.pause barn null (0.5,0.866,0)
+hand.c'' barn null (1,0,0) hand.c'' barn.c'' rigid (1,0,0)
+hand.c'' 🐔 rigid (-0.5,0.866,0) hand.c'' 🐔 rigid (0.5,0.866,0)
+barn.c'' 🐔 null (-0.5,0.866,0) barn.c' 🐔 rigid (-0.5,0.866,0)
+barn.c' hand.c'' rigid (-1,0,0) barn.c' hand.c' rigid (-1,0,0)
+hand.c' 🐔 rigid (0.5,0.866,0) hand 🐔 null (0.5,0.866,0)
+hand barn.c rigid (1,0,0) hand..l barn.c null (1,0,0)
+barn.c' 🐔 rigid (-0.5,0.866,0) barn.c 🐔 rigid (0.5,-0.433,-0.7)
+hand..l torso flexible (0.5,-0.866,0) hand torso.l flexible (0.5,-0.866,0)
+torso.l foot rigid (0.5,-0.866,0) torso.l foot rigid (-0.5,-0.866,0)
+foot torso.l rigid (0.5,0.866,0) foot torso.l rigid (-0.5,0.866,0)
+torso.l airport.fg null (-0.5,0.866,0) torso.pause airport.fg null (-0.5,0.866,0)

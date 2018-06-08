@@ -74,5 +74,15 @@ CNE empty 0 NE A empty 0 NE
 
 
 [Latch on to kinetochore]
-BE K 0 E BE K 1 E 
+BE K 0 E BE K 1 E
 
+Aliases:
+E (1,0,0)n
+SE (0.5,-0.8660254037844386,0)n
+SW (-0.5,-0.8660254037844386,0)n
+W (-1,0,0)n
+NW (-0.5,0.8660254037844386,0)n
+NE (0.5,0.8660254037844386,0)n
+0 null
+1 rigid
+2 flexible

@@ -6,7 +6,7 @@ States:
 -4 2 A
 -2 1 A
 0 1 A
-2 1 SE
+2 1 SqFE
 -1 7 SqF
 -3 1 A
 -1 6 USq
@@ -15,17 +15,17 @@ States:
 -4 4 A
 -1 1 A
 1 1 A
--3 6 TSq
+-3 6 USq
 -2 7 SqF
-0 7 SqF
+0 7 SqCT
 -4 3 A
 -2 6 USq
 0 6 USq
 -3 7 SqF
-2 5 SqF
-1 2 RSq
+2 5 SqCS
+1 2 SSq
 2 4 SqF
--4 7 SL
+-4 7 SqF
 -4 6 A
 2 3 SqF
 -4 5 A
@@ -59,10 +59,9 @@ Bonds:
 -1 6 0 6 1
 -1 6 -2 7 2
 1 6 1 5 1
-1 6 0 6 1
-1 6 1 6 1
 1 6 0 7 1
-1 6 2 5 2
+1 6 0 6 1
+1 6 2 5 1
 1 5 1 6 1
 1 5 1 4 1
 1 5 2 4 2
@@ -78,7 +77,6 @@ Bonds:
 -2 7 -1 6 2
 -2 7 -3 7 2
 0 7 1 6 1
-0 7 0 7 1
 0 7 -1 7 2
 -4 3 -4 4 1
 -4 3 -4 2 1
@@ -91,7 +89,7 @@ Bonds:
 -3 7 -2 6 2
 -3 7 -2 7 2
 -3 7 -4 7 2
-2 5 1 6 2
+2 5 1 6 1
 2 5 2 4 2
 1 2 1 3 1
 1 2 2 1 2
@@ -110,32 +108,57 @@ Bonds:
 
 Rules:
 [Flip from square to triangle]
-[SL TSq 2 SE TL TTr 1 SW]
-SE RSq 2 NW SET RTr 1 W
-CSq SqF 2 E CTr TrF 2 E
-CTr SqF 1 NW CTr TrF 1 NE
+CSq SqCS 1 SE CTrO TrCS 1 E
+CTrO SqCT 1 NW CTr TrCT 1 NE
 
 [Move side of Square]
 SSq SqF 2 E STr TrF 2 E
-RTr STr 1 NE RTr STr 1 NW
-[STr CTr 1 NE STr CTr 1 NW]
-CTr STr 1 SW CTr STr 1 SE
-RTr TrF 0 E RTr ETr 2 E
-TrF STr 0 W TrF2 STr 2 W
-TrF2 STr 2 NW TrF2 STr 0 NW
+CTr STr 1 SW CTr1 STr 1 SE
 STr STr 1 NE STr STr 1 NW
 
-SSq ETr 2 SE STr ETr 0 SE
-ETr STr 2 NW ETr STr 0 NW
-ETr RTr 2 W ETr RTr 0 W
+STr TrF 0 NE STr1 TrF 2 NE
+STr1 TrF 2 E STr2 TrF 0 E
+STr2 STr2 1 SW STr2 STr2 1 SE
+STr2 STr 1 SW STr2 STr 1 SE
+STr TrCS 0 NE STr1 TrCS 2 NE
+
+SSq SqFE 2 E STr TrFE1 2 E
+TrFE1 SqF 2 NW TrFE2 SqF 1 NW
+TrFE1 TrF 2 NW TrFE2 TrF 1 NW
+STr1 TrFE2 2 E STr2 TrFE2 0 E
+
 
 [Move top of square]
-TSq SL 2 NE TTr TL 2 SE
 TTr A 1 W TTr A 1 SW
 TTr UTr 1 E TTr UTr 1 SE
 USq SqF 2 NE UTr TrF 2 NE
 UTr UTr 1 W UTr UTr 1 NW
-UTr CTr 1 E UTr CTr 1 SE
+UTr CTr1 1 E UTr CTr2 1 SE
+A UTr 1 E A UTr 1 NE
+
+[Triangle to Square]
+TrCT TrCS 0 SE TrCT1 TrCS 2 SE
+CTr2 TrCT1 1 NE CTr3 TrCT1 1 NE
+CTr3 TrCS 1 E CSq0 TrCS 0 E
+CSq0 TrCT1 1 NE CSq0 TrCT1 1 E
+
+[Upper square]
+UTr TrF 2 E USq0 SqF 2 E
+USq0 SqF 0 NE USq1 SqF 2 NE
+USq1 SqF 2 E USq2 SqF 0 E
+[SqF TrCT1 2 SE SqF TrCT]
+A USq0 1 NE A USqT 1 E
+USqT SqF 2 E USqT SqF 0 E
+CSq0 USq2 1 NW CSq1 USq2 1 W
+USqT USq2 1 SE USqT USq2 1 E
+USq2 USq2 1 SE USq2 USq2 1 E
+
+
+[Lower Square]
+STr2 TrF 2 E SSq1 SqF 2 E
+SSq1 SSq1 1 SE SSq1 SSq1 1 SW
+STr2 TrCS 2 E SSq1 SqCS 0 E
+SSq1 CSq1 1 NW SSq1 CSq2 1 NE
 
 Aliases:
 E (1,0,0)n
@@ -147,3 +170,5 @@ NE (0.5,0.8660254037844386,0)n
 0 null
 1 rigid
 2 flexible
+
+

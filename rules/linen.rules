@@ -1,0 +1,25 @@
+States:
+0 0 10
+
+Rules:
+10 empty null E 0 9 1 E
+9 empty null E 0 8 1 E
+8 empty null E 0 7 1 E
+7 empty null E 0 6 1 E
+6 empty null E 0 5 1 E
+5 empty null E 0 4 1 E
+4 empty null E 0 3 1 E
+3 empty null E 0 2 1 E
+2 empty null E 0 1 1 E
+1 empty null E 0 0 1 E
+
+Aliases:
+E (1,0,0)n
+SE (0.5,-0.8660254037844386,0)n
+SW (-0.5,-0.8660254037844386,0)n
+W (-1,0,0)n
+NW (-0.5,0.8660254037844386,0)n
+NE (0.5,0.8660254037844386,0)n
+0 null
+1 rigid
+2 flexible

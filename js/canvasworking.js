@@ -11,7 +11,7 @@ var canvas_height;
 var aspect;
 function setcanvassize () {
 	// Make canvas appropriate size for fullscreen or not
-	if (document.webkitFullscreenElement || document.fullscreenElement || document.mozFullScreenElement || document.msFullscreenelement) {
+	if (document.webkitFullscreenElement) {
 		canvas_width = screen.width;
 		canvas_height = screen.height;
 
@@ -23,8 +23,8 @@ function setcanvassize () {
 	aspect =  canvas_width / canvas_height;
 	renderer.setSize(canvas_width, canvas_height);
 }
-window.requestAnimationFrame(setcanvassize);
-window.requestAnimationFrame(resetcamera);
+
+setcanvassize();
 // Append the canvas element created by the renderer to document body element.
 var canvasdiv = document.getElementById("canvas_div")
 var canvas = renderer.domElement;
@@ -98,9 +98,7 @@ examplesdropdown.setAttribute("type", "dropdown");
 examplesdropdown.innerHTML = "Examples:";
 let examples = {'Default': 'default.rules', 'Sierpinski': 'sierpinski.rules',
 'Waving Arm': 'wavingarm.rules', 'Square to Triangle': 'SquaretoTriangle2.rules',
- 'River Crossing': 'rivercrossing.rules', 'Turing Clear Tape': 'turing.rules',
-'Linear Line Growth': 'linen.rules', 'Log n Line Growth': 'line_logn.rules',
-'Simple Waving Arm': 'wavingarmsimple.rules', 'Demo': 'demo.rules'};
+ 'River Crossing': 'rivercrossing.rules'};
 for (exampleprettyname in examples) {
 	let example = document.createElement("li");
 	let examplea = document.createElement("a");
@@ -113,7 +111,7 @@ for (exampleprettyname in examples) {
 }
 // TODO: Maybe add autoscan directory for new example files?
 
-rulesdiv.appendChild(examplesdropdown);
+rulesuploaddiv.appendChild(examplesdropdown);
 
 function inputbox (name_) {
 	let boxdiv = document.createElement("div");
@@ -296,7 +294,6 @@ function resetcamera() {
 	return renderer.render(scene, camera);
 }
 resetcamera();
-
 // pan and zoom
 var view = d3.select(renderer.domElement);
 //define a zoom behavior
@@ -346,30 +343,10 @@ function onMouseMove( event ) {
   // console.log(mouse.y);
 }
 window.addEventListener( 'mousemove', onMouseMove, false );
-document.addEventListener('fullscreenchange', function () {
-	window.requestAnimationFrame(setcanvassize);
-	window.requestAnimationFrame(resetcamera);
-});
-document.addEventListener('webkitfullscreenchange', function () {
-	window.requestAnimationFrame(setcanvassize);
-	window.requestAnimationFrame(resetcamera);
-});
-document.addEventListener('mozfullscreenchange', function () {
-	window.requestAnimationFrame(setcanvassize);
-	window.requestAnimationFrame(resetcamera);
-});
-document.addEventListener('MSFullscreenchange', function () {
-	window.requestAnimationFrame(setcanvassize);
-	window.requestAnimationFrame(resetcamera);
-});
 
 function onKeyPress ( event ) {
 	if (event.key === ' ') {
 		nextstep();
-	}
-	if (event.keyCode == 13) {
-		// enter to toggle play
-		toggleplay();
 	}
 }
 canvas.addEventListener("keydown", onKeyPress, false);
@@ -457,7 +434,7 @@ function animate(timestamp) {
 	// console.log(framerate);
 	frameratedisplay.setAttribute("value", parseFloat(framerate.toFixed(2)) + ' fps');
   // Update VR headset position and apply to camera.
-  controls.update();
+  // controls.update();
   // Render the scene.
   effect.render(scene, camera);
 	// composer.render(scene, camera);
@@ -473,6 +450,7 @@ function animate(timestamp) {
 		}
 	});
 
+	setcanvassize(); // Make canvas appropriate size for fullscreen or not
 
   if (vrDisplay) {
     vrDisplay.requestAnimationFrame(animate);
@@ -525,7 +503,6 @@ function onResize() {
     //   camera.aspect = aspect;
     //   camera.updateProjectionMatrix();
 			window.requestAnimationFrame(setcanvassize);
-			window.requestAnimationFrame(resetcamera);
     }, 250);
   }
 }
@@ -551,15 +528,14 @@ window.addEventListener('vrdisplayconnect', onVRDisplayConnect);
 fullscreen.addEventListener('click', e => enterFullscreen(renderer.domElement));
 vr.addEventListener('click', e => vrDisplay.requestPresent([{source: renderer.domElement}]));
 next.addEventListener('click', nextstep);
-function toggleplay() {
+playbutton.addEventListener('click', function(e) {
 	play = ! play;
 	if (play == true) {
 		playbutton.setAttribute("value", "Pause");
 	} else {
 		playbutton.setAttribute("value", "Play");
 	}
-}
-playbutton.addEventListener('click', toggleplay);
+});
 tiltpanbutton.addEventListener('click', function(e) {
 	pan = ! pan;
 	controls.enabled = ! pan;

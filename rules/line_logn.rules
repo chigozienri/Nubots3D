@@ -1,0 +1,36 @@
+States:
+0 0 s.2
+
+Rules:
+[s.1]
+[subroutine 1]
+s.1 empty null E 0 0 rigid E
+
+[s.2]
+[subroutine 1]
+s.2 empty null E 1 0 rigid E
+[subroutine 2]
+1 empty null NE 1 b.1 rigid NE
+b.1 empty null E b.2 b.3 rigid E
+b.3 0 null SW b.4 0' rigid SW
+1 0' rigid E 0 0.1 null E
+b.4 0.1 rigid SW b.5 0.1 rigid SE
+0.1 empty null W 0 0'' rigid W
+0'' b.5 null NE 0'' b.6 rigid NE
+b.6 0 rigid SE b.7 0 null SE
+b.7 0'' rigid SW b.8 0'' rigid SE
+0'' empty null W 0 0 rigid W
+0 0 null E 0 0''' rigid E
+0''' b.8 null NE 0 empty null NE
+[b.2 empty null E empty empty null E]
+
+Aliases:
+E (1,0,0)n
+SE (0.5,-0.8660254037844386,0)n
+SW (-0.5,-0.8660254037844386,0)n
+W (-1,0,0)n
+NW (-0.5,0.8660254037844386,0)n
+NE (0.5,0.8660254037844386,0)n
+0 null
+1 rigid
+2 flexible

@@ -1,0 +1,36 @@
+States:
+0 0 A
+
+Bonds:
+
+Rules:
+A empty 0 E A B 1 NE
+A B 1 NE A B 1 E
+A B 1 E A B 2 E
+A B 2 E A C 2 E
+A C 2 E D empty null E
+D empty null E D' E null E
+D' empty null NE D F 1 NE
+F D 1 SW F D 1 SE
+F D 1 SE F' D'' 1 SW
+D'' empty null W D''' G 1 W
+D''' empty null SE D'''' H 1 SE
+F' D'''' 1 SW F' D'''' 1 SE
+D'''' H 1 SE D''''' H 2 SE
+F' D''''' 1 SE F' D''''' 1 SW
+F' D''''' 1 SW F' D''''' 1 SE 
+
+
+
+
+
+Aliases:
+E (1,0,0)n
+SE (0.5,-0.8660254037844386,0)n
+SW (-0.5,-0.8660254037844386,0)n
+W (-1,0,0)n
+NW (-0.5,0.8660254037844386,0)n
+NE (0.5,0.8660254037844386,0)n
+0 null
+1 rigid
+2 flexible

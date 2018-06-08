@@ -24,6 +24,12 @@ NUBOTS in 1 (-1,0,0)n NUBOTS in 1 (-0.5,0,0.8660254037844386)n
 NUBOTS in 1 (-0.5,0,0.8660254037844386)n NUBOTS in 1 (0.5,0,0.8660254037844386)n
 NUBOTS in 1 (0.5,0,0.8660254037844386)n NUBOTS in 1 E
 
+in 🤖 1 W in 🤖 1 NW
+in 🤖 1 NW in 🤖 1 NE
+in 🤖 1 NE in 🤖 1 E
+in 🤖 1 E in 🤖 1 SE
+in 🤖 1 SE in 🤖 1 SW
+in 🤖 1 SW in 🤖 1 W
 
 Aliases:
 E (1,0,0)n

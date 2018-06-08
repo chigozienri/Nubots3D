@@ -101,4 +101,4 @@ If a configuration looks weird, make sure Legacy format rules? is set correctly 
 
 You may also download the current state of the system and loaded rules. It is not currently possible to download a ruleset in legacy format. Download a ruleset to see an example of how .rules file is formatted.
 
-The javascript console may give useful debugging information if a ruleset does not work.
+The javascript console may give useful debugging information if a ruleset does not work, but will slow the simulation significantly.

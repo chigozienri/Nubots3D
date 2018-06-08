@@ -3,9 +3,10 @@ Nubots in 3D
 Nubots is an abstract model for algorithmic assembly using molecular robots (https://arxiv.org/abs/1301.2626).
 This simulator expands the original model to use arbitrary 3D vectors.
 
-Rule configuration:
+## Rule configuration:
 The States: and Rules: boxes specify the initial configuration.
-An individual bot is placed in the space using a line in the States box:
+
+### An individual bot is placed in the space using a line in the States box:
 ```
 x y state
 ```
@@ -28,7 +29,7 @@ The effect of this is to make it easier to specify coordinates on a triangular l
 
 Each bot state is separated by a line break
 
-A bond between 2 bots in the initial configuration is specified using a line in the Bonds box:
+### A bond between 2 bots in the initial configuration is specified using a line in the Bonds box:
 ```
 x1 y1 x2 y2 type
 ```
@@ -49,7 +50,7 @@ If either of the positions is unoccupied by a bot from the states box, the bond 
 The bond type can also be specified using an alias (see aliases, below)
 
 
-Rules:
+### Rules:
 A rule is specified in the following format:
 ```
 state1_i state2_i type_i dir_i state1_f state2_f type_f dir_f
@@ -66,7 +67,7 @@ dir_i and dir_f can be a vector in the format (x,y,z) with an optional n indicat
 state2_i, state1_f, and state_2_f can be any string, or the special keyword empty which indicates that no bot is present in that position. This can be used to create or delete bots.
 Note that you cannot use the keyword empty in state1_i (in this implementation, the rule is applied to the bot in the first position, so this bot must exist).
 
-Aliases:
+### Aliases:
 You may wish to create aliases for directions and bond types, especially if using legacy formatted rules.
 Each line of the Aliases box is an alias followed by a definition, separated by a space. The definition can be a vector or a bond type.
 The set of aliases below work for legacy formatted rules.
@@ -81,3 +82,23 @@ NE (0.5,0.866,0)n
 1 rigid
 2 flexible
 ```
+
+
+## .rules files
+You may upload a ruleset as a .rules file, which is formatted with a line
+States:
+followed by the states rules
+Bonds:
+followed by the bonds rules
+Rules:
+followed by the rules rules
+Aliases:
+followed by the alias rules
+
+## Simulating
+While the canvas is focused, you may press space to advance one step, or enter to toggle play/pause
+If a configuration looks weird, make sure Legacy format rules? is set correctly and press Submit again.
+
+You may also download the current state of the system and loaded rules. It is not currently possible to download a ruleset in legacy format. Download a ruleset to see an example of how .rules file is formatted.
+
+The javascript console may give useful debugging information if a ruleset does not work.

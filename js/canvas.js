@@ -100,6 +100,7 @@ examplesdropdown.innerHTML = "Examples:";
 let examples = {'Default': 'default.rules', 'Sierpinski': 'sierpinski.rules',
 'Waving Arm': 'wavingarm.rules', 'Square to Triangle': 'SquaretoTriangle2.rules',
  'River Crossing': 'rivercrossing.rules', 'Turing Clear Tape': 'turing.rules',
+'Turing Rainbow Binary Lookup Table': 'turingrainbow.rules',
 'Linear Line Growth': 'linen.rules', 'Log n Line Growth': 'line_logn.rules',
 'Simple Waving Arm': 'wavingarmsimple.rules', 'Demo': 'demo.rules',
 'Square to Triangle and back': 'LinearSquareToTri2.rules', 'Hofstadter': 'GEB.rules'};

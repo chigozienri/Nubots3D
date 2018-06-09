@@ -1,0 +1,5080 @@
+States:
+0 1 0 return
+
+0 0 0 s
+1 0 0 0
+2 0 0 e.0
+
+Bonds:
+0 1 0 0 0 0 rigid
+0 0 1 0 rigid
+1 0 2 0 rigid
+2 0 3 0 rigid
+3 0 4 0 rigid
+4 0 5 0 rigid
+5 0 6 0 rigid
+
+Rules:
+s return rigid (0,1,0) s read1.r rigid (0,1,0) [Change state {return,s}->{read1,s,+1}]
+
+read checkend rigid (0,1,0) read ended.r rigid (0,1,0) [Change state\
+
+  {checkend,read}->{ended,read,+1}]
+
+s checkend rigid (0,1,0) s ended.r rigid (0,1,0) [Change state\
+
+  {checkend,s}->{ended,s,+1}]
+
+0 checkend rigid (0,1,0) 0 return.l rigid (0,1,0) [Change state\
+
+  {checkend,0}->{return,0,-1}]
+
+1 checkend rigid (0,1,0) 1 return.l rigid (0,1,0) [Change state\
+
+  {checkend,1}->{return,1,-1}]
+
+0 return rigid (0,1,0) 0 return.l rigid (0,1,0) [Change state {return,0}->{return,0,-1}]
+
+1 return rigid (0,1,0) 1 return.l rigid (0,1,0) [Change state {return,1}->{return,1,-1}]
+
+read return rigid (0,1,0) read return.l rigid (0,1,0) [Change state\
+
+  {return,read}->{return,read,-1}]
+
+read read1 rigid (0,1,0) read read2.r rigid (0,1,0) [Change state\
+
+  {read1,read}->{read2,read,+1}]
+
+read read2 rigid (0,1,0) read read4.r rigid (0,1,0) [Change state\
+
+  {read2,read}->{read4,read,+1}]
+
+read read4 rigid (0,1,0) read ended.r rigid (0,1,0) [Change state\
+
+  {read4,read}->{ended,read,+1}]
+
+0 read1 rigid (0,1,0) read return.l rigid (0,1,0) [Change state\
+
+  {read1,0}->{return,read,-1}]
+
+0 read2 rigid (0,1,0) read return.l rigid (0,1,0) [Change state\
+
+  {read2,0}->{return,read,-1}]
+
+0 read3 rigid (0,1,0) read return.l rigid (0,1,0) [Change state\
+
+  {read3,0}->{return,read,-1}]
+
+0 read1 rigid (0,1,0) read return.l rigid (0,1,0) [Change state\
+
+  {read1,0}->{return,read,-1}]
+
+0 read2 rigid (0,1,0) read return.l rigid (0,1,0) [Change state\
+
+  {read2,0}->{return,read,-1}]
+
+0 read4 rigid (0,1,0) read return.l rigid (0,1,0) [Change state\
+
+  {read4,0}->{return,read,-1}]
+
+1 read1 rigid (0,1,0) read 1.r rigid (0,1,0) [Change state {read1,1}->{1,read,+1}]
+
+1 read2 rigid (0,1,0) read 2.r rigid (0,1,0) [Change state {read2,1}->{2,read,+1}]
+
+1 read4 rigid (0,1,0) read 4.r rigid (0,1,0) [Change state {read4,1}->{4,read,+1}]
+
+0 1 rigid (0,1,0) 0 1.r rigid (0,1,0) [Change state {1,0}->{1,0,+1}]
+
+1 1 rigid (0,1,0) 1 1.r rigid (0,1,0) [Change state {1,1}->{1,1,+1}]
+
+0 2 rigid (0,1,0) 0 2.r rigid (0,1,0) [Change state {2,0}->{2,0,+1}]
+
+1 2 rigid (0,1,0) 1 2.r rigid (0,1,0) [Change state {2,1}->{2,1,+1}]
+
+e.0 1 rigid (0,1,0) e.1 checkend.l rigid (0,1,0) [Change state\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.0 2 rigid (0,1,0) e.2 checkend.l rigid (0,1,0) [Change state\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.1 2 rigid (0,1,0) e.3 checkend.l rigid (0,1,0) [Change state\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.0 4 rigid (0,1,0) e.4 checkend.l rigid (0,1,0) [Change state\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.1 4 rigid (0,1,0) e.5 checkend.l rigid (0,1,0) [Change state\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.2 4 rigid (0,1,0) e.6 checkend.l rigid (0,1,0) [Change state\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.3 4 rigid (0,1,0) e.7 checkend.l rigid (0,1,0) [Change state\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.0 ended rigid (0,1,0) red converted.r rigid (0,1,0) [Change state\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.1 ended rigid (0,1,0) orange converted.r rigid (0,1,0) [Change state\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.2 ended rigid (0,1,0) yellow converted.r rigid (0,1,0) [Change state\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.3 ended rigid (0,1,0) green converted.r rigid (0,1,0) [Change state\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.4 ended rigid (0,1,0) blue converted.r rigid (0,1,0) [Change state\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.5 ended rigid (0,1,0) indigo converted.r rigid (0,1,0) [Change state\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.6 ended rigid (0,1,0) violet converted.r rigid (0,1,0) [Change state\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+0 read1.r null (-1,1,0) 0 read1.r' rigid (-1,1,0)[Bond right {return,s}->{read1,s,+1}]
+
+1 read1.r null (-1,1,0) 1 read1.r' rigid (-1,1,0)[Bond right {return,s}->{read1,s,+1}]
+
+e.0 read1.r null (-1,1,0) e.0 read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+e.1 read1.r null (-1,1,0) e.1 read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+e.2 read1.r null (-1,1,0) e.2 read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+e.3 read1.r null (-1,1,0) e.3 read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+e.4 read1.r null (-1,1,0) e.4 read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+e.5 read1.r null (-1,1,0) e.5 read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+e.6 read1.r null (-1,1,0) e.6 read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+e.7 read1.r null (-1,1,0) e.7 read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+read read1.r null (-1,1,0) read read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+s read1.r null (-1,1,0) s read1.r' rigid (-1,1,0)[Bond right {return,s}->{read1,s,+1}]
+
+blue read1.r null (-1,1,0) blue read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+green read1.r null (-1,1,0) green read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+indigo read1.r null (-1,1,0) indigo read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+orange read1.r null (-1,1,0) orange read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+red read1.r null (-1,1,0) red read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+violet read1.r null (-1,1,0) violet read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+yellow read1.r null (-1,1,0) yellow read1.r' rigid (-1,1,0)[Bond right\
+
+  {return,s}->{read1,s,+1}]
+
+0 ended.r null (-1,1,0) 0 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+1 ended.r null (-1,1,0) 1 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.0 ended.r null (-1,1,0) e.0 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.1 ended.r null (-1,1,0) e.1 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.2 ended.r null (-1,1,0) e.2 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.3 ended.r null (-1,1,0) e.3 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.4 ended.r null (-1,1,0) e.4 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.5 ended.r null (-1,1,0) e.5 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.6 ended.r null (-1,1,0) e.6 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.7 ended.r null (-1,1,0) e.7 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+read ended.r null (-1,1,0) read ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+s ended.r null (-1,1,0) s ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+blue ended.r null (-1,1,0) blue ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+green ended.r null (-1,1,0) green ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+indigo ended.r null (-1,1,0) indigo ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+orange ended.r null (-1,1,0) orange ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+red ended.r null (-1,1,0) red ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+violet ended.r null (-1,1,0) violet ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+yellow ended.r null (-1,1,0) yellow ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,read}->{ended,read,+1}]
+
+0 ended.r null (-1,1,0) 0 ended.r' rigid (-1,1,0)[Bond right {checkend,s}->{ended,s,+1}]
+
+1 ended.r null (-1,1,0) 1 ended.r' rigid (-1,1,0)[Bond right {checkend,s}->{ended,s,+1}]
+
+e.0 ended.r null (-1,1,0) e.0 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+e.1 ended.r null (-1,1,0) e.1 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+e.2 ended.r null (-1,1,0) e.2 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+e.3 ended.r null (-1,1,0) e.3 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+e.4 ended.r null (-1,1,0) e.4 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+e.5 ended.r null (-1,1,0) e.5 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+e.6 ended.r null (-1,1,0) e.6 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+e.7 ended.r null (-1,1,0) e.7 ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+read ended.r null (-1,1,0) read ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+s ended.r null (-1,1,0) s ended.r' rigid (-1,1,0)[Bond right {checkend,s}->{ended,s,+1}]
+
+blue ended.r null (-1,1,0) blue ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+green ended.r null (-1,1,0) green ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+indigo ended.r null (-1,1,0) indigo ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+orange ended.r null (-1,1,0) orange ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+red ended.r null (-1,1,0) red ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+violet ended.r null (-1,1,0) violet ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+yellow ended.r null (-1,1,0) yellow ended.r' rigid (-1,1,0)[Bond right\
+
+  {checkend,s}->{ended,s,+1}]
+
+0 return.l null (1,1,0) 0 return.l' rigid (1,1,0)[Bond left {checkend,0}->{return,0,-1}]
+
+1 return.l null (1,1,0) 1 return.l' rigid (1,1,0)[Bond left {checkend,0}->{return,0,-1}]
+
+e.0 return.l null (1,1,0) e.0 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+e.1 return.l null (1,1,0) e.1 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+e.2 return.l null (1,1,0) e.2 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+e.3 return.l null (1,1,0) e.3 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+e.4 return.l null (1,1,0) e.4 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+e.5 return.l null (1,1,0) e.5 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+e.6 return.l null (1,1,0) e.6 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+e.7 return.l null (1,1,0) e.7 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+read return.l null (1,1,0) read return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+s return.l null (1,1,0) s return.l' rigid (1,1,0)[Bond left {checkend,0}->{return,0,-1}]
+
+blue return.l null (1,1,0) blue return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+green return.l null (1,1,0) green return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+indigo return.l null (1,1,0) indigo return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+orange return.l null (1,1,0) orange return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+red return.l null (1,1,0) red return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+violet return.l null (1,1,0) violet return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+yellow return.l null (1,1,0) yellow return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,0}->{return,0,-1}]
+
+0 return.l null (1,1,0) 0 return.l' rigid (1,1,0)[Bond left {checkend,1}->{return,1,-1}]
+
+1 return.l null (1,1,0) 1 return.l' rigid (1,1,0)[Bond left {checkend,1}->{return,1,-1}]
+
+e.0 return.l null (1,1,0) e.0 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+e.1 return.l null (1,1,0) e.1 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+e.2 return.l null (1,1,0) e.2 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+e.3 return.l null (1,1,0) e.3 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+e.4 return.l null (1,1,0) e.4 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+e.5 return.l null (1,1,0) e.5 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+e.6 return.l null (1,1,0) e.6 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+e.7 return.l null (1,1,0) e.7 return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+read return.l null (1,1,0) read return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+s return.l null (1,1,0) s return.l' rigid (1,1,0)[Bond left {checkend,1}->{return,1,-1}]
+
+blue return.l null (1,1,0) blue return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+green return.l null (1,1,0) green return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+indigo return.l null (1,1,0) indigo return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+orange return.l null (1,1,0) orange return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+red return.l null (1,1,0) red return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+violet return.l null (1,1,0) violet return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+yellow return.l null (1,1,0) yellow return.l' rigid (1,1,0)[Bond left\
+
+  {checkend,1}->{return,1,-1}]
+
+0 return.l null (1,1,0) 0 return.l' rigid (1,1,0)[Bond left {return,0}->{return,0,-1}]
+
+1 return.l null (1,1,0) 1 return.l' rigid (1,1,0)[Bond left {return,0}->{return,0,-1}]
+
+e.0 return.l null (1,1,0) e.0 return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+e.1 return.l null (1,1,0) e.1 return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+e.2 return.l null (1,1,0) e.2 return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+e.3 return.l null (1,1,0) e.3 return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+e.4 return.l null (1,1,0) e.4 return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+e.5 return.l null (1,1,0) e.5 return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+e.6 return.l null (1,1,0) e.6 return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+e.7 return.l null (1,1,0) e.7 return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+read return.l null (1,1,0) read return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+s return.l null (1,1,0) s return.l' rigid (1,1,0)[Bond left {return,0}->{return,0,-1}]
+
+blue return.l null (1,1,0) blue return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+green return.l null (1,1,0) green return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+indigo return.l null (1,1,0) indigo return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+orange return.l null (1,1,0) orange return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+red return.l null (1,1,0) red return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+violet return.l null (1,1,0) violet return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+yellow return.l null (1,1,0) yellow return.l' rigid (1,1,0)[Bond left\
+
+  {return,0}->{return,0,-1}]
+
+0 return.l null (1,1,0) 0 return.l' rigid (1,1,0)[Bond left {return,1}->{return,1,-1}]
+
+1 return.l null (1,1,0) 1 return.l' rigid (1,1,0)[Bond left {return,1}->{return,1,-1}]
+
+e.0 return.l null (1,1,0) e.0 return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+e.1 return.l null (1,1,0) e.1 return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+e.2 return.l null (1,1,0) e.2 return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+e.3 return.l null (1,1,0) e.3 return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+e.4 return.l null (1,1,0) e.4 return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+e.5 return.l null (1,1,0) e.5 return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+e.6 return.l null (1,1,0) e.6 return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+e.7 return.l null (1,1,0) e.7 return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+read return.l null (1,1,0) read return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+s return.l null (1,1,0) s return.l' rigid (1,1,0)[Bond left {return,1}->{return,1,-1}]
+
+blue return.l null (1,1,0) blue return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+green return.l null (1,1,0) green return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+indigo return.l null (1,1,0) indigo return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+orange return.l null (1,1,0) orange return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+red return.l null (1,1,0) red return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+violet return.l null (1,1,0) violet return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+yellow return.l null (1,1,0) yellow return.l' rigid (1,1,0)[Bond left\
+
+  {return,1}->{return,1,-1}]
+
+0 return.l null (1,1,0) 0 return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+1 return.l null (1,1,0) 1 return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+e.0 return.l null (1,1,0) e.0 return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+e.1 return.l null (1,1,0) e.1 return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+e.2 return.l null (1,1,0) e.2 return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+e.3 return.l null (1,1,0) e.3 return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+e.4 return.l null (1,1,0) e.4 return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+e.5 return.l null (1,1,0) e.5 return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+e.6 return.l null (1,1,0) e.6 return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+e.7 return.l null (1,1,0) e.7 return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+read return.l null (1,1,0) read return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+s return.l null (1,1,0) s return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+blue return.l null (1,1,0) blue return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+green return.l null (1,1,0) green return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+indigo return.l null (1,1,0) indigo return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+orange return.l null (1,1,0) orange return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+red return.l null (1,1,0) red return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+violet return.l null (1,1,0) violet return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+yellow return.l null (1,1,0) yellow return.l' rigid (1,1,0)[Bond left\
+
+  {return,read}->{return,read,-1}]
+
+0 read2.r null (-1,1,0) 0 read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+1 read2.r null (-1,1,0) 1 read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.0 read2.r null (-1,1,0) e.0 read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.1 read2.r null (-1,1,0) e.1 read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.2 read2.r null (-1,1,0) e.2 read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.3 read2.r null (-1,1,0) e.3 read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.4 read2.r null (-1,1,0) e.4 read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.5 read2.r null (-1,1,0) e.5 read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.6 read2.r null (-1,1,0) e.6 read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.7 read2.r null (-1,1,0) e.7 read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+read read2.r null (-1,1,0) read read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+s read2.r null (-1,1,0) s read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+blue read2.r null (-1,1,0) blue read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+green read2.r null (-1,1,0) green read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+indigo read2.r null (-1,1,0) indigo read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+orange read2.r null (-1,1,0) orange read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+red read2.r null (-1,1,0) red read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+violet read2.r null (-1,1,0) violet read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+yellow read2.r null (-1,1,0) yellow read2.r' rigid (-1,1,0)[Bond right\
+
+  {read1,read}->{read2,read,+1}]
+
+0 read4.r null (-1,1,0) 0 read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+1 read4.r null (-1,1,0) 1 read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.0 read4.r null (-1,1,0) e.0 read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.1 read4.r null (-1,1,0) e.1 read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.2 read4.r null (-1,1,0) e.2 read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.3 read4.r null (-1,1,0) e.3 read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.4 read4.r null (-1,1,0) e.4 read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.5 read4.r null (-1,1,0) e.5 read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.6 read4.r null (-1,1,0) e.6 read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.7 read4.r null (-1,1,0) e.7 read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+read read4.r null (-1,1,0) read read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+s read4.r null (-1,1,0) s read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+blue read4.r null (-1,1,0) blue read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+green read4.r null (-1,1,0) green read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+indigo read4.r null (-1,1,0) indigo read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+orange read4.r null (-1,1,0) orange read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+red read4.r null (-1,1,0) red read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+violet read4.r null (-1,1,0) violet read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+yellow read4.r null (-1,1,0) yellow read4.r' rigid (-1,1,0)[Bond right\
+
+  {read2,read}->{read4,read,+1}]
+
+0 ended.r null (-1,1,0) 0 ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+1 ended.r null (-1,1,0) 1 ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.0 ended.r null (-1,1,0) e.0 ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.1 ended.r null (-1,1,0) e.1 ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.2 ended.r null (-1,1,0) e.2 ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.3 ended.r null (-1,1,0) e.3 ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.4 ended.r null (-1,1,0) e.4 ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.5 ended.r null (-1,1,0) e.5 ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.6 ended.r null (-1,1,0) e.6 ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.7 ended.r null (-1,1,0) e.7 ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+read ended.r null (-1,1,0) read ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+s ended.r null (-1,1,0) s ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+blue ended.r null (-1,1,0) blue ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+green ended.r null (-1,1,0) green ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+indigo ended.r null (-1,1,0) indigo ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+orange ended.r null (-1,1,0) orange ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+red ended.r null (-1,1,0) red ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+violet ended.r null (-1,1,0) violet ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+yellow ended.r null (-1,1,0) yellow ended.r' rigid (-1,1,0)[Bond right\
+
+  {read4,read}->{ended,read,+1}]
+
+0 return.l null (1,1,0) 0 return.l' rigid (1,1,0)[Bond left {read1,0}->{return,read,-1}]
+
+1 return.l null (1,1,0) 1 return.l' rigid (1,1,0)[Bond left {read1,0}->{return,read,-1}]
+
+e.0 return.l null (1,1,0) e.0 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.1 return.l null (1,1,0) e.1 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.2 return.l null (1,1,0) e.2 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.3 return.l null (1,1,0) e.3 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.4 return.l null (1,1,0) e.4 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.5 return.l null (1,1,0) e.5 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.6 return.l null (1,1,0) e.6 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.7 return.l null (1,1,0) e.7 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+read return.l null (1,1,0) read return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+s return.l null (1,1,0) s return.l' rigid (1,1,0)[Bond left {read1,0}->{return,read,-1}]
+
+blue return.l null (1,1,0) blue return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+green return.l null (1,1,0) green return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+indigo return.l null (1,1,0) indigo return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+orange return.l null (1,1,0) orange return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+red return.l null (1,1,0) red return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+violet return.l null (1,1,0) violet return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+yellow return.l null (1,1,0) yellow return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+0 return.l null (1,1,0) 0 return.l' rigid (1,1,0)[Bond left {read2,0}->{return,read,-1}]
+
+1 return.l null (1,1,0) 1 return.l' rigid (1,1,0)[Bond left {read2,0}->{return,read,-1}]
+
+e.0 return.l null (1,1,0) e.0 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.1 return.l null (1,1,0) e.1 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.2 return.l null (1,1,0) e.2 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.3 return.l null (1,1,0) e.3 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.4 return.l null (1,1,0) e.4 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.5 return.l null (1,1,0) e.5 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.6 return.l null (1,1,0) e.6 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.7 return.l null (1,1,0) e.7 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+read return.l null (1,1,0) read return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+s return.l null (1,1,0) s return.l' rigid (1,1,0)[Bond left {read2,0}->{return,read,-1}]
+
+blue return.l null (1,1,0) blue return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+green return.l null (1,1,0) green return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+indigo return.l null (1,1,0) indigo return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+orange return.l null (1,1,0) orange return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+red return.l null (1,1,0) red return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+violet return.l null (1,1,0) violet return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+yellow return.l null (1,1,0) yellow return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+0 return.l null (1,1,0) 0 return.l' rigid (1,1,0)[Bond left {read3,0}->{return,read,-1}]
+
+1 return.l null (1,1,0) 1 return.l' rigid (1,1,0)[Bond left {read3,0}->{return,read,-1}]
+
+e.0 return.l null (1,1,0) e.0 return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+e.1 return.l null (1,1,0) e.1 return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+e.2 return.l null (1,1,0) e.2 return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+e.3 return.l null (1,1,0) e.3 return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+e.4 return.l null (1,1,0) e.4 return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+e.5 return.l null (1,1,0) e.5 return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+e.6 return.l null (1,1,0) e.6 return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+e.7 return.l null (1,1,0) e.7 return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+read return.l null (1,1,0) read return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+s return.l null (1,1,0) s return.l' rigid (1,1,0)[Bond left {read3,0}->{return,read,-1}]
+
+blue return.l null (1,1,0) blue return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+green return.l null (1,1,0) green return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+indigo return.l null (1,1,0) indigo return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+orange return.l null (1,1,0) orange return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+red return.l null (1,1,0) red return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+violet return.l null (1,1,0) violet return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+yellow return.l null (1,1,0) yellow return.l' rigid (1,1,0)[Bond left\
+
+  {read3,0}->{return,read,-1}]
+
+0 return.l null (1,1,0) 0 return.l' rigid (1,1,0)[Bond left {read1,0}->{return,read,-1}]
+
+1 return.l null (1,1,0) 1 return.l' rigid (1,1,0)[Bond left {read1,0}->{return,read,-1}]
+
+e.0 return.l null (1,1,0) e.0 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.1 return.l null (1,1,0) e.1 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.2 return.l null (1,1,0) e.2 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.3 return.l null (1,1,0) e.3 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.4 return.l null (1,1,0) e.4 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.5 return.l null (1,1,0) e.5 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.6 return.l null (1,1,0) e.6 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+e.7 return.l null (1,1,0) e.7 return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+read return.l null (1,1,0) read return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+s return.l null (1,1,0) s return.l' rigid (1,1,0)[Bond left {read1,0}->{return,read,-1}]
+
+blue return.l null (1,1,0) blue return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+green return.l null (1,1,0) green return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+indigo return.l null (1,1,0) indigo return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+orange return.l null (1,1,0) orange return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+red return.l null (1,1,0) red return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+violet return.l null (1,1,0) violet return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+yellow return.l null (1,1,0) yellow return.l' rigid (1,1,0)[Bond left\
+
+  {read1,0}->{return,read,-1}]
+
+0 return.l null (1,1,0) 0 return.l' rigid (1,1,0)[Bond left {read2,0}->{return,read,-1}]
+
+1 return.l null (1,1,0) 1 return.l' rigid (1,1,0)[Bond left {read2,0}->{return,read,-1}]
+
+e.0 return.l null (1,1,0) e.0 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.1 return.l null (1,1,0) e.1 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.2 return.l null (1,1,0) e.2 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.3 return.l null (1,1,0) e.3 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.4 return.l null (1,1,0) e.4 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.5 return.l null (1,1,0) e.5 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.6 return.l null (1,1,0) e.6 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+e.7 return.l null (1,1,0) e.7 return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+read return.l null (1,1,0) read return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+s return.l null (1,1,0) s return.l' rigid (1,1,0)[Bond left {read2,0}->{return,read,-1}]
+
+blue return.l null (1,1,0) blue return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+green return.l null (1,1,0) green return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+indigo return.l null (1,1,0) indigo return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+orange return.l null (1,1,0) orange return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+red return.l null (1,1,0) red return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+violet return.l null (1,1,0) violet return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+yellow return.l null (1,1,0) yellow return.l' rigid (1,1,0)[Bond left\
+
+  {read2,0}->{return,read,-1}]
+
+0 return.l null (1,1,0) 0 return.l' rigid (1,1,0)[Bond left {read4,0}->{return,read,-1}]
+
+1 return.l null (1,1,0) 1 return.l' rigid (1,1,0)[Bond left {read4,0}->{return,read,-1}]
+
+e.0 return.l null (1,1,0) e.0 return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+e.1 return.l null (1,1,0) e.1 return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+e.2 return.l null (1,1,0) e.2 return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+e.3 return.l null (1,1,0) e.3 return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+e.4 return.l null (1,1,0) e.4 return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+e.5 return.l null (1,1,0) e.5 return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+e.6 return.l null (1,1,0) e.6 return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+e.7 return.l null (1,1,0) e.7 return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+read return.l null (1,1,0) read return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+s return.l null (1,1,0) s return.l' rigid (1,1,0)[Bond left {read4,0}->{return,read,-1}]
+
+blue return.l null (1,1,0) blue return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+green return.l null (1,1,0) green return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+indigo return.l null (1,1,0) indigo return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+orange return.l null (1,1,0) orange return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+red return.l null (1,1,0) red return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+violet return.l null (1,1,0) violet return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+yellow return.l null (1,1,0) yellow return.l' rigid (1,1,0)[Bond left\
+
+  {read4,0}->{return,read,-1}]
+
+0 1.r null (-1,1,0) 0 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+1 1.r null (-1,1,0) 1 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+e.0 1.r null (-1,1,0) e.0 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+e.1 1.r null (-1,1,0) e.1 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+e.2 1.r null (-1,1,0) e.2 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+e.3 1.r null (-1,1,0) e.3 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+e.4 1.r null (-1,1,0) e.4 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+e.5 1.r null (-1,1,0) e.5 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+e.6 1.r null (-1,1,0) e.6 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+e.7 1.r null (-1,1,0) e.7 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+read 1.r null (-1,1,0) read 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+s 1.r null (-1,1,0) s 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+blue 1.r null (-1,1,0) blue 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+green 1.r null (-1,1,0) green 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+indigo 1.r null (-1,1,0) indigo 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+orange 1.r null (-1,1,0) orange 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+red 1.r null (-1,1,0) red 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+violet 1.r null (-1,1,0) violet 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+yellow 1.r null (-1,1,0) yellow 1.r' rigid (-1,1,0)[Bond right {read1,1}->{1,read,+1}]
+
+0 2.r null (-1,1,0) 0 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+1 2.r null (-1,1,0) 1 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+e.0 2.r null (-1,1,0) e.0 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+e.1 2.r null (-1,1,0) e.1 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+e.2 2.r null (-1,1,0) e.2 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+e.3 2.r null (-1,1,0) e.3 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+e.4 2.r null (-1,1,0) e.4 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+e.5 2.r null (-1,1,0) e.5 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+e.6 2.r null (-1,1,0) e.6 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+e.7 2.r null (-1,1,0) e.7 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+read 2.r null (-1,1,0) read 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+s 2.r null (-1,1,0) s 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+blue 2.r null (-1,1,0) blue 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+green 2.r null (-1,1,0) green 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+indigo 2.r null (-1,1,0) indigo 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+orange 2.r null (-1,1,0) orange 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+red 2.r null (-1,1,0) red 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+violet 2.r null (-1,1,0) violet 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+yellow 2.r null (-1,1,0) yellow 2.r' rigid (-1,1,0)[Bond right {read2,1}->{2,read,+1}]
+
+0 4.r null (-1,1,0) 0 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+1 4.r null (-1,1,0) 1 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+e.0 4.r null (-1,1,0) e.0 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+e.1 4.r null (-1,1,0) e.1 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+e.2 4.r null (-1,1,0) e.2 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+e.3 4.r null (-1,1,0) e.3 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+e.4 4.r null (-1,1,0) e.4 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+e.5 4.r null (-1,1,0) e.5 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+e.6 4.r null (-1,1,0) e.6 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+e.7 4.r null (-1,1,0) e.7 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+read 4.r null (-1,1,0) read 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+s 4.r null (-1,1,0) s 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+blue 4.r null (-1,1,0) blue 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+green 4.r null (-1,1,0) green 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+indigo 4.r null (-1,1,0) indigo 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+orange 4.r null (-1,1,0) orange 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+red 4.r null (-1,1,0) red 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+violet 4.r null (-1,1,0) violet 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+yellow 4.r null (-1,1,0) yellow 4.r' rigid (-1,1,0)[Bond right {read4,1}->{4,read,+1}]
+
+0 1.r null (-1,1,0) 0 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+1 1.r null (-1,1,0) 1 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+e.0 1.r null (-1,1,0) e.0 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+e.1 1.r null (-1,1,0) e.1 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+e.2 1.r null (-1,1,0) e.2 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+e.3 1.r null (-1,1,0) e.3 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+e.4 1.r null (-1,1,0) e.4 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+e.5 1.r null (-1,1,0) e.5 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+e.6 1.r null (-1,1,0) e.6 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+e.7 1.r null (-1,1,0) e.7 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+read 1.r null (-1,1,0) read 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+s 1.r null (-1,1,0) s 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+blue 1.r null (-1,1,0) blue 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+green 1.r null (-1,1,0) green 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+indigo 1.r null (-1,1,0) indigo 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+orange 1.r null (-1,1,0) orange 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+red 1.r null (-1,1,0) red 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+violet 1.r null (-1,1,0) violet 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+yellow 1.r null (-1,1,0) yellow 1.r' rigid (-1,1,0)[Bond right {1,0}->{1,0,+1}]
+
+0 1.r null (-1,1,0) 0 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+1 1.r null (-1,1,0) 1 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+e.0 1.r null (-1,1,0) e.0 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+e.1 1.r null (-1,1,0) e.1 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+e.2 1.r null (-1,1,0) e.2 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+e.3 1.r null (-1,1,0) e.3 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+e.4 1.r null (-1,1,0) e.4 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+e.5 1.r null (-1,1,0) e.5 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+e.6 1.r null (-1,1,0) e.6 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+e.7 1.r null (-1,1,0) e.7 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+read 1.r null (-1,1,0) read 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+s 1.r null (-1,1,0) s 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+blue 1.r null (-1,1,0) blue 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+green 1.r null (-1,1,0) green 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+indigo 1.r null (-1,1,0) indigo 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+orange 1.r null (-1,1,0) orange 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+red 1.r null (-1,1,0) red 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+violet 1.r null (-1,1,0) violet 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+yellow 1.r null (-1,1,0) yellow 1.r' rigid (-1,1,0)[Bond right {1,1}->{1,1,+1}]
+
+0 2.r null (-1,1,0) 0 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+1 2.r null (-1,1,0) 1 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+e.0 2.r null (-1,1,0) e.0 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+e.1 2.r null (-1,1,0) e.1 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+e.2 2.r null (-1,1,0) e.2 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+e.3 2.r null (-1,1,0) e.3 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+e.4 2.r null (-1,1,0) e.4 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+e.5 2.r null (-1,1,0) e.5 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+e.6 2.r null (-1,1,0) e.6 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+e.7 2.r null (-1,1,0) e.7 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+read 2.r null (-1,1,0) read 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+s 2.r null (-1,1,0) s 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+blue 2.r null (-1,1,0) blue 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+green 2.r null (-1,1,0) green 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+indigo 2.r null (-1,1,0) indigo 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+orange 2.r null (-1,1,0) orange 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+red 2.r null (-1,1,0) red 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+violet 2.r null (-1,1,0) violet 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+yellow 2.r null (-1,1,0) yellow 2.r' rigid (-1,1,0)[Bond right {2,0}->{2,0,+1}]
+
+0 2.r null (-1,1,0) 0 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+1 2.r null (-1,1,0) 1 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+e.0 2.r null (-1,1,0) e.0 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+e.1 2.r null (-1,1,0) e.1 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+e.2 2.r null (-1,1,0) e.2 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+e.3 2.r null (-1,1,0) e.3 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+e.4 2.r null (-1,1,0) e.4 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+e.5 2.r null (-1,1,0) e.5 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+e.6 2.r null (-1,1,0) e.6 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+e.7 2.r null (-1,1,0) e.7 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+read 2.r null (-1,1,0) read 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+s 2.r null (-1,1,0) s 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+blue 2.r null (-1,1,0) blue 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+green 2.r null (-1,1,0) green 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+indigo 2.r null (-1,1,0) indigo 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+orange 2.r null (-1,1,0) orange 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+red 2.r null (-1,1,0) red 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+violet 2.r null (-1,1,0) violet 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+yellow 2.r null (-1,1,0) yellow 2.r' rigid (-1,1,0)[Bond right {2,1}->{2,1,+1}]
+
+0 checkend.l null (1,1,0) 0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+1 checkend.l null (1,1,0) 1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.0 checkend.l null (1,1,0) e.0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.1 checkend.l null (1,1,0) e.1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.2 checkend.l null (1,1,0) e.2 checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.3 checkend.l null (1,1,0) e.3 checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.4 checkend.l null (1,1,0) e.4 checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.5 checkend.l null (1,1,0) e.5 checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.6 checkend.l null (1,1,0) e.6 checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.7 checkend.l null (1,1,0) e.7 checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+read checkend.l null (1,1,0) read checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+s checkend.l null (1,1,0) s checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+blue checkend.l null (1,1,0) blue checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+green checkend.l null (1,1,0) green checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+indigo checkend.l null (1,1,0) indigo checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+orange checkend.l null (1,1,0) orange checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+red checkend.l null (1,1,0) red checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+violet checkend.l null (1,1,0) violet checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+yellow checkend.l null (1,1,0) yellow checkend.l' rigid (1,1,0)[Bond left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+0 checkend.l null (1,1,0) 0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+1 checkend.l null (1,1,0) 1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.0 checkend.l null (1,1,0) e.0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.1 checkend.l null (1,1,0) e.1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.2 checkend.l null (1,1,0) e.2 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.3 checkend.l null (1,1,0) e.3 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.4 checkend.l null (1,1,0) e.4 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.5 checkend.l null (1,1,0) e.5 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.6 checkend.l null (1,1,0) e.6 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.7 checkend.l null (1,1,0) e.7 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+read checkend.l null (1,1,0) read checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+s checkend.l null (1,1,0) s checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+blue checkend.l null (1,1,0) blue checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+green checkend.l null (1,1,0) green checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+indigo checkend.l null (1,1,0) indigo checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+orange checkend.l null (1,1,0) orange checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+red checkend.l null (1,1,0) red checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+violet checkend.l null (1,1,0) violet checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+yellow checkend.l null (1,1,0) yellow checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+0 checkend.l null (1,1,0) 0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+1 checkend.l null (1,1,0) 1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.0 checkend.l null (1,1,0) e.0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.1 checkend.l null (1,1,0) e.1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.2 checkend.l null (1,1,0) e.2 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.3 checkend.l null (1,1,0) e.3 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.4 checkend.l null (1,1,0) e.4 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.5 checkend.l null (1,1,0) e.5 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.6 checkend.l null (1,1,0) e.6 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.7 checkend.l null (1,1,0) e.7 checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+read checkend.l null (1,1,0) read checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+s checkend.l null (1,1,0) s checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+blue checkend.l null (1,1,0) blue checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+green checkend.l null (1,1,0) green checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+indigo checkend.l null (1,1,0) indigo checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+orange checkend.l null (1,1,0) orange checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+red checkend.l null (1,1,0) red checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+violet checkend.l null (1,1,0) violet checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+yellow checkend.l null (1,1,0) yellow checkend.l' rigid (1,1,0)[Bond left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+0 checkend.l null (1,1,0) 0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+1 checkend.l null (1,1,0) 1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.0 checkend.l null (1,1,0) e.0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.1 checkend.l null (1,1,0) e.1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.2 checkend.l null (1,1,0) e.2 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.3 checkend.l null (1,1,0) e.3 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.4 checkend.l null (1,1,0) e.4 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.5 checkend.l null (1,1,0) e.5 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.6 checkend.l null (1,1,0) e.6 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.7 checkend.l null (1,1,0) e.7 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+read checkend.l null (1,1,0) read checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+s checkend.l null (1,1,0) s checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+blue checkend.l null (1,1,0) blue checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+green checkend.l null (1,1,0) green checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+indigo checkend.l null (1,1,0) indigo checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+orange checkend.l null (1,1,0) orange checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+red checkend.l null (1,1,0) red checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+violet checkend.l null (1,1,0) violet checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+yellow checkend.l null (1,1,0) yellow checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+0 checkend.l null (1,1,0) 0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+1 checkend.l null (1,1,0) 1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.0 checkend.l null (1,1,0) e.0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.1 checkend.l null (1,1,0) e.1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.2 checkend.l null (1,1,0) e.2 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.3 checkend.l null (1,1,0) e.3 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.4 checkend.l null (1,1,0) e.4 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.5 checkend.l null (1,1,0) e.5 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.6 checkend.l null (1,1,0) e.6 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.7 checkend.l null (1,1,0) e.7 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+read checkend.l null (1,1,0) read checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+s checkend.l null (1,1,0) s checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+blue checkend.l null (1,1,0) blue checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+green checkend.l null (1,1,0) green checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+indigo checkend.l null (1,1,0) indigo checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+orange checkend.l null (1,1,0) orange checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+red checkend.l null (1,1,0) red checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+violet checkend.l null (1,1,0) violet checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+yellow checkend.l null (1,1,0) yellow checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+0 checkend.l null (1,1,0) 0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+1 checkend.l null (1,1,0) 1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.0 checkend.l null (1,1,0) e.0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.1 checkend.l null (1,1,0) e.1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.2 checkend.l null (1,1,0) e.2 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.3 checkend.l null (1,1,0) e.3 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.4 checkend.l null (1,1,0) e.4 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.5 checkend.l null (1,1,0) e.5 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.6 checkend.l null (1,1,0) e.6 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.7 checkend.l null (1,1,0) e.7 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+read checkend.l null (1,1,0) read checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+s checkend.l null (1,1,0) s checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+blue checkend.l null (1,1,0) blue checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+green checkend.l null (1,1,0) green checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+indigo checkend.l null (1,1,0) indigo checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+orange checkend.l null (1,1,0) orange checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+red checkend.l null (1,1,0) red checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+violet checkend.l null (1,1,0) violet checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+yellow checkend.l null (1,1,0) yellow checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+0 checkend.l null (1,1,0) 0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+1 checkend.l null (1,1,0) 1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.0 checkend.l null (1,1,0) e.0 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.1 checkend.l null (1,1,0) e.1 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.2 checkend.l null (1,1,0) e.2 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.3 checkend.l null (1,1,0) e.3 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.4 checkend.l null (1,1,0) e.4 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.5 checkend.l null (1,1,0) e.5 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.6 checkend.l null (1,1,0) e.6 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.7 checkend.l null (1,1,0) e.7 checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+read checkend.l null (1,1,0) read checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+s checkend.l null (1,1,0) s checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+blue checkend.l null (1,1,0) blue checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+green checkend.l null (1,1,0) green checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+indigo checkend.l null (1,1,0) indigo checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+orange checkend.l null (1,1,0) orange checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+red checkend.l null (1,1,0) red checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+violet checkend.l null (1,1,0) violet checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+yellow checkend.l null (1,1,0) yellow checkend.l' rigid (1,1,0)[Bond left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+0 converted.r null (-1,1,0) 0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+1 converted.r null (-1,1,0) 1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.0 converted.r null (-1,1,0) e.0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.1 converted.r null (-1,1,0) e.1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.2 converted.r null (-1,1,0) e.2 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.3 converted.r null (-1,1,0) e.3 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.4 converted.r null (-1,1,0) e.4 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.5 converted.r null (-1,1,0) e.5 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.6 converted.r null (-1,1,0) e.6 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.7 converted.r null (-1,1,0) e.7 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+read converted.r null (-1,1,0) read converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+s converted.r null (-1,1,0) s converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+blue converted.r null (-1,1,0) blue converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+green converted.r null (-1,1,0) green converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+indigo converted.r null (-1,1,0) indigo converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+orange converted.r null (-1,1,0) orange converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+red converted.r null (-1,1,0) red converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+violet converted.r null (-1,1,0) violet converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+yellow converted.r null (-1,1,0) yellow converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+0 converted.r null (-1,1,0) 0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+1 converted.r null (-1,1,0) 1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.0 converted.r null (-1,1,0) e.0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.1 converted.r null (-1,1,0) e.1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.2 converted.r null (-1,1,0) e.2 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.3 converted.r null (-1,1,0) e.3 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.4 converted.r null (-1,1,0) e.4 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.5 converted.r null (-1,1,0) e.5 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.6 converted.r null (-1,1,0) e.6 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.7 converted.r null (-1,1,0) e.7 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+read converted.r null (-1,1,0) read converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+s converted.r null (-1,1,0) s converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+blue converted.r null (-1,1,0) blue converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+green converted.r null (-1,1,0) green converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+indigo converted.r null (-1,1,0) indigo converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+orange converted.r null (-1,1,0) orange converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+red converted.r null (-1,1,0) red converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+violet converted.r null (-1,1,0) violet converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+yellow converted.r null (-1,1,0) yellow converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+0 converted.r null (-1,1,0) 0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+1 converted.r null (-1,1,0) 1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.0 converted.r null (-1,1,0) e.0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.1 converted.r null (-1,1,0) e.1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.2 converted.r null (-1,1,0) e.2 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.3 converted.r null (-1,1,0) e.3 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.4 converted.r null (-1,1,0) e.4 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.5 converted.r null (-1,1,0) e.5 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.6 converted.r null (-1,1,0) e.6 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.7 converted.r null (-1,1,0) e.7 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+read converted.r null (-1,1,0) read converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+s converted.r null (-1,1,0) s converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+blue converted.r null (-1,1,0) blue converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+green converted.r null (-1,1,0) green converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+indigo converted.r null (-1,1,0) indigo converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+orange converted.r null (-1,1,0) orange converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+red converted.r null (-1,1,0) red converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+violet converted.r null (-1,1,0) violet converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+yellow converted.r null (-1,1,0) yellow converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+0 converted.r null (-1,1,0) 0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+1 converted.r null (-1,1,0) 1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.0 converted.r null (-1,1,0) e.0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.1 converted.r null (-1,1,0) e.1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.2 converted.r null (-1,1,0) e.2 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.3 converted.r null (-1,1,0) e.3 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.4 converted.r null (-1,1,0) e.4 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.5 converted.r null (-1,1,0) e.5 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.6 converted.r null (-1,1,0) e.6 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.7 converted.r null (-1,1,0) e.7 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+read converted.r null (-1,1,0) read converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+s converted.r null (-1,1,0) s converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+blue converted.r null (-1,1,0) blue converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+green converted.r null (-1,1,0) green converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+indigo converted.r null (-1,1,0) indigo converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+orange converted.r null (-1,1,0) orange converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+red converted.r null (-1,1,0) red converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+violet converted.r null (-1,1,0) violet converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+yellow converted.r null (-1,1,0) yellow converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+0 converted.r null (-1,1,0) 0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+1 converted.r null (-1,1,0) 1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.0 converted.r null (-1,1,0) e.0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.1 converted.r null (-1,1,0) e.1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.2 converted.r null (-1,1,0) e.2 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.3 converted.r null (-1,1,0) e.3 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.4 converted.r null (-1,1,0) e.4 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.5 converted.r null (-1,1,0) e.5 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.6 converted.r null (-1,1,0) e.6 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.7 converted.r null (-1,1,0) e.7 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+read converted.r null (-1,1,0) read converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+s converted.r null (-1,1,0) s converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+blue converted.r null (-1,1,0) blue converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+green converted.r null (-1,1,0) green converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+indigo converted.r null (-1,1,0) indigo converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+orange converted.r null (-1,1,0) orange converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+red converted.r null (-1,1,0) red converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+violet converted.r null (-1,1,0) violet converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+yellow converted.r null (-1,1,0) yellow converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+0 converted.r null (-1,1,0) 0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+1 converted.r null (-1,1,0) 1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.0 converted.r null (-1,1,0) e.0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.1 converted.r null (-1,1,0) e.1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.2 converted.r null (-1,1,0) e.2 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.3 converted.r null (-1,1,0) e.3 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.4 converted.r null (-1,1,0) e.4 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.5 converted.r null (-1,1,0) e.5 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.6 converted.r null (-1,1,0) e.6 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.7 converted.r null (-1,1,0) e.7 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+read converted.r null (-1,1,0) read converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+s converted.r null (-1,1,0) s converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+blue converted.r null (-1,1,0) blue converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+green converted.r null (-1,1,0) green converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+indigo converted.r null (-1,1,0) indigo converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+orange converted.r null (-1,1,0) orange converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+red converted.r null (-1,1,0) red converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+violet converted.r null (-1,1,0) violet converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+yellow converted.r null (-1,1,0) yellow converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+0 converted.r null (-1,1,0) 0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+1 converted.r null (-1,1,0) 1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.0 converted.r null (-1,1,0) e.0 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.1 converted.r null (-1,1,0) e.1 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.2 converted.r null (-1,1,0) e.2 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.3 converted.r null (-1,1,0) e.3 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.4 converted.r null (-1,1,0) e.4 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.5 converted.r null (-1,1,0) e.5 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.6 converted.r null (-1,1,0) e.6 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.7 converted.r null (-1,1,0) e.7 converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+read converted.r null (-1,1,0) read converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+s converted.r null (-1,1,0) s converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+blue converted.r null (-1,1,0) blue converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+green converted.r null (-1,1,0) green converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+indigo converted.r null (-1,1,0) indigo converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+orange converted.r null (-1,1,0) orange converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+red converted.r null (-1,1,0) red converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+violet converted.r null (-1,1,0) violet converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+yellow converted.r null (-1,1,0) yellow converted.r' rigid (-1,1,0)[Bond right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+s read1.r' rigid (0,1,0) s read1 null (0,1,0)[Unbond {return,s}->{read1,s,+1}]
+
+read ended.r' rigid (0,1,0) read ended null (0,1,0)[Unbond\
+
+  {checkend,read}->{ended,read,+1}]
+
+s ended.r' rigid (0,1,0) s ended null (0,1,0)[Unbond {checkend,s}->{ended,s,+1}]
+
+0 return.l' rigid (0,1,0) 0 return null (0,1,0)[Unbond {checkend,0}->{return,0,-1}]
+
+1 return.l' rigid (0,1,0) 1 return null (0,1,0)[Unbond {checkend,1}->{return,1,-1}]
+
+0 return.l' rigid (0,1,0) 0 return null (0,1,0)[Unbond {return,0}->{return,0,-1}]
+
+1 return.l' rigid (0,1,0) 1 return null (0,1,0)[Unbond {return,1}->{return,1,-1}]
+
+read return.l' rigid (0,1,0) read return null (0,1,0)[Unbond\
+
+  {return,read}->{return,read,-1}]
+
+read read2.r' rigid (0,1,0) read read2 null (0,1,0)[Unbond\
+
+  {read1,read}->{read2,read,+1}]
+
+read read4.r' rigid (0,1,0) read read4 null (0,1,0)[Unbond\
+
+  {read2,read}->{read4,read,+1}]
+
+read ended.r' rigid (0,1,0) read ended null (0,1,0)[Unbond\
+
+  {read4,read}->{ended,read,+1}]
+
+read return.l' rigid (0,1,0) read return null (0,1,0)[Unbond\
+
+  {read1,0}->{return,read,-1}]
+
+read return.l' rigid (0,1,0) read return null (0,1,0)[Unbond\
+
+  {read2,0}->{return,read,-1}]
+
+read return.l' rigid (0,1,0) read return null (0,1,0)[Unbond\
+
+  {read3,0}->{return,read,-1}]
+
+read return.l' rigid (0,1,0) read return null (0,1,0)[Unbond\
+
+  {read1,0}->{return,read,-1}]
+
+read return.l' rigid (0,1,0) read return null (0,1,0)[Unbond\
+
+  {read2,0}->{return,read,-1}]
+
+read return.l' rigid (0,1,0) read return null (0,1,0)[Unbond\
+
+  {read4,0}->{return,read,-1}]
+
+read 1.r' rigid (0,1,0) read 1 null (0,1,0)[Unbond {read1,1}->{1,read,+1}]
+
+read 2.r' rigid (0,1,0) read 2 null (0,1,0)[Unbond {read2,1}->{2,read,+1}]
+
+read 4.r' rigid (0,1,0) read 4 null (0,1,0)[Unbond {read4,1}->{4,read,+1}]
+
+0 1.r' rigid (0,1,0) 0 1 null (0,1,0)[Unbond {1,0}->{1,0,+1}]
+
+1 1.r' rigid (0,1,0) 1 1 null (0,1,0)[Unbond {1,1}->{1,1,+1}]
+
+0 2.r' rigid (0,1,0) 0 2 null (0,1,0)[Unbond {2,0}->{2,0,+1}]
+
+1 2.r' rigid (0,1,0) 1 2 null (0,1,0)[Unbond {2,1}->{2,1,+1}]
+
+e.1 checkend.l' rigid (0,1,0) e.1 checkend null (0,1,0)[Unbond\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.2 checkend.l' rigid (0,1,0) e.2 checkend null (0,1,0)[Unbond\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.3 checkend.l' rigid (0,1,0) e.3 checkend null (0,1,0)[Unbond\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.4 checkend.l' rigid (0,1,0) e.4 checkend null (0,1,0)[Unbond\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.5 checkend.l' rigid (0,1,0) e.5 checkend null (0,1,0)[Unbond\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.6 checkend.l' rigid (0,1,0) e.6 checkend null (0,1,0)[Unbond\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.7 checkend.l' rigid (0,1,0) e.7 checkend null (0,1,0)[Unbond\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+red converted.r' rigid (0,1,0) red converted null (0,1,0)[Unbond\
+
+  {ended,e.0}->{converted,red,+1}]
+
+orange converted.r' rigid (0,1,0) orange converted null (0,1,0)[Unbond\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+yellow converted.r' rigid (0,1,0) yellow converted null (0,1,0)[Unbond\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+green converted.r' rigid (0,1,0) green converted null (0,1,0)[Unbond\
+
+  {ended,e.3}->{converted,green,+1}]
+
+blue converted.r' rigid (0,1,0) blue converted null (0,1,0)[Unbond\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+indigo converted.r' rigid (0,1,0) indigo converted null (0,1,0)[Unbond\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+violet converted.r' rigid (0,1,0) violet converted null (0,1,0)[Unbond\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+0 read1 rigid (-1,1,0) 0 read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+1 read1 rigid (-1,1,0) 1 read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+e.0 read1 rigid (-1,1,0) e.0 read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+e.1 read1 rigid (-1,1,0) e.1 read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+e.2 read1 rigid (-1,1,0) e.2 read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+e.3 read1 rigid (-1,1,0) e.3 read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+e.4 read1 rigid (-1,1,0) e.4 read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+e.5 read1 rigid (-1,1,0) e.5 read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+e.6 read1 rigid (-1,1,0) e.6 read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+e.7 read1 rigid (-1,1,0) e.7 read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+read read1 rigid (-1,1,0) read read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+s read1 rigid (-1,1,0) s read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+blue read1 rigid (-1,1,0) blue read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+green read1 rigid (-1,1,0) green read1 rigid (0,1,0)[Move right\
+
+  {return,s}->{read1,s,+1}]
+
+indigo read1 rigid (-1,1,0) indigo read1 rigid (0,1,0)[Move right\
+
+  {return,s}->{read1,s,+1}]
+
+orange read1 rigid (-1,1,0) orange read1 rigid (0,1,0)[Move right\
+
+  {return,s}->{read1,s,+1}]
+
+red read1 rigid (-1,1,0) red read1 rigid (0,1,0)[Move right {return,s}->{read1,s,+1}]
+
+violet read1 rigid (-1,1,0) violet read1 rigid (0,1,0)[Move right\
+
+  {return,s}->{read1,s,+1}]
+
+yellow read1 rigid (-1,1,0) yellow read1 rigid (0,1,0)[Move right\
+
+  {return,s}->{read1,s,+1}]
+
+0 ended rigid (-1,1,0) 0 ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+1 ended rigid (-1,1,0) 1 ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.0 ended rigid (-1,1,0) e.0 ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.1 ended rigid (-1,1,0) e.1 ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.2 ended rigid (-1,1,0) e.2 ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.3 ended rigid (-1,1,0) e.3 ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.4 ended rigid (-1,1,0) e.4 ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.5 ended rigid (-1,1,0) e.5 ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.6 ended rigid (-1,1,0) e.6 ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+e.7 ended rigid (-1,1,0) e.7 ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+read ended rigid (-1,1,0) read ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+s ended rigid (-1,1,0) s ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+blue ended rigid (-1,1,0) blue ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+green ended rigid (-1,1,0) green ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+indigo ended rigid (-1,1,0) indigo ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+orange ended rigid (-1,1,0) orange ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+red ended rigid (-1,1,0) red ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+violet ended rigid (-1,1,0) violet ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+yellow ended rigid (-1,1,0) yellow ended rigid (0,1,0)[Move right\
+
+  {checkend,read}->{ended,read,+1}]
+
+0 ended rigid (-1,1,0) 0 ended rigid (0,1,0)[Move right {checkend,s}->{ended,s,+1}]
+
+1 ended rigid (-1,1,0) 1 ended rigid (0,1,0)[Move right {checkend,s}->{ended,s,+1}]
+
+e.0 ended rigid (-1,1,0) e.0 ended rigid (0,1,0)[Move right {checkend,s}->{ended,s,+1}]
+
+e.1 ended rigid (-1,1,0) e.1 ended rigid (0,1,0)[Move right {checkend,s}->{ended,s,+1}]
+
+e.2 ended rigid (-1,1,0) e.2 ended rigid (0,1,0)[Move right {checkend,s}->{ended,s,+1}]
+
+e.3 ended rigid (-1,1,0) e.3 ended rigid (0,1,0)[Move right {checkend,s}->{ended,s,+1}]
+
+e.4 ended rigid (-1,1,0) e.4 ended rigid (0,1,0)[Move right {checkend,s}->{ended,s,+1}]
+
+e.5 ended rigid (-1,1,0) e.5 ended rigid (0,1,0)[Move right {checkend,s}->{ended,s,+1}]
+
+e.6 ended rigid (-1,1,0) e.6 ended rigid (0,1,0)[Move right {checkend,s}->{ended,s,+1}]
+
+e.7 ended rigid (-1,1,0) e.7 ended rigid (0,1,0)[Move right {checkend,s}->{ended,s,+1}]
+
+read ended rigid (-1,1,0) read ended rigid (0,1,0)[Move right\
+
+  {checkend,s}->{ended,s,+1}]
+
+s ended rigid (-1,1,0) s ended rigid (0,1,0)[Move right {checkend,s}->{ended,s,+1}]
+
+blue ended rigid (-1,1,0) blue ended rigid (0,1,0)[Move right\
+
+  {checkend,s}->{ended,s,+1}]
+
+green ended rigid (-1,1,0) green ended rigid (0,1,0)[Move right\
+
+  {checkend,s}->{ended,s,+1}]
+
+indigo ended rigid (-1,1,0) indigo ended rigid (0,1,0)[Move right\
+
+  {checkend,s}->{ended,s,+1}]
+
+orange ended rigid (-1,1,0) orange ended rigid (0,1,0)[Move right\
+
+  {checkend,s}->{ended,s,+1}]
+
+red ended rigid (-1,1,0) red ended rigid (0,1,0)[Move right {checkend,s}->{ended,s,+1}]
+
+violet ended rigid (-1,1,0) violet ended rigid (0,1,0)[Move right\
+
+  {checkend,s}->{ended,s,+1}]
+
+yellow ended rigid (-1,1,0) yellow ended rigid (0,1,0)[Move right\
+
+  {checkend,s}->{ended,s,+1}]
+
+0 return rigid (1,1,0) 0 return rigid (0,1,0)[Move left {checkend,0}->{return,0,-1}]
+
+1 return rigid (1,1,0) 1 return rigid (0,1,0)[Move left {checkend,0}->{return,0,-1}]
+
+e.0 return rigid (1,1,0) e.0 return rigid (0,1,0)[Move left {checkend,0}->{return,0,-1}]
+
+e.1 return rigid (1,1,0) e.1 return rigid (0,1,0)[Move left {checkend,0}->{return,0,-1}]
+
+e.2 return rigid (1,1,0) e.2 return rigid (0,1,0)[Move left {checkend,0}->{return,0,-1}]
+
+e.3 return rigid (1,1,0) e.3 return rigid (0,1,0)[Move left {checkend,0}->{return,0,-1}]
+
+e.4 return rigid (1,1,0) e.4 return rigid (0,1,0)[Move left {checkend,0}->{return,0,-1}]
+
+e.5 return rigid (1,1,0) e.5 return rigid (0,1,0)[Move left {checkend,0}->{return,0,-1}]
+
+e.6 return rigid (1,1,0) e.6 return rigid (0,1,0)[Move left {checkend,0}->{return,0,-1}]
+
+e.7 return rigid (1,1,0) e.7 return rigid (0,1,0)[Move left {checkend,0}->{return,0,-1}]
+
+read return rigid (1,1,0) read return rigid (0,1,0)[Move left\
+
+  {checkend,0}->{return,0,-1}]
+
+s return rigid (1,1,0) s return rigid (0,1,0)[Move left {checkend,0}->{return,0,-1}]
+
+blue return rigid (1,1,0) blue return rigid (0,1,0)[Move left\
+
+  {checkend,0}->{return,0,-1}]
+
+green return rigid (1,1,0) green return rigid (0,1,0)[Move left\
+
+  {checkend,0}->{return,0,-1}]
+
+indigo return rigid (1,1,0) indigo return rigid (0,1,0)[Move left\
+
+  {checkend,0}->{return,0,-1}]
+
+orange return rigid (1,1,0) orange return rigid (0,1,0)[Move left\
+
+  {checkend,0}->{return,0,-1}]
+
+red return rigid (1,1,0) red return rigid (0,1,0)[Move left {checkend,0}->{return,0,-1}]
+
+violet return rigid (1,1,0) violet return rigid (0,1,0)[Move left\
+
+  {checkend,0}->{return,0,-1}]
+
+yellow return rigid (1,1,0) yellow return rigid (0,1,0)[Move left\
+
+  {checkend,0}->{return,0,-1}]
+
+0 return rigid (1,1,0) 0 return rigid (0,1,0)[Move left {checkend,1}->{return,1,-1}]
+
+1 return rigid (1,1,0) 1 return rigid (0,1,0)[Move left {checkend,1}->{return,1,-1}]
+
+e.0 return rigid (1,1,0) e.0 return rigid (0,1,0)[Move left {checkend,1}->{return,1,-1}]
+
+e.1 return rigid (1,1,0) e.1 return rigid (0,1,0)[Move left {checkend,1}->{return,1,-1}]
+
+e.2 return rigid (1,1,0) e.2 return rigid (0,1,0)[Move left {checkend,1}->{return,1,-1}]
+
+e.3 return rigid (1,1,0) e.3 return rigid (0,1,0)[Move left {checkend,1}->{return,1,-1}]
+
+e.4 return rigid (1,1,0) e.4 return rigid (0,1,0)[Move left {checkend,1}->{return,1,-1}]
+
+e.5 return rigid (1,1,0) e.5 return rigid (0,1,0)[Move left {checkend,1}->{return,1,-1}]
+
+e.6 return rigid (1,1,0) e.6 return rigid (0,1,0)[Move left {checkend,1}->{return,1,-1}]
+
+e.7 return rigid (1,1,0) e.7 return rigid (0,1,0)[Move left {checkend,1}->{return,1,-1}]
+
+read return rigid (1,1,0) read return rigid (0,1,0)[Move left\
+
+  {checkend,1}->{return,1,-1}]
+
+s return rigid (1,1,0) s return rigid (0,1,0)[Move left {checkend,1}->{return,1,-1}]
+
+blue return rigid (1,1,0) blue return rigid (0,1,0)[Move left\
+
+  {checkend,1}->{return,1,-1}]
+
+green return rigid (1,1,0) green return rigid (0,1,0)[Move left\
+
+  {checkend,1}->{return,1,-1}]
+
+indigo return rigid (1,1,0) indigo return rigid (0,1,0)[Move left\
+
+  {checkend,1}->{return,1,-1}]
+
+orange return rigid (1,1,0) orange return rigid (0,1,0)[Move left\
+
+  {checkend,1}->{return,1,-1}]
+
+red return rigid (1,1,0) red return rigid (0,1,0)[Move left {checkend,1}->{return,1,-1}]
+
+violet return rigid (1,1,0) violet return rigid (0,1,0)[Move left\
+
+  {checkend,1}->{return,1,-1}]
+
+yellow return rigid (1,1,0) yellow return rigid (0,1,0)[Move left\
+
+  {checkend,1}->{return,1,-1}]
+
+0 return rigid (1,1,0) 0 return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+1 return rigid (1,1,0) 1 return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+e.0 return rigid (1,1,0) e.0 return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+e.1 return rigid (1,1,0) e.1 return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+e.2 return rigid (1,1,0) e.2 return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+e.3 return rigid (1,1,0) e.3 return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+e.4 return rigid (1,1,0) e.4 return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+e.5 return rigid (1,1,0) e.5 return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+e.6 return rigid (1,1,0) e.6 return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+e.7 return rigid (1,1,0) e.7 return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+read return rigid (1,1,0) read return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+s return rigid (1,1,0) s return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+blue return rigid (1,1,0) blue return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+green return rigid (1,1,0) green return rigid (0,1,0)[Move left\
+
+  {return,0}->{return,0,-1}]
+
+indigo return rigid (1,1,0) indigo return rigid (0,1,0)[Move left\
+
+  {return,0}->{return,0,-1}]
+
+orange return rigid (1,1,0) orange return rigid (0,1,0)[Move left\
+
+  {return,0}->{return,0,-1}]
+
+red return rigid (1,1,0) red return rigid (0,1,0)[Move left {return,0}->{return,0,-1}]
+
+violet return rigid (1,1,0) violet return rigid (0,1,0)[Move left\
+
+  {return,0}->{return,0,-1}]
+
+yellow return rigid (1,1,0) yellow return rigid (0,1,0)[Move left\
+
+  {return,0}->{return,0,-1}]
+
+0 return rigid (1,1,0) 0 return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+1 return rigid (1,1,0) 1 return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+e.0 return rigid (1,1,0) e.0 return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+e.1 return rigid (1,1,0) e.1 return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+e.2 return rigid (1,1,0) e.2 return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+e.3 return rigid (1,1,0) e.3 return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+e.4 return rigid (1,1,0) e.4 return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+e.5 return rigid (1,1,0) e.5 return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+e.6 return rigid (1,1,0) e.6 return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+e.7 return rigid (1,1,0) e.7 return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+read return rigid (1,1,0) read return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+s return rigid (1,1,0) s return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+blue return rigid (1,1,0) blue return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+green return rigid (1,1,0) green return rigid (0,1,0)[Move left\
+
+  {return,1}->{return,1,-1}]
+
+indigo return rigid (1,1,0) indigo return rigid (0,1,0)[Move left\
+
+  {return,1}->{return,1,-1}]
+
+orange return rigid (1,1,0) orange return rigid (0,1,0)[Move left\
+
+  {return,1}->{return,1,-1}]
+
+red return rigid (1,1,0) red return rigid (0,1,0)[Move left {return,1}->{return,1,-1}]
+
+violet return rigid (1,1,0) violet return rigid (0,1,0)[Move left\
+
+  {return,1}->{return,1,-1}]
+
+yellow return rigid (1,1,0) yellow return rigid (0,1,0)[Move left\
+
+  {return,1}->{return,1,-1}]
+
+0 return rigid (1,1,0) 0 return rigid (0,1,0)[Move left {return,read}->{return,read,-1}]
+
+1 return rigid (1,1,0) 1 return rigid (0,1,0)[Move left {return,read}->{return,read,-1}]
+
+e.0 return rigid (1,1,0) e.0 return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+e.1 return rigid (1,1,0) e.1 return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+e.2 return rigid (1,1,0) e.2 return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+e.3 return rigid (1,1,0) e.3 return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+e.4 return rigid (1,1,0) e.4 return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+e.5 return rigid (1,1,0) e.5 return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+e.6 return rigid (1,1,0) e.6 return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+e.7 return rigid (1,1,0) e.7 return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+read return rigid (1,1,0) read return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+s return rigid (1,1,0) s return rigid (0,1,0)[Move left {return,read}->{return,read,-1}]
+
+blue return rigid (1,1,0) blue return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+green return rigid (1,1,0) green return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+indigo return rigid (1,1,0) indigo return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+orange return rigid (1,1,0) orange return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+red return rigid (1,1,0) red return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+violet return rigid (1,1,0) violet return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+yellow return rigid (1,1,0) yellow return rigid (0,1,0)[Move left\
+
+  {return,read}->{return,read,-1}]
+
+0 read2 rigid (-1,1,0) 0 read2 rigid (0,1,0)[Move right {read1,read}->{read2,read,+1}]
+
+1 read2 rigid (-1,1,0) 1 read2 rigid (0,1,0)[Move right {read1,read}->{read2,read,+1}]
+
+e.0 read2 rigid (-1,1,0) e.0 read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.1 read2 rigid (-1,1,0) e.1 read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.2 read2 rigid (-1,1,0) e.2 read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.3 read2 rigid (-1,1,0) e.3 read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.4 read2 rigid (-1,1,0) e.4 read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.5 read2 rigid (-1,1,0) e.5 read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.6 read2 rigid (-1,1,0) e.6 read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+e.7 read2 rigid (-1,1,0) e.7 read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+read read2 rigid (-1,1,0) read read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+s read2 rigid (-1,1,0) s read2 rigid (0,1,0)[Move right {read1,read}->{read2,read,+1}]
+
+blue read2 rigid (-1,1,0) blue read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+green read2 rigid (-1,1,0) green read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+indigo read2 rigid (-1,1,0) indigo read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+orange read2 rigid (-1,1,0) orange read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+red read2 rigid (-1,1,0) red read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+violet read2 rigid (-1,1,0) violet read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+yellow read2 rigid (-1,1,0) yellow read2 rigid (0,1,0)[Move right\
+
+  {read1,read}->{read2,read,+1}]
+
+0 read4 rigid (-1,1,0) 0 read4 rigid (0,1,0)[Move right {read2,read}->{read4,read,+1}]
+
+1 read4 rigid (-1,1,0) 1 read4 rigid (0,1,0)[Move right {read2,read}->{read4,read,+1}]
+
+e.0 read4 rigid (-1,1,0) e.0 read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.1 read4 rigid (-1,1,0) e.1 read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.2 read4 rigid (-1,1,0) e.2 read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.3 read4 rigid (-1,1,0) e.3 read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.4 read4 rigid (-1,1,0) e.4 read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.5 read4 rigid (-1,1,0) e.5 read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.6 read4 rigid (-1,1,0) e.6 read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+e.7 read4 rigid (-1,1,0) e.7 read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+read read4 rigid (-1,1,0) read read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+s read4 rigid (-1,1,0) s read4 rigid (0,1,0)[Move right {read2,read}->{read4,read,+1}]
+
+blue read4 rigid (-1,1,0) blue read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+green read4 rigid (-1,1,0) green read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+indigo read4 rigid (-1,1,0) indigo read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+orange read4 rigid (-1,1,0) orange read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+red read4 rigid (-1,1,0) red read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+violet read4 rigid (-1,1,0) violet read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+yellow read4 rigid (-1,1,0) yellow read4 rigid (0,1,0)[Move right\
+
+  {read2,read}->{read4,read,+1}]
+
+0 ended rigid (-1,1,0) 0 ended rigid (0,1,0)[Move right {read4,read}->{ended,read,+1}]
+
+1 ended rigid (-1,1,0) 1 ended rigid (0,1,0)[Move right {read4,read}->{ended,read,+1}]
+
+e.0 ended rigid (-1,1,0) e.0 ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.1 ended rigid (-1,1,0) e.1 ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.2 ended rigid (-1,1,0) e.2 ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.3 ended rigid (-1,1,0) e.3 ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.4 ended rigid (-1,1,0) e.4 ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.5 ended rigid (-1,1,0) e.5 ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.6 ended rigid (-1,1,0) e.6 ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+e.7 ended rigid (-1,1,0) e.7 ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+read ended rigid (-1,1,0) read ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+s ended rigid (-1,1,0) s ended rigid (0,1,0)[Move right {read4,read}->{ended,read,+1}]
+
+blue ended rigid (-1,1,0) blue ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+green ended rigid (-1,1,0) green ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+indigo ended rigid (-1,1,0) indigo ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+orange ended rigid (-1,1,0) orange ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+red ended rigid (-1,1,0) red ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+violet ended rigid (-1,1,0) violet ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+yellow ended rigid (-1,1,0) yellow ended rigid (0,1,0)[Move right\
+
+  {read4,read}->{ended,read,+1}]
+
+0 return rigid (1,1,0) 0 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+1 return rigid (1,1,0) 1 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.0 return rigid (1,1,0) e.0 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.1 return rigid (1,1,0) e.1 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.2 return rigid (1,1,0) e.2 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.3 return rigid (1,1,0) e.3 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.4 return rigid (1,1,0) e.4 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.5 return rigid (1,1,0) e.5 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.6 return rigid (1,1,0) e.6 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.7 return rigid (1,1,0) e.7 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+read return rigid (1,1,0) read return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+s return rigid (1,1,0) s return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+blue return rigid (1,1,0) blue return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+green return rigid (1,1,0) green return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+indigo return rigid (1,1,0) indigo return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+orange return rigid (1,1,0) orange return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+red return rigid (1,1,0) red return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+violet return rigid (1,1,0) violet return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+yellow return rigid (1,1,0) yellow return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+0 return rigid (1,1,0) 0 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+1 return rigid (1,1,0) 1 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.0 return rigid (1,1,0) e.0 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.1 return rigid (1,1,0) e.1 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.2 return rigid (1,1,0) e.2 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.3 return rigid (1,1,0) e.3 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.4 return rigid (1,1,0) e.4 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.5 return rigid (1,1,0) e.5 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.6 return rigid (1,1,0) e.6 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.7 return rigid (1,1,0) e.7 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+read return rigid (1,1,0) read return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+s return rigid (1,1,0) s return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+blue return rigid (1,1,0) blue return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+green return rigid (1,1,0) green return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+indigo return rigid (1,1,0) indigo return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+orange return rigid (1,1,0) orange return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+red return rigid (1,1,0) red return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+violet return rigid (1,1,0) violet return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+yellow return rigid (1,1,0) yellow return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+0 return rigid (1,1,0) 0 return rigid (0,1,0)[Move left {read3,0}->{return,read,-1}]
+
+1 return rigid (1,1,0) 1 return rigid (0,1,0)[Move left {read3,0}->{return,read,-1}]
+
+e.0 return rigid (1,1,0) e.0 return rigid (0,1,0)[Move left {read3,0}->{return,read,-1}]
+
+e.1 return rigid (1,1,0) e.1 return rigid (0,1,0)[Move left {read3,0}->{return,read,-1}]
+
+e.2 return rigid (1,1,0) e.2 return rigid (0,1,0)[Move left {read3,0}->{return,read,-1}]
+
+e.3 return rigid (1,1,0) e.3 return rigid (0,1,0)[Move left {read3,0}->{return,read,-1}]
+
+e.4 return rigid (1,1,0) e.4 return rigid (0,1,0)[Move left {read3,0}->{return,read,-1}]
+
+e.5 return rigid (1,1,0) e.5 return rigid (0,1,0)[Move left {read3,0}->{return,read,-1}]
+
+e.6 return rigid (1,1,0) e.6 return rigid (0,1,0)[Move left {read3,0}->{return,read,-1}]
+
+e.7 return rigid (1,1,0) e.7 return rigid (0,1,0)[Move left {read3,0}->{return,read,-1}]
+
+read return rigid (1,1,0) read return rigid (0,1,0)[Move left\
+
+  {read3,0}->{return,read,-1}]
+
+s return rigid (1,1,0) s return rigid (0,1,0)[Move left {read3,0}->{return,read,-1}]
+
+blue return rigid (1,1,0) blue return rigid (0,1,0)[Move left\
+
+  {read3,0}->{return,read,-1}]
+
+green return rigid (1,1,0) green return rigid (0,1,0)[Move left\
+
+  {read3,0}->{return,read,-1}]
+
+indigo return rigid (1,1,0) indigo return rigid (0,1,0)[Move left\
+
+  {read3,0}->{return,read,-1}]
+
+orange return rigid (1,1,0) orange return rigid (0,1,0)[Move left\
+
+  {read3,0}->{return,read,-1}]
+
+red return rigid (1,1,0) red return rigid (0,1,0)[Move left {read3,0}->{return,read,-1}]
+
+violet return rigid (1,1,0) violet return rigid (0,1,0)[Move left\
+
+  {read3,0}->{return,read,-1}]
+
+yellow return rigid (1,1,0) yellow return rigid (0,1,0)[Move left\
+
+  {read3,0}->{return,read,-1}]
+
+0 return rigid (1,1,0) 0 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+1 return rigid (1,1,0) 1 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.0 return rigid (1,1,0) e.0 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.1 return rigid (1,1,0) e.1 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.2 return rigid (1,1,0) e.2 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.3 return rigid (1,1,0) e.3 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.4 return rigid (1,1,0) e.4 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.5 return rigid (1,1,0) e.5 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.6 return rigid (1,1,0) e.6 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+e.7 return rigid (1,1,0) e.7 return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+read return rigid (1,1,0) read return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+s return rigid (1,1,0) s return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+blue return rigid (1,1,0) blue return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+green return rigid (1,1,0) green return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+indigo return rigid (1,1,0) indigo return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+orange return rigid (1,1,0) orange return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+red return rigid (1,1,0) red return rigid (0,1,0)[Move left {read1,0}->{return,read,-1}]
+
+violet return rigid (1,1,0) violet return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+yellow return rigid (1,1,0) yellow return rigid (0,1,0)[Move left\
+
+  {read1,0}->{return,read,-1}]
+
+0 return rigid (1,1,0) 0 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+1 return rigid (1,1,0) 1 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.0 return rigid (1,1,0) e.0 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.1 return rigid (1,1,0) e.1 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.2 return rigid (1,1,0) e.2 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.3 return rigid (1,1,0) e.3 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.4 return rigid (1,1,0) e.4 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.5 return rigid (1,1,0) e.5 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.6 return rigid (1,1,0) e.6 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+e.7 return rigid (1,1,0) e.7 return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+read return rigid (1,1,0) read return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+s return rigid (1,1,0) s return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+blue return rigid (1,1,0) blue return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+green return rigid (1,1,0) green return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+indigo return rigid (1,1,0) indigo return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+orange return rigid (1,1,0) orange return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+red return rigid (1,1,0) red return rigid (0,1,0)[Move left {read2,0}->{return,read,-1}]
+
+violet return rigid (1,1,0) violet return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+yellow return rigid (1,1,0) yellow return rigid (0,1,0)[Move left\
+
+  {read2,0}->{return,read,-1}]
+
+0 return rigid (1,1,0) 0 return rigid (0,1,0)[Move left {read4,0}->{return,read,-1}]
+
+1 return rigid (1,1,0) 1 return rigid (0,1,0)[Move left {read4,0}->{return,read,-1}]
+
+e.0 return rigid (1,1,0) e.0 return rigid (0,1,0)[Move left {read4,0}->{return,read,-1}]
+
+e.1 return rigid (1,1,0) e.1 return rigid (0,1,0)[Move left {read4,0}->{return,read,-1}]
+
+e.2 return rigid (1,1,0) e.2 return rigid (0,1,0)[Move left {read4,0}->{return,read,-1}]
+
+e.3 return rigid (1,1,0) e.3 return rigid (0,1,0)[Move left {read4,0}->{return,read,-1}]
+
+e.4 return rigid (1,1,0) e.4 return rigid (0,1,0)[Move left {read4,0}->{return,read,-1}]
+
+e.5 return rigid (1,1,0) e.5 return rigid (0,1,0)[Move left {read4,0}->{return,read,-1}]
+
+e.6 return rigid (1,1,0) e.6 return rigid (0,1,0)[Move left {read4,0}->{return,read,-1}]
+
+e.7 return rigid (1,1,0) e.7 return rigid (0,1,0)[Move left {read4,0}->{return,read,-1}]
+
+read return rigid (1,1,0) read return rigid (0,1,0)[Move left\
+
+  {read4,0}->{return,read,-1}]
+
+s return rigid (1,1,0) s return rigid (0,1,0)[Move left {read4,0}->{return,read,-1}]
+
+blue return rigid (1,1,0) blue return rigid (0,1,0)[Move left\
+
+  {read4,0}->{return,read,-1}]
+
+green return rigid (1,1,0) green return rigid (0,1,0)[Move left\
+
+  {read4,0}->{return,read,-1}]
+
+indigo return rigid (1,1,0) indigo return rigid (0,1,0)[Move left\
+
+  {read4,0}->{return,read,-1}]
+
+orange return rigid (1,1,0) orange return rigid (0,1,0)[Move left\
+
+  {read4,0}->{return,read,-1}]
+
+red return rigid (1,1,0) red return rigid (0,1,0)[Move left {read4,0}->{return,read,-1}]
+
+violet return rigid (1,1,0) violet return rigid (0,1,0)[Move left\
+
+  {read4,0}->{return,read,-1}]
+
+yellow return rigid (1,1,0) yellow return rigid (0,1,0)[Move left\
+
+  {read4,0}->{return,read,-1}]
+
+0 1 rigid (-1,1,0) 0 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+1 1 rigid (-1,1,0) 1 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+e.0 1 rigid (-1,1,0) e.0 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+e.1 1 rigid (-1,1,0) e.1 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+e.2 1 rigid (-1,1,0) e.2 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+e.3 1 rigid (-1,1,0) e.3 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+e.4 1 rigid (-1,1,0) e.4 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+e.5 1 rigid (-1,1,0) e.5 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+e.6 1 rigid (-1,1,0) e.6 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+e.7 1 rigid (-1,1,0) e.7 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+read 1 rigid (-1,1,0) read 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+s 1 rigid (-1,1,0) s 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+blue 1 rigid (-1,1,0) blue 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+green 1 rigid (-1,1,0) green 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+indigo 1 rigid (-1,1,0) indigo 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+orange 1 rigid (-1,1,0) orange 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+red 1 rigid (-1,1,0) red 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+violet 1 rigid (-1,1,0) violet 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+yellow 1 rigid (-1,1,0) yellow 1 rigid (0,1,0)[Move right {read1,1}->{1,read,+1}]
+
+0 2 rigid (-1,1,0) 0 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+1 2 rigid (-1,1,0) 1 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+e.0 2 rigid (-1,1,0) e.0 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+e.1 2 rigid (-1,1,0) e.1 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+e.2 2 rigid (-1,1,0) e.2 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+e.3 2 rigid (-1,1,0) e.3 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+e.4 2 rigid (-1,1,0) e.4 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+e.5 2 rigid (-1,1,0) e.5 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+e.6 2 rigid (-1,1,0) e.6 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+e.7 2 rigid (-1,1,0) e.7 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+read 2 rigid (-1,1,0) read 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+s 2 rigid (-1,1,0) s 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+blue 2 rigid (-1,1,0) blue 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+green 2 rigid (-1,1,0) green 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+indigo 2 rigid (-1,1,0) indigo 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+orange 2 rigid (-1,1,0) orange 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+red 2 rigid (-1,1,0) red 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+violet 2 rigid (-1,1,0) violet 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+yellow 2 rigid (-1,1,0) yellow 2 rigid (0,1,0)[Move right {read2,1}->{2,read,+1}]
+
+0 4 rigid (-1,1,0) 0 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+1 4 rigid (-1,1,0) 1 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+e.0 4 rigid (-1,1,0) e.0 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+e.1 4 rigid (-1,1,0) e.1 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+e.2 4 rigid (-1,1,0) e.2 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+e.3 4 rigid (-1,1,0) e.3 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+e.4 4 rigid (-1,1,0) e.4 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+e.5 4 rigid (-1,1,0) e.5 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+e.6 4 rigid (-1,1,0) e.6 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+e.7 4 rigid (-1,1,0) e.7 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+read 4 rigid (-1,1,0) read 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+s 4 rigid (-1,1,0) s 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+blue 4 rigid (-1,1,0) blue 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+green 4 rigid (-1,1,0) green 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+indigo 4 rigid (-1,1,0) indigo 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+orange 4 rigid (-1,1,0) orange 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+red 4 rigid (-1,1,0) red 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+violet 4 rigid (-1,1,0) violet 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+yellow 4 rigid (-1,1,0) yellow 4 rigid (0,1,0)[Move right {read4,1}->{4,read,+1}]
+
+0 1 rigid (-1,1,0) 0 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+1 1 rigid (-1,1,0) 1 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+e.0 1 rigid (-1,1,0) e.0 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+e.1 1 rigid (-1,1,0) e.1 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+e.2 1 rigid (-1,1,0) e.2 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+e.3 1 rigid (-1,1,0) e.3 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+e.4 1 rigid (-1,1,0) e.4 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+e.5 1 rigid (-1,1,0) e.5 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+e.6 1 rigid (-1,1,0) e.6 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+e.7 1 rigid (-1,1,0) e.7 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+read 1 rigid (-1,1,0) read 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+s 1 rigid (-1,1,0) s 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+blue 1 rigid (-1,1,0) blue 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+green 1 rigid (-1,1,0) green 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+indigo 1 rigid (-1,1,0) indigo 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+orange 1 rigid (-1,1,0) orange 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+red 1 rigid (-1,1,0) red 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+violet 1 rigid (-1,1,0) violet 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+yellow 1 rigid (-1,1,0) yellow 1 rigid (0,1,0)[Move right {1,0}->{1,0,+1}]
+
+0 1 rigid (-1,1,0) 0 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+1 1 rigid (-1,1,0) 1 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+e.0 1 rigid (-1,1,0) e.0 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+e.1 1 rigid (-1,1,0) e.1 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+e.2 1 rigid (-1,1,0) e.2 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+e.3 1 rigid (-1,1,0) e.3 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+e.4 1 rigid (-1,1,0) e.4 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+e.5 1 rigid (-1,1,0) e.5 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+e.6 1 rigid (-1,1,0) e.6 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+e.7 1 rigid (-1,1,0) e.7 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+read 1 rigid (-1,1,0) read 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+s 1 rigid (-1,1,0) s 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+blue 1 rigid (-1,1,0) blue 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+green 1 rigid (-1,1,0) green 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+indigo 1 rigid (-1,1,0) indigo 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+orange 1 rigid (-1,1,0) orange 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+red 1 rigid (-1,1,0) red 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+violet 1 rigid (-1,1,0) violet 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+yellow 1 rigid (-1,1,0) yellow 1 rigid (0,1,0)[Move right {1,1}->{1,1,+1}]
+
+0 2 rigid (-1,1,0) 0 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+1 2 rigid (-1,1,0) 1 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+e.0 2 rigid (-1,1,0) e.0 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+e.1 2 rigid (-1,1,0) e.1 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+e.2 2 rigid (-1,1,0) e.2 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+e.3 2 rigid (-1,1,0) e.3 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+e.4 2 rigid (-1,1,0) e.4 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+e.5 2 rigid (-1,1,0) e.5 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+e.6 2 rigid (-1,1,0) e.6 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+e.7 2 rigid (-1,1,0) e.7 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+read 2 rigid (-1,1,0) read 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+s 2 rigid (-1,1,0) s 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+blue 2 rigid (-1,1,0) blue 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+green 2 rigid (-1,1,0) green 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+indigo 2 rigid (-1,1,0) indigo 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+orange 2 rigid (-1,1,0) orange 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+red 2 rigid (-1,1,0) red 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+violet 2 rigid (-1,1,0) violet 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+yellow 2 rigid (-1,1,0) yellow 2 rigid (0,1,0)[Move right {2,0}->{2,0,+1}]
+
+0 2 rigid (-1,1,0) 0 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+1 2 rigid (-1,1,0) 1 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+e.0 2 rigid (-1,1,0) e.0 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+e.1 2 rigid (-1,1,0) e.1 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+e.2 2 rigid (-1,1,0) e.2 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+e.3 2 rigid (-1,1,0) e.3 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+e.4 2 rigid (-1,1,0) e.4 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+e.5 2 rigid (-1,1,0) e.5 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+e.6 2 rigid (-1,1,0) e.6 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+e.7 2 rigid (-1,1,0) e.7 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+read 2 rigid (-1,1,0) read 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+s 2 rigid (-1,1,0) s 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+blue 2 rigid (-1,1,0) blue 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+green 2 rigid (-1,1,0) green 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+indigo 2 rigid (-1,1,0) indigo 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+orange 2 rigid (-1,1,0) orange 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+red 2 rigid (-1,1,0) red 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+violet 2 rigid (-1,1,0) violet 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+yellow 2 rigid (-1,1,0) yellow 2 rigid (0,1,0)[Move right {2,1}->{2,1,+1}]
+
+0 checkend rigid (1,1,0) 0 checkend rigid (0,1,0)[Move left {1,e.0}->{checkend,e.1,-1}]
+
+1 checkend rigid (1,1,0) 1 checkend rigid (0,1,0)[Move left {1,e.0}->{checkend,e.1,-1}]
+
+e.0 checkend rigid (1,1,0) e.0 checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.1 checkend rigid (1,1,0) e.1 checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.2 checkend rigid (1,1,0) e.2 checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.3 checkend rigid (1,1,0) e.3 checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.4 checkend rigid (1,1,0) e.4 checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.5 checkend rigid (1,1,0) e.5 checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.6 checkend rigid (1,1,0) e.6 checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+e.7 checkend rigid (1,1,0) e.7 checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+read checkend rigid (1,1,0) read checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+s checkend rigid (1,1,0) s checkend rigid (0,1,0)[Move left {1,e.0}->{checkend,e.1,-1}]
+
+blue checkend rigid (1,1,0) blue checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+green checkend rigid (1,1,0) green checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+indigo checkend rigid (1,1,0) indigo checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+orange checkend rigid (1,1,0) orange checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+red checkend rigid (1,1,0) red checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+violet checkend rigid (1,1,0) violet checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+yellow checkend rigid (1,1,0) yellow checkend rigid (0,1,0)[Move left\
+
+  {1,e.0}->{checkend,e.1,-1}]
+
+0 checkend rigid (1,1,0) 0 checkend rigid (0,1,0)[Move left {2,e.0}->{checkend,e.2,-1}]
+
+1 checkend rigid (1,1,0) 1 checkend rigid (0,1,0)[Move left {2,e.0}->{checkend,e.2,-1}]
+
+e.0 checkend rigid (1,1,0) e.0 checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.1 checkend rigid (1,1,0) e.1 checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.2 checkend rigid (1,1,0) e.2 checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.3 checkend rigid (1,1,0) e.3 checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.4 checkend rigid (1,1,0) e.4 checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.5 checkend rigid (1,1,0) e.5 checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.6 checkend rigid (1,1,0) e.6 checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+e.7 checkend rigid (1,1,0) e.7 checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+read checkend rigid (1,1,0) read checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+s checkend rigid (1,1,0) s checkend rigid (0,1,0)[Move left {2,e.0}->{checkend,e.2,-1}]
+
+blue checkend rigid (1,1,0) blue checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+green checkend rigid (1,1,0) green checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+indigo checkend rigid (1,1,0) indigo checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+orange checkend rigid (1,1,0) orange checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+red checkend rigid (1,1,0) red checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+violet checkend rigid (1,1,0) violet checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+yellow checkend rigid (1,1,0) yellow checkend rigid (0,1,0)[Move left\
+
+  {2,e.0}->{checkend,e.2,-1}]
+
+0 checkend rigid (1,1,0) 0 checkend rigid (0,1,0)[Move left {2,e.1}->{checkend,e.3,-1}]
+
+1 checkend rigid (1,1,0) 1 checkend rigid (0,1,0)[Move left {2,e.1}->{checkend,e.3,-1}]
+
+e.0 checkend rigid (1,1,0) e.0 checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.1 checkend rigid (1,1,0) e.1 checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.2 checkend rigid (1,1,0) e.2 checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.3 checkend rigid (1,1,0) e.3 checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.4 checkend rigid (1,1,0) e.4 checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.5 checkend rigid (1,1,0) e.5 checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.6 checkend rigid (1,1,0) e.6 checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+e.7 checkend rigid (1,1,0) e.7 checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+read checkend rigid (1,1,0) read checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+s checkend rigid (1,1,0) s checkend rigid (0,1,0)[Move left {2,e.1}->{checkend,e.3,-1}]
+
+blue checkend rigid (1,1,0) blue checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+green checkend rigid (1,1,0) green checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+indigo checkend rigid (1,1,0) indigo checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+orange checkend rigid (1,1,0) orange checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+red checkend rigid (1,1,0) red checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+violet checkend rigid (1,1,0) violet checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+yellow checkend rigid (1,1,0) yellow checkend rigid (0,1,0)[Move left\
+
+  {2,e.1}->{checkend,e.3,-1}]
+
+0 checkend rigid (1,1,0) 0 checkend rigid (0,1,0)[Move left {4,e.0}->{checkend,e.4,-1}]
+
+1 checkend rigid (1,1,0) 1 checkend rigid (0,1,0)[Move left {4,e.0}->{checkend,e.4,-1}]
+
+e.0 checkend rigid (1,1,0) e.0 checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.1 checkend rigid (1,1,0) e.1 checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.2 checkend rigid (1,1,0) e.2 checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.3 checkend rigid (1,1,0) e.3 checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.4 checkend rigid (1,1,0) e.4 checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.5 checkend rigid (1,1,0) e.5 checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.6 checkend rigid (1,1,0) e.6 checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+e.7 checkend rigid (1,1,0) e.7 checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+read checkend rigid (1,1,0) read checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+s checkend rigid (1,1,0) s checkend rigid (0,1,0)[Move left {4,e.0}->{checkend,e.4,-1}]
+
+blue checkend rigid (1,1,0) blue checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+green checkend rigid (1,1,0) green checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+indigo checkend rigid (1,1,0) indigo checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+orange checkend rigid (1,1,0) orange checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+red checkend rigid (1,1,0) red checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+violet checkend rigid (1,1,0) violet checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+yellow checkend rigid (1,1,0) yellow checkend rigid (0,1,0)[Move left\
+
+  {4,e.0}->{checkend,e.4,-1}]
+
+0 checkend rigid (1,1,0) 0 checkend rigid (0,1,0)[Move left {4,e.1}->{checkend,e.5,-1}]
+
+1 checkend rigid (1,1,0) 1 checkend rigid (0,1,0)[Move left {4,e.1}->{checkend,e.5,-1}]
+
+e.0 checkend rigid (1,1,0) e.0 checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.1 checkend rigid (1,1,0) e.1 checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.2 checkend rigid (1,1,0) e.2 checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.3 checkend rigid (1,1,0) e.3 checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.4 checkend rigid (1,1,0) e.4 checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.5 checkend rigid (1,1,0) e.5 checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.6 checkend rigid (1,1,0) e.6 checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+e.7 checkend rigid (1,1,0) e.7 checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+read checkend rigid (1,1,0) read checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+s checkend rigid (1,1,0) s checkend rigid (0,1,0)[Move left {4,e.1}->{checkend,e.5,-1}]
+
+blue checkend rigid (1,1,0) blue checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+green checkend rigid (1,1,0) green checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+indigo checkend rigid (1,1,0) indigo checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+orange checkend rigid (1,1,0) orange checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+red checkend rigid (1,1,0) red checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+violet checkend rigid (1,1,0) violet checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+yellow checkend rigid (1,1,0) yellow checkend rigid (0,1,0)[Move left\
+
+  {4,e.1}->{checkend,e.5,-1}]
+
+0 checkend rigid (1,1,0) 0 checkend rigid (0,1,0)[Move left {4,e.2}->{checkend,e.6,-1}]
+
+1 checkend rigid (1,1,0) 1 checkend rigid (0,1,0)[Move left {4,e.2}->{checkend,e.6,-1}]
+
+e.0 checkend rigid (1,1,0) e.0 checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.1 checkend rigid (1,1,0) e.1 checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.2 checkend rigid (1,1,0) e.2 checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.3 checkend rigid (1,1,0) e.3 checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.4 checkend rigid (1,1,0) e.4 checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.5 checkend rigid (1,1,0) e.5 checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.6 checkend rigid (1,1,0) e.6 checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+e.7 checkend rigid (1,1,0) e.7 checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+read checkend rigid (1,1,0) read checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+s checkend rigid (1,1,0) s checkend rigid (0,1,0)[Move left {4,e.2}->{checkend,e.6,-1}]
+
+blue checkend rigid (1,1,0) blue checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+green checkend rigid (1,1,0) green checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+indigo checkend rigid (1,1,0) indigo checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+orange checkend rigid (1,1,0) orange checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+red checkend rigid (1,1,0) red checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+violet checkend rigid (1,1,0) violet checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+yellow checkend rigid (1,1,0) yellow checkend rigid (0,1,0)[Move left\
+
+  {4,e.2}->{checkend,e.6,-1}]
+
+0 checkend rigid (1,1,0) 0 checkend rigid (0,1,0)[Move left {4,e.3}->{checkend,e.7,-1}]
+
+1 checkend rigid (1,1,0) 1 checkend rigid (0,1,0)[Move left {4,e.3}->{checkend,e.7,-1}]
+
+e.0 checkend rigid (1,1,0) e.0 checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.1 checkend rigid (1,1,0) e.1 checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.2 checkend rigid (1,1,0) e.2 checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.3 checkend rigid (1,1,0) e.3 checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.4 checkend rigid (1,1,0) e.4 checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.5 checkend rigid (1,1,0) e.5 checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.6 checkend rigid (1,1,0) e.6 checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+e.7 checkend rigid (1,1,0) e.7 checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+read checkend rigid (1,1,0) read checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+s checkend rigid (1,1,0) s checkend rigid (0,1,0)[Move left {4,e.3}->{checkend,e.7,-1}]
+
+blue checkend rigid (1,1,0) blue checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+green checkend rigid (1,1,0) green checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+indigo checkend rigid (1,1,0) indigo checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+orange checkend rigid (1,1,0) orange checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+red checkend rigid (1,1,0) red checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+violet checkend rigid (1,1,0) violet checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+yellow checkend rigid (1,1,0) yellow checkend rigid (0,1,0)[Move left\
+
+  {4,e.3}->{checkend,e.7,-1}]
+
+0 converted rigid (-1,1,0) 0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+1 converted rigid (-1,1,0) 1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.0 converted rigid (-1,1,0) e.0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.1 converted rigid (-1,1,0) e.1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.2 converted rigid (-1,1,0) e.2 converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.3 converted rigid (-1,1,0) e.3 converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.4 converted rigid (-1,1,0) e.4 converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.5 converted rigid (-1,1,0) e.5 converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.6 converted rigid (-1,1,0) e.6 converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+e.7 converted rigid (-1,1,0) e.7 converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+read converted rigid (-1,1,0) read converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+s converted rigid (-1,1,0) s converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+blue converted rigid (-1,1,0) blue converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+green converted rigid (-1,1,0) green converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+indigo converted rigid (-1,1,0) indigo converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+orange converted rigid (-1,1,0) orange converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+red converted rigid (-1,1,0) red converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+violet converted rigid (-1,1,0) violet converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+yellow converted rigid (-1,1,0) yellow converted rigid (0,1,0)[Move right\
+
+  {ended,e.0}->{converted,red,+1}]
+
+0 converted rigid (-1,1,0) 0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+1 converted rigid (-1,1,0) 1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.0 converted rigid (-1,1,0) e.0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.1 converted rigid (-1,1,0) e.1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.2 converted rigid (-1,1,0) e.2 converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.3 converted rigid (-1,1,0) e.3 converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.4 converted rigid (-1,1,0) e.4 converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.5 converted rigid (-1,1,0) e.5 converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.6 converted rigid (-1,1,0) e.6 converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+e.7 converted rigid (-1,1,0) e.7 converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+read converted rigid (-1,1,0) read converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+s converted rigid (-1,1,0) s converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+blue converted rigid (-1,1,0) blue converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+green converted rigid (-1,1,0) green converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+indigo converted rigid (-1,1,0) indigo converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+orange converted rigid (-1,1,0) orange converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+red converted rigid (-1,1,0) red converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+violet converted rigid (-1,1,0) violet converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+yellow converted rigid (-1,1,0) yellow converted rigid (0,1,0)[Move right\
+
+  {ended,e.1}->{converted,orange,+1}]
+
+0 converted rigid (-1,1,0) 0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+1 converted rigid (-1,1,0) 1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.0 converted rigid (-1,1,0) e.0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.1 converted rigid (-1,1,0) e.1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.2 converted rigid (-1,1,0) e.2 converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.3 converted rigid (-1,1,0) e.3 converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.4 converted rigid (-1,1,0) e.4 converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.5 converted rigid (-1,1,0) e.5 converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.6 converted rigid (-1,1,0) e.6 converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+e.7 converted rigid (-1,1,0) e.7 converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+read converted rigid (-1,1,0) read converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+s converted rigid (-1,1,0) s converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+blue converted rigid (-1,1,0) blue converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+green converted rigid (-1,1,0) green converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+indigo converted rigid (-1,1,0) indigo converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+orange converted rigid (-1,1,0) orange converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+red converted rigid (-1,1,0) red converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+violet converted rigid (-1,1,0) violet converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+yellow converted rigid (-1,1,0) yellow converted rigid (0,1,0)[Move right\
+
+  {ended,e.2}->{converted,yellow,+1}]
+
+0 converted rigid (-1,1,0) 0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+1 converted rigid (-1,1,0) 1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.0 converted rigid (-1,1,0) e.0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.1 converted rigid (-1,1,0) e.1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.2 converted rigid (-1,1,0) e.2 converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.3 converted rigid (-1,1,0) e.3 converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.4 converted rigid (-1,1,0) e.4 converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.5 converted rigid (-1,1,0) e.5 converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.6 converted rigid (-1,1,0) e.6 converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+e.7 converted rigid (-1,1,0) e.7 converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+read converted rigid (-1,1,0) read converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+s converted rigid (-1,1,0) s converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+blue converted rigid (-1,1,0) blue converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+green converted rigid (-1,1,0) green converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+indigo converted rigid (-1,1,0) indigo converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+orange converted rigid (-1,1,0) orange converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+red converted rigid (-1,1,0) red converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+violet converted rigid (-1,1,0) violet converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+yellow converted rigid (-1,1,0) yellow converted rigid (0,1,0)[Move right\
+
+  {ended,e.3}->{converted,green,+1}]
+
+0 converted rigid (-1,1,0) 0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+1 converted rigid (-1,1,0) 1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.0 converted rigid (-1,1,0) e.0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.1 converted rigid (-1,1,0) e.1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.2 converted rigid (-1,1,0) e.2 converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.3 converted rigid (-1,1,0) e.3 converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.4 converted rigid (-1,1,0) e.4 converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.5 converted rigid (-1,1,0) e.5 converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.6 converted rigid (-1,1,0) e.6 converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+e.7 converted rigid (-1,1,0) e.7 converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+read converted rigid (-1,1,0) read converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+s converted rigid (-1,1,0) s converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+blue converted rigid (-1,1,0) blue converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+green converted rigid (-1,1,0) green converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+indigo converted rigid (-1,1,0) indigo converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+orange converted rigid (-1,1,0) orange converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+red converted rigid (-1,1,0) red converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+violet converted rigid (-1,1,0) violet converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+yellow converted rigid (-1,1,0) yellow converted rigid (0,1,0)[Move right\
+
+  {ended,e.4}->{converted,blue,+1}]
+
+0 converted rigid (-1,1,0) 0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+1 converted rigid (-1,1,0) 1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.0 converted rigid (-1,1,0) e.0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.1 converted rigid (-1,1,0) e.1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.2 converted rigid (-1,1,0) e.2 converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.3 converted rigid (-1,1,0) e.3 converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.4 converted rigid (-1,1,0) e.4 converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.5 converted rigid (-1,1,0) e.5 converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.6 converted rigid (-1,1,0) e.6 converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+e.7 converted rigid (-1,1,0) e.7 converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+read converted rigid (-1,1,0) read converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+s converted rigid (-1,1,0) s converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+blue converted rigid (-1,1,0) blue converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+green converted rigid (-1,1,0) green converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+indigo converted rigid (-1,1,0) indigo converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+orange converted rigid (-1,1,0) orange converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+red converted rigid (-1,1,0) red converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+violet converted rigid (-1,1,0) violet converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+yellow converted rigid (-1,1,0) yellow converted rigid (0,1,0)[Move right\
+
+  {ended,e.5}->{converted,indigo,+1}]
+
+0 converted rigid (-1,1,0) 0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+1 converted rigid (-1,1,0) 1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.0 converted rigid (-1,1,0) e.0 converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.1 converted rigid (-1,1,0) e.1 converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.2 converted rigid (-1,1,0) e.2 converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.3 converted rigid (-1,1,0) e.3 converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.4 converted rigid (-1,1,0) e.4 converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.5 converted rigid (-1,1,0) e.5 converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.6 converted rigid (-1,1,0) e.6 converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+e.7 converted rigid (-1,1,0) e.7 converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+read converted rigid (-1,1,0) read converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+s converted rigid (-1,1,0) s converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+blue converted rigid (-1,1,0) blue converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+green converted rigid (-1,1,0) green converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+indigo converted rigid (-1,1,0) indigo converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+orange converted rigid (-1,1,0) orange converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+red converted rigid (-1,1,0) red converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+violet converted rigid (-1,1,0) violet converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]
+
+yellow converted rigid (-1,1,0) yellow converted rigid (0,1,0)[Move right\
+
+  {ended,e.6}->{converted,violet,+1}]

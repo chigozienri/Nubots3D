@@ -102,7 +102,7 @@ let examples = {'Default': 'default.rules', 'Sierpinski': 'sierpinski.rules',
  'River Crossing': 'rivercrossing.rules', 'Turing Clear Tape': 'turing.rules',
 'Linear Line Growth': 'linen.rules', 'Log n Line Growth': 'line_logn.rules',
 'Simple Waving Arm': 'wavingarmsimple.rules', 'Demo': 'demo.rules',
-'Square to Triangle and back': 'LinearSquareToTri2.rules'};
+'Square to Triangle and back': 'LinearSquareToTri2.rules', 'Hofstadter': 'GEB.rules'};
 for (exampleprettyname in examples) {
 	let example = document.createElement("li");
 	let examplea = document.createElement("a");

@@ -1,0 +1,48 @@
+States:
+1 0 0 DH
+2 0 0 DH
+3 0 0 DH
+4 0 1 DH
+0 2 0 DH
+3 2 0 DH
+3 2 2 DH
+3 2 4 DH
+4 2 1 DH
+1 4 0 DH
+2 4 0 DH
+3 4 0 DH
+4 4 1 DH
+
+0 1 4 DH
+0 2 0 DH
+4 2 3 DH
+0 3 4 DH
+1 4 2 DH
+2 4 2 DH
+3 4 2 DH
+4 4 3 DH
+1 4 4 DH
+2 4 4 DH
+3 4 4 DH
+
+
+
+
+0 2 0 DH
+1 0 0 DH
+2 0 0 DH
+3 0 0 DH
+0 2 1 DH
+4 0 1 DH
+0 2 2 DH
+1 0 2 DH
+2 0 2 DH
+3 0 2 DH
+0 2 3 DH
+4 0 3 DH
+0 2 4 DH
+1 0 4 DH
+2 0 4 DH
+3 0 4 DH
+
+4 1 4 DH

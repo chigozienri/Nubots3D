@@ -2,27 +2,119 @@ States:
 0 0 s.2
 
 Rules:
-[s.1]
-[subroutine 1]
+b.1 empty null E b.2 b.3 rigid E
+
+b.3 0 null SW b.4 0' rigid SW
+
+b.6 0 rigid SE b.7 0 null SE
+
+0.'' b.8 null NE 0 empty null NE
+
+b.2 empty null E empty empty null E
+
 s.1 empty null E 0 0 rigid E
 
-[s.2]
-[subroutine 1]
 s.2 empty null E 1 0 rigid E
-[subroutine 2]
+
+s.3 empty null E 2 0 rigid E
+
+s.4 empty null E 3 0 rigid E
+
 1 empty null NE 1 b.1 rigid NE
-b.1 empty null E b.2 b.3 rigid E
-b.3 0 null SW b.4 0' rigid SW
-1 0' rigid E 0 0.1 null E
-b.4 0.1 rigid SW b.5 0.1 rigid SE
-0.1 empty null W 0 0'' rigid W
+
+1 0' rigid E 0 0' null E
+
+0' b.4 rigid NE 0' b.5 rigid NW
+
+0' empty null W 0 0'' rigid W
+
 0'' b.5 null NE 0'' b.6 rigid NE
-b.6 0 rigid SE b.7 0 null SE
-b.7 0'' rigid SW b.8 0'' rigid SE
-0'' empty null W 0 0 rigid W
-0 0 null E 0 0''' rigid E
-0''' b.8 null NE 0 empty null NE
-[b.2 empty null E empty empty null E]
+
+0'' b.7 rigid NE 0'' b.8 rigid NW
+
+0'' empty null W 0 0.' rigid W
+
+0 0.' null E 0 0.'' rigid E
+
+1 empty null NE 1 b.1 rigid NE
+
+1 0' rigid E 0 0' null E
+
+0' b.4 rigid NE 0' b.5 rigid NW
+
+0' empty null W 0 0'' rigid W
+
+0'' b.5 null NE 0'' b.6 rigid NE
+
+0'' b.7 rigid NE 0'' b.8 rigid NW
+
+0'' empty null W 0 0.' rigid W
+
+0 0.' null E 0 0.'' rigid E
+
+2 empty null NE 2 b.1 rigid NE
+
+2 0' rigid E 1 1' null E
+
+1' b.4 rigid NE 1' b.5 rigid NW
+
+1' empty null W 0 1'' rigid W
+
+1'' b.5 null NE 1'' b.6 rigid NE
+
+1'' b.7 rigid NE 1'' b.8 rigid NW
+
+1'' empty null W 1 0.' rigid W
+
+1 0.' null E 1 0.'' rigid E
+
+1 empty null NE 1 b.1 rigid NE
+
+1 0' rigid E 0 0' null E
+
+0' b.4 rigid NE 0' b.5 rigid NW
+
+0' empty null W 0 0'' rigid W
+
+0'' b.5 null NE 0'' b.6 rigid NE
+
+0'' b.7 rigid NE 0'' b.8 rigid NW
+
+0'' empty null W 0 0.' rigid W
+
+0 0.' null E 0 0.'' rigid E
+
+2 empty null NE 2 b.1 rigid NE
+
+2 0' rigid E 1 1' null E
+
+1' b.4 rigid NE 1' b.5 rigid NW
+
+1' empty null W 0 1'' rigid W
+
+1'' b.5 null NE 1'' b.6 rigid NE
+
+1'' b.7 rigid NE 1'' b.8 rigid NW
+
+1'' empty null W 1 0.' rigid W
+
+1 0.' null E 1 0.'' rigid E
+
+3 empty null NE 3 b.1 rigid NE
+
+3 0' rigid E 2 2' null E
+
+2' b.4 rigid NE 2' b.5 rigid NW
+
+2' empty null W 0 2'' rigid W
+
+2'' b.5 null NE 2'' b.6 rigid NE
+
+2'' b.7 rigid NE 2'' b.8 rigid NW
+
+2'' empty null W 2 0.' rigid W
+
+2 0.' null E 2 0.'' rigid E
 
 Aliases:
 E (1,0,0)n

@@ -570,6 +570,8 @@ class Node {
     let rule_blocked = false;
     let n = rule_;
     let rule = rules[rule_];
+    let target_position;
+    let position_occupied;
 
     if (rule.state1_i == 'empty') {
       console.log('Rule with empty in state1_i position not supported');
@@ -611,12 +613,12 @@ class Node {
         }
         if (direction.distanceTo(rule.dir_i) < tolerance) {
           nulledge=false;
+          position_occupied=true;
           console.log('There is a bound node in direction specified by rule, setting nulledge to false')
           boundnode = boundnode_temp;
           boundedge = edge;
         }
       }
-
       if (((rule.type_i == 'null') || (rule.state2_i == 'empty')) && nulledge == true) { // in this case we need to check all nodes, not just neighbours
         for (let node of nodes) {
           let direction;
@@ -626,7 +628,15 @@ class Node {
             boundnode = node;
           }
         }
+        // TODO only need to do this once!
+        target_position = this.pos.clone().add(rule.dir_f.clone());
+        position_occupied = false;
+        for (let node of nodes) { // check target position for collision
+          if (node.pos.distanceTo(target_position) < tolerance) {
+            position_occupied = true;
+          }
         console.log('boundnode', boundnode);
+        }
       }
 
       if (rule.state2_i != 'empty') {           // if the rule calls for an operation on an existing neighbour
@@ -696,6 +706,9 @@ class Node {
           rule_blocked = true;
         }
       } else { // rule state2_i is 'empty'\
+        if (boundnode == 'undefined') {
+         // TODO: can probably move check below up here to improve performance
+        }
         let createnode2 = (rules[rule_]['state2_f'] != 'empty');
         if (createnode2 == true) {
            // TODO: This is terrible for performance, checking every node AGAIN, but only happens when we need to create a node.
@@ -718,16 +731,22 @@ class Node {
       }
       // Do operations on node1
       // console.log(rule.state1_i, rule.state1_f, rule_blocked);
-      if ((rule.state1_i != rule.state1_f) && (rule.state1_f != 'empty') && (rule_blocked == false)) {
-        console.log("change state 1")
-        this.state = rule.state1_f;
-        this.show()
-        rule_applied = true;
-      } else if ((rule.state1_f == 'empty') && (rule_blocked == false)) {
-        this.remove();
-        rule_applied = true;
+      console.log('position_occupied', position_occupied);
+      if (((position_occupied == true) &&
+          (rule.state2_i != 'empty')) ||
+          ((position_occupied == false) && // nulledge == true
+              (rule.state2_i == 'empty'))) {
+        // console.log('flag',nulledge);
+        if ((rule.state1_i != rule.state1_f) && (rule.state1_f != 'empty') && (rule_blocked == false)) {
+          console.log("change state 1")
+          this.state = rule.state1_f;
+          this.show()
+          rule_applied = true;
+        } else if ((rule.state1_f == 'empty') && (rule_blocked == false)) {
+          this.remove();
+          rule_applied = true;
+        }
       }
-
     } else {
       console.log('State of this node (' + this.state + ') does not match initial state of node 1 in rule: (' + rules[rule_]['state1_i'] + ')' );
     }

@@ -55,149 +55,149 @@ s c rigid (0,1,0) s f.r rigid (0,1,0) [Change state {c,s}->{f,s,+1}]
 
 s g rigid (0,1,0) s f.r rigid (0,1,0) [Change state {g,s}->{f,s,+1}]
 
-0 b.r null (-1,1,0) 0 b.r' rigid (-1,1,0)[Bond right {a,0}->{b,s,+1}]
+0 b.r rigid (-1,1,0) 0 b.r' rigid (-1,1,0)[Bond right {a,0}->{b,s,+1}]
 
-1 b.r null (-1,1,0) 1 b.r' rigid (-1,1,0)[Bond right {a,0}->{b,s,+1}]
+1 b.r rigid (-1,1,0) 1 b.r' rigid (-1,1,0)[Bond right {a,0}->{b,s,+1}]
 
-e b.r null (-1,1,0) e b.r' rigid (-1,1,0)[Bond right {a,0}->{b,s,+1}]
+e b.r rigid (-1,1,0) e b.r' rigid (-1,1,0)[Bond right {a,0}->{b,s,+1}]
 
-s b.r null (-1,1,0) s b.r' rigid (-1,1,0)[Bond right {a,0}->{b,s,+1}]
+s b.r rigid (-1,1,0) s b.r' rigid (-1,1,0)[Bond right {a,0}->{b,s,+1}]
 
-0 b.r null (-1,1,0) 0 b.r' rigid (-1,1,0)[Bond right {b,0}->{b,0,+1}]
+0 b.r rigid (-1,1,0) 0 b.r' rigid (-1,1,0)[Bond right {b,0}->{b,0,+1}]
 
-1 b.r null (-1,1,0) 1 b.r' rigid (-1,1,0)[Bond right {b,0}->{b,0,+1}]
+1 b.r rigid (-1,1,0) 1 b.r' rigid (-1,1,0)[Bond right {b,0}->{b,0,+1}]
 
-e b.r null (-1,1,0) e b.r' rigid (-1,1,0)[Bond right {b,0}->{b,0,+1}]
+e b.r rigid (-1,1,0) e b.r' rigid (-1,1,0)[Bond right {b,0}->{b,0,+1}]
 
-s b.r null (-1,1,0) s b.r' rigid (-1,1,0)[Bond right {b,0}->{b,0,+1}]
+s b.r rigid (-1,1,0) s b.r' rigid (-1,1,0)[Bond right {b,0}->{b,0,+1}]
 
-0 b.r null (-1,1,0) 0 b.r' rigid (-1,1,0)[Bond right {b,1}->{b,1,+1}]
+0 b.r rigid (-1,1,0) 0 b.r' rigid (-1,1,0)[Bond right {b,1}->{b,1,+1}]
 
-1 b.r null (-1,1,0) 1 b.r' rigid (-1,1,0)[Bond right {b,1}->{b,1,+1}]
+1 b.r rigid (-1,1,0) 1 b.r' rigid (-1,1,0)[Bond right {b,1}->{b,1,+1}]
 
-e b.r null (-1,1,0) e b.r' rigid (-1,1,0)[Bond right {b,1}->{b,1,+1}]
+e b.r rigid (-1,1,0) e b.r' rigid (-1,1,0)[Bond right {b,1}->{b,1,+1}]
 
-s b.r null (-1,1,0) s b.r' rigid (-1,1,0)[Bond right {b,1}->{b,1,+1}]
+s b.r rigid (-1,1,0) s b.r' rigid (-1,1,0)[Bond right {b,1}->{b,1,+1}]
 
-0 c.l null (1,1,0) 0 c.l' rigid (1,1,0)[Bond left {b,e}->{c,e,-1}]
+0 c.l rigid (1,1,0) 0 c.l' rigid (1,1,0)[Bond left {b,e}->{c,e,-1}]
 
-1 c.l null (1,1,0) 1 c.l' rigid (1,1,0)[Bond left {b,e}->{c,e,-1}]
+1 c.l rigid (1,1,0) 1 c.l' rigid (1,1,0)[Bond left {b,e}->{c,e,-1}]
 
-e c.l null (1,1,0) e c.l' rigid (1,1,0)[Bond left {b,e}->{c,e,-1}]
+e c.l rigid (1,1,0) e c.l' rigid (1,1,0)[Bond left {b,e}->{c,e,-1}]
 
-s c.l null (1,1,0) s c.l' rigid (1,1,0)[Bond left {b,e}->{c,e,-1}]
+s c.l rigid (1,1,0) s c.l' rigid (1,1,0)[Bond left {b,e}->{c,e,-1}]
 
-0 z.l null (1,1,0) 0 z.l' rigid (1,1,0)[Bond left {c,1}->{z,0,-1}]
+0 z.l rigid (1,1,0) 0 z.l' rigid (1,1,0)[Bond left {c,1}->{z,0,-1}]
 
-1 z.l null (1,1,0) 1 z.l' rigid (1,1,0)[Bond left {c,1}->{z,0,-1}]
+1 z.l rigid (1,1,0) 1 z.l' rigid (1,1,0)[Bond left {c,1}->{z,0,-1}]
 
-e z.l null (1,1,0) e z.l' rigid (1,1,0)[Bond left {c,1}->{z,0,-1}]
+e z.l rigid (1,1,0) e z.l' rigid (1,1,0)[Bond left {c,1}->{z,0,-1}]
 
-s z.l null (1,1,0) s z.l' rigid (1,1,0)[Bond left {c,1}->{z,0,-1}]
+s z.l rigid (1,1,0) s z.l' rigid (1,1,0)[Bond left {c,1}->{z,0,-1}]
 
-0 d.l null (1,1,0) 0 d.l' rigid (1,1,0)[Bond left {c,0}->{d,e,-1}]
+0 d.l rigid (1,1,0) 0 d.l' rigid (1,1,0)[Bond left {c,0}->{d,e,-1}]
 
-1 d.l null (1,1,0) 1 d.l' rigid (1,1,0)[Bond left {c,0}->{d,e,-1}]
+1 d.l rigid (1,1,0) 1 d.l' rigid (1,1,0)[Bond left {c,0}->{d,e,-1}]
 
-e d.l null (1,1,0) e d.l' rigid (1,1,0)[Bond left {c,0}->{d,e,-1}]
+e d.l rigid (1,1,0) e d.l' rigid (1,1,0)[Bond left {c,0}->{d,e,-1}]
 
-s d.l null (1,1,0) s d.l' rigid (1,1,0)[Bond left {c,0}->{d,e,-1}]
+s d.l rigid (1,1,0) s d.l' rigid (1,1,0)[Bond left {c,0}->{d,e,-1}]
 
-0 d.l null (1,1,0) 0 d.l' rigid (1,1,0)[Bond left {d,1}->{d,1,-1}]
+0 d.l rigid (1,1,0) 0 d.l' rigid (1,1,0)[Bond left {d,1}->{d,1,-1}]
 
-1 d.l null (1,1,0) 1 d.l' rigid (1,1,0)[Bond left {d,1}->{d,1,-1}]
+1 d.l rigid (1,1,0) 1 d.l' rigid (1,1,0)[Bond left {d,1}->{d,1,-1}]
 
-e d.l null (1,1,0) e d.l' rigid (1,1,0)[Bond left {d,1}->{d,1,-1}]
+e d.l rigid (1,1,0) e d.l' rigid (1,1,0)[Bond left {d,1}->{d,1,-1}]
 
-s d.l null (1,1,0) s d.l' rigid (1,1,0)[Bond left {d,1}->{d,1,-1}]
+s d.l rigid (1,1,0) s d.l' rigid (1,1,0)[Bond left {d,1}->{d,1,-1}]
 
-0 d.l null (1,1,0) 0 d.l' rigid (1,1,0)[Bond left {d,0}->{d,0,-1}]
+0 d.l rigid (1,1,0) 0 d.l' rigid (1,1,0)[Bond left {d,0}->{d,0,-1}]
 
-1 d.l null (1,1,0) 1 d.l' rigid (1,1,0)[Bond left {d,0}->{d,0,-1}]
+1 d.l rigid (1,1,0) 1 d.l' rigid (1,1,0)[Bond left {d,0}->{d,0,-1}]
 
-e d.l null (1,1,0) e d.l' rigid (1,1,0)[Bond left {d,0}->{d,0,-1}]
+e d.l rigid (1,1,0) e d.l' rigid (1,1,0)[Bond left {d,0}->{d,0,-1}]
 
-s d.l null (1,1,0) s d.l' rigid (1,1,0)[Bond left {d,0}->{d,0,-1}]
+s d.l rigid (1,1,0) s d.l' rigid (1,1,0)[Bond left {d,0}->{d,0,-1}]
 
-0 a.r null (-1,1,0) 0 a.r' rigid (-1,1,0)[Bond right {d,s}->{a,s,+1}]
+0 a.r rigid (-1,1,0) 0 a.r' rigid (-1,1,0)[Bond right {d,s}->{a,s,+1}]
 
-1 a.r null (-1,1,0) 1 a.r' rigid (-1,1,0)[Bond right {d,s}->{a,s,+1}]
+1 a.r rigid (-1,1,0) 1 a.r' rigid (-1,1,0)[Bond right {d,s}->{a,s,+1}]
 
-e a.r null (-1,1,0) e a.r' rigid (-1,1,0)[Bond right {d,s}->{a,s,+1}]
+e a.r rigid (-1,1,0) e a.r' rigid (-1,1,0)[Bond right {d,s}->{a,s,+1}]
 
-s a.r null (-1,1,0) s a.r' rigid (-1,1,0)[Bond right {d,s}->{a,s,+1}]
+s a.r rigid (-1,1,0) s a.r' rigid (-1,1,0)[Bond right {d,s}->{a,s,+1}]
 
-0 f.r null (-1,1,0) 0 f.r' rigid (-1,1,0)[Bond right {a,1}->{f,s,+1}]
+0 f.r rigid (-1,1,0) 0 f.r' rigid (-1,1,0)[Bond right {a,1}->{f,s,+1}]
 
-1 f.r null (-1,1,0) 1 f.r' rigid (-1,1,0)[Bond right {a,1}->{f,s,+1}]
+1 f.r rigid (-1,1,0) 1 f.r' rigid (-1,1,0)[Bond right {a,1}->{f,s,+1}]
 
-e f.r null (-1,1,0) e f.r' rigid (-1,1,0)[Bond right {a,1}->{f,s,+1}]
+e f.r rigid (-1,1,0) e f.r' rigid (-1,1,0)[Bond right {a,1}->{f,s,+1}]
 
-s f.r null (-1,1,0) s f.r' rigid (-1,1,0)[Bond right {a,1}->{f,s,+1}]
+s f.r rigid (-1,1,0) s f.r' rigid (-1,1,0)[Bond right {a,1}->{f,s,+1}]
 
-0 f.r null (-1,1,0) 0 f.r' rigid (-1,1,0)[Bond right {f,0}->{f,0,+1}]
+0 f.r rigid (-1,1,0) 0 f.r' rigid (-1,1,0)[Bond right {f,0}->{f,0,+1}]
 
-1 f.r null (-1,1,0) 1 f.r' rigid (-1,1,0)[Bond right {f,0}->{f,0,+1}]
+1 f.r rigid (-1,1,0) 1 f.r' rigid (-1,1,0)[Bond right {f,0}->{f,0,+1}]
 
-e f.r null (-1,1,0) e f.r' rigid (-1,1,0)[Bond right {f,0}->{f,0,+1}]
+e f.r rigid (-1,1,0) e f.r' rigid (-1,1,0)[Bond right {f,0}->{f,0,+1}]
 
-s f.r null (-1,1,0) s f.r' rigid (-1,1,0)[Bond right {f,0}->{f,0,+1}]
+s f.r rigid (-1,1,0) s f.r' rigid (-1,1,0)[Bond right {f,0}->{f,0,+1}]
 
-0 f.r null (-1,1,0) 0 f.r' rigid (-1,1,0)[Bond right {f,1}->{f,1,+1}]
+0 f.r rigid (-1,1,0) 0 f.r' rigid (-1,1,0)[Bond right {f,1}->{f,1,+1}]
 
-1 f.r null (-1,1,0) 1 f.r' rigid (-1,1,0)[Bond right {f,1}->{f,1,+1}]
+1 f.r rigid (-1,1,0) 1 f.r' rigid (-1,1,0)[Bond right {f,1}->{f,1,+1}]
 
-e f.r null (-1,1,0) e f.r' rigid (-1,1,0)[Bond right {f,1}->{f,1,+1}]
+e f.r rigid (-1,1,0) e f.r' rigid (-1,1,0)[Bond right {f,1}->{f,1,+1}]
 
-s f.r null (-1,1,0) s f.r' rigid (-1,1,0)[Bond right {f,1}->{f,1,+1}]
+s f.r rigid (-1,1,0) s f.r' rigid (-1,1,0)[Bond right {f,1}->{f,1,+1}]
 
-0 g.l null (1,1,0) 0 g.l' rigid (1,1,0)[Bond left {f,e}->{g,e,-1}]
+0 g.l rigid (1,1,0) 0 g.l' rigid (1,1,0)[Bond left {f,e}->{g,e,-1}]
 
-1 g.l null (1,1,0) 1 g.l' rigid (1,1,0)[Bond left {f,e}->{g,e,-1}]
+1 g.l rigid (1,1,0) 1 g.l' rigid (1,1,0)[Bond left {f,e}->{g,e,-1}]
 
-e g.l null (1,1,0) e g.l' rigid (1,1,0)[Bond left {f,e}->{g,e,-1}]
+e g.l rigid (1,1,0) e g.l' rigid (1,1,0)[Bond left {f,e}->{g,e,-1}]
 
-s g.l null (1,1,0) s g.l' rigid (1,1,0)[Bond left {f,e}->{g,e,-1}]
+s g.l rigid (1,1,0) s g.l' rigid (1,1,0)[Bond left {f,e}->{g,e,-1}]
 
-0 z.l null (1,1,0) 0 z.l' rigid (1,1,0)[Bond left {g,0}->{z,0,-1}]
+0 z.l rigid (1,1,0) 0 z.l' rigid (1,1,0)[Bond left {g,0}->{z,0,-1}]
 
-1 z.l null (1,1,0) 1 z.l' rigid (1,1,0)[Bond left {g,0}->{z,0,-1}]
+1 z.l rigid (1,1,0) 1 z.l' rigid (1,1,0)[Bond left {g,0}->{z,0,-1}]
 
-e z.l null (1,1,0) e z.l' rigid (1,1,0)[Bond left {g,0}->{z,0,-1}]
+e z.l rigid (1,1,0) e z.l' rigid (1,1,0)[Bond left {g,0}->{z,0,-1}]
 
-s z.l null (1,1,0) s z.l' rigid (1,1,0)[Bond left {g,0}->{z,0,-1}]
+s z.l rigid (1,1,0) s z.l' rigid (1,1,0)[Bond left {g,0}->{z,0,-1}]
 
-0 d.l null (1,1,0) 0 d.l' rigid (1,1,0)[Bond left {g,1}->{d,e,-1}]
+0 d.l rigid (1,1,0) 0 d.l' rigid (1,1,0)[Bond left {g,1}->{d,e,-1}]
 
-1 d.l null (1,1,0) 1 d.l' rigid (1,1,0)[Bond left {g,1}->{d,e,-1}]
+1 d.l rigid (1,1,0) 1 d.l' rigid (1,1,0)[Bond left {g,1}->{d,e,-1}]
 
-e d.l null (1,1,0) e d.l' rigid (1,1,0)[Bond left {g,1}->{d,e,-1}]
+e d.l rigid (1,1,0) e d.l' rigid (1,1,0)[Bond left {g,1}->{d,e,-1}]
 
-s d.l null (1,1,0) s d.l' rigid (1,1,0)[Bond left {g,1}->{d,e,-1}]
+s d.l rigid (1,1,0) s d.l' rigid (1,1,0)[Bond left {g,1}->{d,e,-1}]
 
-0 d.l null (1,1,0) 0 d.l' rigid (1,1,0)[Bond left {a,e}->{d,e,-1}]
+0 d.l rigid (1,1,0) 0 d.l' rigid (1,1,0)[Bond left {a,e}->{d,e,-1}]
 
-1 d.l null (1,1,0) 1 d.l' rigid (1,1,0)[Bond left {a,e}->{d,e,-1}]
+1 d.l rigid (1,1,0) 1 d.l' rigid (1,1,0)[Bond left {a,e}->{d,e,-1}]
 
-e d.l null (1,1,0) e d.l' rigid (1,1,0)[Bond left {a,e}->{d,e,-1}]
+e d.l rigid (1,1,0) e d.l' rigid (1,1,0)[Bond left {a,e}->{d,e,-1}]
 
-s d.l null (1,1,0) s d.l' rigid (1,1,0)[Bond left {a,e}->{d,e,-1}]
+s d.l rigid (1,1,0) s d.l' rigid (1,1,0)[Bond left {a,e}->{d,e,-1}]
 
-0 f.r null (-1,1,0) 0 f.r' rigid (-1,1,0)[Bond right {c,s}->{f,s,+1}]
+0 f.r rigid (-1,1,0) 0 f.r' rigid (-1,1,0)[Bond right {c,s}->{f,s,+1}]
 
-1 f.r null (-1,1,0) 1 f.r' rigid (-1,1,0)[Bond right {c,s}->{f,s,+1}]
+1 f.r rigid (-1,1,0) 1 f.r' rigid (-1,1,0)[Bond right {c,s}->{f,s,+1}]
 
-e f.r null (-1,1,0) e f.r' rigid (-1,1,0)[Bond right {c,s}->{f,s,+1}]
+e f.r rigid (-1,1,0) e f.r' rigid (-1,1,0)[Bond right {c,s}->{f,s,+1}]
 
-s f.r null (-1,1,0) s f.r' rigid (-1,1,0)[Bond right {c,s}->{f,s,+1}]
+s f.r rigid (-1,1,0) s f.r' rigid (-1,1,0)[Bond right {c,s}->{f,s,+1}]
 
-0 f.r null (-1,1,0) 0 f.r' rigid (-1,1,0)[Bond right {g,s}->{f,s,+1}]
+0 f.r rigid (-1,1,0) 0 f.r' rigid (-1,1,0)[Bond right {g,s}->{f,s,+1}]
 
-1 f.r null (-1,1,0) 1 f.r' rigid (-1,1,0)[Bond right {g,s}->{f,s,+1}]
+1 f.r rigid (-1,1,0) 1 f.r' rigid (-1,1,0)[Bond right {g,s}->{f,s,+1}]
 
-e f.r null (-1,1,0) e f.r' rigid (-1,1,0)[Bond right {g,s}->{f,s,+1}]
+e f.r rigid (-1,1,0) e f.r' rigid (-1,1,0)[Bond right {g,s}->{f,s,+1}]
 
-s f.r null (-1,1,0) s f.r' rigid (-1,1,0)[Bond right {g,s}->{f,s,+1}]
+s f.r rigid (-1,1,0) s f.r' rigid (-1,1,0)[Bond right {g,s}->{f,s,+1}]
 
 s b.r' rigid (0,1,0) s b null (0,1,0)[Unbond {a,0}->{b,s,+1}]
 

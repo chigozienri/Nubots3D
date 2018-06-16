@@ -1,0 +1,228 @@
+States:
+0 0 s.2
+
+Rules:
+b.1 empty null E b.2 b.3 rigid E
+
+b.3 0 null SW b.4 0' rigid SW
+
+b.6 0 rigid SE b.7 0 null SE
+
+0.'' b.8 null NE 0 empty null NE
+
+b.2 empty null E empty empty null E
+
+s.1 empty null E 0 0 rigid E
+
+s.2 empty null E 1 0 rigid E
+
+s.3 empty null E 2 0 rigid E
+
+1 empty null NE 1 b.1 rigid NE
+
+1 0' rigid E 0 0' null E
+
+0' b.4 rigid NE 0' b.5 rigid NW
+
+0' empty null W 0 0'' rigid W
+
+0'' b.5 null NE 0'' b.6 rigid NE
+
+0''' b.5 null NE 0''' b.6 rigid NE
+
+0''' b.7 rigid NE 0'' b.8 rigid NW
+
+1'' empty null W 1 0.' rigid W
+
+1 0.' null E 1 0.'' rigid E
+
+1 empty null NE 1 b.1 rigid NE
+
+1 0' rigid E 0 0' null E
+
+0' b.4 rigid NE 0' b.5 rigid NW
+
+0' empty null W 0 0'' rigid W
+
+0'' b.5 null NE 0'' b.6 rigid NE
+
+0''' b.5 null NE 0''' b.6 rigid NE
+
+0''' b.7 rigid NE 0'' b.8 rigid NW
+
+1'' empty null W 1 0.' rigid W
+
+1 0.' null E 1 0.'' rigid E
+
+2 empty null NE 2 b.1 rigid NE
+
+2 0' rigid E 1 1' null E
+
+1' b.4 rigid NE 1' b.5 rigid NW
+
+1' empty null W 0 1'' rigid W
+
+1'' b.5 null NE 1'' b.6 rigid NE
+
+1''' b.5 null NE 1''' b.6 rigid NE
+
+1''' b.7 rigid NE 1'' b.8 rigid NW
+
+2'' empty null W 2 0.' rigid W
+
+2 0.' null E 2 0.'' rigid E
+
+tape.0' tape.0 null NE tape.0 tape.0 rigid NE
+
+tape.0' tape.1 null NE tape.0 tape.1 rigid NE
+
+tape.1' tape.0 rigid W tape.1'' tape.0 null W
+
+tape.0.copying tape.1'' rigid SW tape.0'' tape.1 rigid SW
+
+tape.1.copying tape.1'' rigid SW tape.1'' tape.1 rigid SW
+
+tape.0.copying tape.0'' rigid SW tape.0'' tape.0 rigid SW
+
+tape.1.copying tape.0'' rigid SW tape.1'' tape.0 rigid SW
+
+copier tape.0 null W tape.0.copying tape.0 null W
+
+tape.0.copying empty null SW tape.0.copying copier rigid SW
+
+copier tape.1 null W tape.1.copying tape.1 null W
+
+tape.1.copying empty null SW tape.1.copying copier rigid SW
+
+0'' empty null SW 0'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 0 null NE tape.0 0 rigid NE
+
+0'' tape.1'' rigid SW 0''' tape.1 rigid SW
+
+0'' tape.0'' rigid SW 0''' tape.0 rigid SW
+
+0'' empty null SW 0'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 0 null NE tape.0 0 rigid NE
+
+0'' tape.1'' rigid SW 0''' tape.1 rigid SW
+
+0'' tape.0'' rigid SW 0''' tape.0 rigid SW
+
+1'' empty null SW 1'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 1 null NE tape.0 1 rigid NE
+
+1'' tape.1'' rigid SW 1''' tape.1 rigid SW
+
+1'' tape.0'' rigid SW 1''' tape.0 rigid SW
+
+0'' empty null SW 0'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 0 null NE tape.0 0 rigid NE
+
+0'' tape.1'' rigid SW 0''' tape.1 rigid SW
+
+0'' tape.0'' rigid SW 0''' tape.0 rigid SW
+
+1'' empty null SW 1'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 1 null NE tape.0 1 rigid NE
+
+1'' tape.1'' rigid SW 1''' tape.1 rigid SW
+
+1'' tape.0'' rigid SW 1''' tape.0 rigid SW
+
+2'' empty null SW 2'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 2 null NE tape.0 2 rigid NE
+
+2'' tape.1'' rigid SW 2''' tape.1 rigid SW
+
+2'' tape.0'' rigid SW 2''' tape.0 rigid SW
+
+0'' empty null W 0.maketuringhead 0.' rigid W
+
+0.maketuringhead empty null SE 0 T.unbound rigid SE
+
+0 0.' null E 0 0.maketuringhead' rigid E
+
+0.maketuringhead' empty null SW 0.'' T.unbound rigid SW
+
+T.unbound tape.0 null W T.bound tape.0 rigid W
+
+T.unbound tape.1 null W T.bound tape.1 rigid W
+
+0 T.bound rigid SW 0 copier2' null SW
+
+0 T.bound rigid SE 0 copier2' null SE
+
+0 copier2' null SW e.0' copier2' rigid SW
+
+0 e.0' rigid E e.0 e.0 rigid E
+
+e.0 copier2' rigid SW e.0 copier2'' rigid SW
+
+tape.0 copier2'' rigid E tape.0 copier2 null E
+
+tape.1 copier2'' rigid E tape.1 copier2 null E
+
+tape.0 copier2 null E tape.0 tape.0.copied rigid E
+
+tape.1 copier2 null E tape.1 tape.1.copied rigid E
+
+tape.0.copied empty null SW tape.0.copied' copier2 rigid SW
+
+tape.1.copied empty null SW tape.1.copied' copier2 rigid SW
+
+tape.0 tape.0.copied' rigid E tape.0 tape.0 null E
+
+tape.1 tape.1.copied' rigid E tape.1 tape.1 null E
+
+copier2 empty null W tape.1.s'' tape.0.s' rigid W
+
+tape.0.s' tape.0 null NE tape.0.s'' tape.0 rigid NE
+
+tape.0.s' tape.1 null NE tape.0.s'' tape.1 rigid NE
+
+tape.1.s'' tape.0.s'' rigid W tape.1.s tape.0.s null W
+
+tape.1.s empty null SW tape.1 s.start rigid SW
+
+tape.0.s empty null SW tape.0 s.start rigid SW
+
+s.start empty null (0,0,1) s return rigid (0,0,1)
+
+Aliases:
+E (1,0,0)
+SE (1,-1,0)
+SW (0,-1,0)
+W (-1,0,0)
+NW (-1,1,0)
+NE (0,1,0)
+
++a (0,1,0)
++b (0,0,1)
+-a (0,-1,0)
+-b (0,0,-1)
++a+b (0,1,1)
++a-b (0,1,-1)
+-a+b (0,-1,1)
+-a-b (0,-1,-1)
+
+0 null
+1 rigid
+2 flexible

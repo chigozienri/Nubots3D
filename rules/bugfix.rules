@@ -3,12 +3,13 @@ States:
 1 0 C
 
 Bonds:
-0 0 1 0 2
+[0 0 1 0 2]
 
 Rules:
 [C A 2 W C empty null W] [fixed with hack: mark for deletion from scene, then delete in animation loop]
 
-C empty null W 10 empty null W [not fixed: does not respect empty initial rule]
+[C empty null W 10 empty null W][fixed, but need to improve performance]
+A C null (1,0,0) A C rigid (1,0,0) 
 
 Aliases:
 E (1,0,0)n

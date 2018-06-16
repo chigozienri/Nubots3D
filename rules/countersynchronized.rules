@@ -1,9 +1,98 @@
-States:
-0 0 s.2
-
+﻿States:
+-2 0 0 red
+1 0 0 green
+0 0 0 yellow
+0 -1 0 read
+-2 -1 0 read
+-1 0 0 orange
+1 -1 0 read
+-1 -1 0 read
+-1 -2 0 read
+-2 -2 0 read
+1 -2 0 read
+-2 -3 0 s
+-1 -3 0 s
+0 0 1 sync
+-1 0 1 syncstart
+0 -2 0 read
+1 -3 0 s
+0 -3 0 s
+2 0 1 sync
+1 0 1 sync
 Bonds:
-
+1 0 0 0 0 0 rigid
+0 0 0 0 -1 0 rigid
+-2 -1 0 -2 0 0 rigid
+0 0 0 -1 0 0 rigid
+-2 0 0 -1 0 0 rigid
+1 0 0 1 -1 0 rigid
+-1 0 0 -1 -1 0 rigid
+-1 -1 0 -1 -2 0 rigid
+-2 -2 0 -2 -1 0 rigid
+1 -1 0 1 -2 0 rigid
+-2 -2 0 -2 -3 0 rigid
+-1 -2 0 -1 -3 0 rigid
+0 -2 0 0 -1 0 rigid
+1 -2 0 1 -3 0 rigid
+0 -2 0 0 -3 0 rigid
+0 0 0 1 0 1 flexible
+-2 0 0 -1 0 1 rigid
+1 0 0 2 0 1 flexible
+-1 0 0 0 0 1 flexible
+1 0 1 2 0 1 rigid
+0 0 1 1 0 1 rigid
+-1 0 1 0 0 1 rigid
 Rules:
+[deletesync]
+
+red converted rigid +b red syncstart rigid +b
+
+red converted.r rigid +b red syncstart rigid +b
+
+red syncstart' rigid +b red syncstart rigid (1,0,1)
+
+syncstart sync null (1,0,0) syncstart' sync' rigid (1,0,0)
+
+sync sync null (1,0,0) sync sync' rigid (1,0,0)
+
+red syncstart rigid (1,0,1) red.delete empty null (1,0,1)
+
+red.delete read rigid (0,-1,0) red delete null (0,-1,0)
+
+delete read rigid (0,-1,0) empty delete null (0,-1,0)
+
+delete s rigid (0,-1,0) empty empty null (0,-1,0)
+
+orange converted rigid +b orange sync rigid +b
+
+orange converted.r rigid +b orange sync rigid +b
+
+orange sync' rigid +b orange sync flexible +b
+
+orange sync flexible (1,0,1) orange.delete empty null (1,0,1)
+
+orange.delete read rigid (0,-1,0) orange delete null (0,-1,0)
+
+yellow converted rigid +b yellow sync rigid +b
+
+yellow converted.r rigid +b yellow sync rigid +b
+
+yellow sync' rigid +b yellow sync flexible +b
+
+yellow sync flexible (1,0,1) yellow.delete empty null (1,0,1)
+
+yellow.delete read rigid (0,-1,0) yellow delete null (0,-1,0)
+
+green converted rigid +b green sync rigid +b
+
+green converted.r rigid +b green sync rigid +b
+
+green sync' rigid +b green sync flexible +b
+
+green sync flexible (1,0,1) green.delete empty null (1,0,1)
+
+green.delete read rigid (0,-1,0) green delete null (0,-1,0)
+
 [counter]
 b.1 empty null E b.2 b.3 rigid E
 
@@ -18,6 +107,10 @@ b.2 empty null E empty empty null E
 s.1 empty null E 0 0 rigid E
 
 s.2 empty null E 1 0 rigid E
+
+s.3 empty null E 2 0 rigid E
+
+s.4 empty null E 3 0 rigid E
 
 1 empty null NE 1 b.1 rigid NE
 
@@ -36,6 +129,96 @@ s.2 empty null E 1 0 rigid E
 1'' empty null W 1 0.' rigid W
 
 1 0.' null E 1 0.'' rigid E
+
+1 empty null NE 1 b.1 rigid NE
+
+1 0' rigid E 0 0' null E
+
+0' b.4 rigid NE 0' b.5 rigid NW
+
+0' empty null W 0 0'' rigid W
+
+0'' b.5 null NE 0'' b.6 rigid NE
+
+0''' b.5 null NE 0''' b.6 rigid NE
+
+0''' b.7 rigid NE 0'' b.8 rigid NW
+
+1'' empty null W 1 0.' rigid W
+
+1 0.' null E 1 0.'' rigid E
+
+2 empty null NE 2 b.1 rigid NE
+
+2 0' rigid E 1 1' null E
+
+1' b.4 rigid NE 1' b.5 rigid NW
+
+1' empty null W 0 1'' rigid W
+
+1'' b.5 null NE 1'' b.6 rigid NE
+
+1''' b.5 null NE 1''' b.6 rigid NE
+
+1''' b.7 rigid NE 1'' b.8 rigid NW
+
+2'' empty null W 2 0.' rigid W
+
+2 0.' null E 2 0.'' rigid E
+
+1 empty null NE 1 b.1 rigid NE
+
+1 0' rigid E 0 0' null E
+
+0' b.4 rigid NE 0' b.5 rigid NW
+
+0' empty null W 0 0'' rigid W
+
+0'' b.5 null NE 0'' b.6 rigid NE
+
+0''' b.5 null NE 0''' b.6 rigid NE
+
+0''' b.7 rigid NE 0'' b.8 rigid NW
+
+1'' empty null W 1 0.' rigid W
+
+1 0.' null E 1 0.'' rigid E
+
+2 empty null NE 2 b.1 rigid NE
+
+2 0' rigid E 1 1' null E
+
+1' b.4 rigid NE 1' b.5 rigid NW
+
+1' empty null W 0 1'' rigid W
+
+1'' b.5 null NE 1'' b.6 rigid NE
+
+1''' b.5 null NE 1''' b.6 rigid NE
+
+1''' b.7 rigid NE 1'' b.8 rigid NW
+
+2'' empty null W 2 0.' rigid W
+
+2 0.' null E 2 0.'' rigid E
+
+3 empty null NE 3 b.1 rigid NE
+
+3 0' rigid E 2 2' null E
+
+2' b.4 rigid NE 2' b.5 rigid NW
+
+2' empty null W 0 2'' rigid W
+
+2'' b.5 null NE 2'' b.6 rigid NE
+
+2''' b.5 null NE 2''' b.6 rigid NE
+
+2''' b.7 rigid NE 2'' b.8 rigid NW
+
+3'' empty null W 3 0.' rigid W
+
+3 0.' null E 3 0.'' rigid E
 
 tape.0' tape.0 null NE tape.0 tape.0 rigid NE
 
@@ -88,6 +271,76 @@ tape.0' 1 null NE tape.0 1 rigid NE
 1'' tape.1'' rigid SW 1''' tape.1 rigid SW
 
 1'' tape.0'' rigid SW 1''' tape.0 rigid SW
+
+0'' empty null SW 0'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 0 null NE tape.0 0 rigid NE
+
+0'' tape.1'' rigid SW 0''' tape.1 rigid SW
+
+0'' tape.0'' rigid SW 0''' tape.0 rigid SW
+
+1'' empty null SW 1'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 1 null NE tape.0 1 rigid NE
+
+1'' tape.1'' rigid SW 1''' tape.1 rigid SW
+
+1'' tape.0'' rigid SW 1''' tape.0 rigid SW
+
+2'' empty null SW 2'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 2 null NE tape.0 2 rigid NE
+
+2'' tape.1'' rigid SW 2''' tape.1 rigid SW
+
+2'' tape.0'' rigid SW 2''' tape.0 rigid SW
+
+0'' empty null SW 0'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 0 null NE tape.0 0 rigid NE
+
+0'' tape.1'' rigid SW 0''' tape.1 rigid SW
+
+0'' tape.0'' rigid SW 0''' tape.0 rigid SW
+
+1'' empty null SW 1'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 1 null NE tape.0 1 rigid NE
+
+1'' tape.1'' rigid SW 1''' tape.1 rigid SW
+
+1'' tape.0'' rigid SW 1''' tape.0 rigid SW
+
+2'' empty null SW 2'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 2 null NE tape.0 2 rigid NE
+
+2'' tape.1'' rigid SW 2''' tape.1 rigid SW
+
+2'' tape.0'' rigid SW 2''' tape.0 rigid SW
+
+3'' empty null SW 3'' copier rigid SW
+
+copier empty null W tape.1' tape.0' rigid W
+
+tape.0' 3 null NE tape.0 3 rigid NE
+
+3'' tape.1'' rigid SW 3''' tape.1 rigid SW
+
+3'' tape.0'' rigid SW 3''' tape.0 rigid SW
 
 0'' empty null W 0.maketuringhead 0.' rigid W
 
@@ -142,6 +395,7 @@ tape.0.s empty null SW tape.0 s.start rigid SW
 s.start empty null (0,0,1) s return rigid (0,0,1)
 
 [turing]
+
 s return rigid +b s read1.r rigid +b [Change state {return,s}->{read1,s,+1}]
 
 read checkend rigid +b read ended.r rigid +b [Change state {checkend,read}->{ended,read,+1}]
@@ -202,19 +456,19 @@ e.2 read1.r null -a+b e.2 read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1
 
 e.3 read1.r null -a+b e.3 read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1}]
 
-green read1.r null -a+b green read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1}]
-
-orange read1.r null -a+b orange read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1}]
-
 read read1.r null -a+b read read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1}]
-
-red read1.r null -a+b red read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1}]
 
 s read1.r null -a+b s read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1}]
 
 tape.0 read1.r null -a+b tape.0 read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1}]
 
 tape.1 read1.r null -a+b tape.1 read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1}]
+
+green read1.r null -a+b green read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1}]
+
+orange read1.r null -a+b orange read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1}]
+
+red read1.r null -a+b red read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1}]
 
 yellow read1.r null -a+b yellow read1.r' rigid -a+b[Bond right {return,s}->{read1,s,+1}]
 
@@ -228,19 +482,19 @@ e.2 ended.r null -a+b e.2 ended.r' rigid -a+b[Bond right {checkend,read}->{ended
 
 e.3 ended.r null -a+b e.3 ended.r' rigid -a+b[Bond right {checkend,read}->{ended,read,+1}]
 
-green ended.r null -a+b green ended.r' rigid -a+b[Bond right {checkend,read}->{ended,read,+1}]
-
-orange ended.r null -a+b orange ended.r' rigid -a+b[Bond right {checkend,read}->{ended,read,+1}]
-
 read ended.r null -a+b read ended.r' rigid -a+b[Bond right {checkend,read}->{ended,read,+1}]
-
-red ended.r null -a+b red ended.r' rigid -a+b[Bond right {checkend,read}->{ended,read,+1}]
 
 s ended.r null -a+b s ended.r' rigid -a+b[Bond right {checkend,read}->{ended,read,+1}]
 
 tape.0 ended.r null -a+b tape.0 ended.r' rigid -a+b[Bond right {checkend,read}->{ended,read,+1}]
 
 tape.1 ended.r null -a+b tape.1 ended.r' rigid -a+b[Bond right {checkend,read}->{ended,read,+1}]
+
+green ended.r null -a+b green ended.r' rigid -a+b[Bond right {checkend,read}->{ended,read,+1}]
+
+orange ended.r null -a+b orange ended.r' rigid -a+b[Bond right {checkend,read}->{ended,read,+1}]
+
+red ended.r null -a+b red ended.r' rigid -a+b[Bond right {checkend,read}->{ended,read,+1}]
 
 yellow ended.r null -a+b yellow ended.r' rigid -a+b[Bond right {checkend,read}->{ended,read,+1}]
 
@@ -254,19 +508,19 @@ e.2 ended.r null -a+b e.2 ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,
 
 e.3 ended.r null -a+b e.3 ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,+1}]
 
-green ended.r null -a+b green ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,+1}]
-
-orange ended.r null -a+b orange ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,+1}]
-
 read ended.r null -a+b read ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,+1}]
-
-red ended.r null -a+b red ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,+1}]
 
 s ended.r null -a+b s ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,+1}]
 
 tape.0 ended.r null -a+b tape.0 ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,+1}]
 
 tape.1 ended.r null -a+b tape.1 ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,+1}]
+
+green ended.r null -a+b green ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,+1}]
+
+orange ended.r null -a+b orange ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,+1}]
+
+red ended.r null -a+b red ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,+1}]
 
 yellow ended.r null -a+b yellow ended.r' rigid -a+b[Bond right {checkend,s}->{ended,s,+1}]
 
@@ -280,19 +534,19 @@ e.2 return.l null +a+b e.2 return.l' rigid +a+b[Bond left {checkend,tape.0}->{re
 
 e.3 return.l null +a+b e.3 return.l' rigid +a+b[Bond left {checkend,tape.0}->{return,tape.0,-1}]
 
-green return.l null +a+b green return.l' rigid +a+b[Bond left {checkend,tape.0}->{return,tape.0,-1}]
-
-orange return.l null +a+b orange return.l' rigid +a+b[Bond left {checkend,tape.0}->{return,tape.0,-1}]
-
 read return.l null +a+b read return.l' rigid +a+b[Bond left {checkend,tape.0}->{return,tape.0,-1}]
-
-red return.l null +a+b red return.l' rigid +a+b[Bond left {checkend,tape.0}->{return,tape.0,-1}]
 
 s return.l null +a+b s return.l' rigid +a+b[Bond left {checkend,tape.0}->{return,tape.0,-1}]
 
 tape.0 return.l null +a+b tape.0 return.l' rigid +a+b[Bond left {checkend,tape.0}->{return,tape.0,-1}]
 
 tape.1 return.l null +a+b tape.1 return.l' rigid +a+b[Bond left {checkend,tape.0}->{return,tape.0,-1}]
+
+green return.l null +a+b green return.l' rigid +a+b[Bond left {checkend,tape.0}->{return,tape.0,-1}]
+
+orange return.l null +a+b orange return.l' rigid +a+b[Bond left {checkend,tape.0}->{return,tape.0,-1}]
+
+red return.l null +a+b red return.l' rigid +a+b[Bond left {checkend,tape.0}->{return,tape.0,-1}]
 
 yellow return.l null +a+b yellow return.l' rigid +a+b[Bond left {checkend,tape.0}->{return,tape.0,-1}]
 
@@ -306,19 +560,19 @@ e.2 return.l null +a+b e.2 return.l' rigid +a+b[Bond left {checkend,tape.1}->{re
 
 e.3 return.l null +a+b e.3 return.l' rigid +a+b[Bond left {checkend,tape.1}->{return,tape.1,-1}]
 
-green return.l null +a+b green return.l' rigid +a+b[Bond left {checkend,tape.1}->{return,tape.1,-1}]
-
-orange return.l null +a+b orange return.l' rigid +a+b[Bond left {checkend,tape.1}->{return,tape.1,-1}]
-
 read return.l null +a+b read return.l' rigid +a+b[Bond left {checkend,tape.1}->{return,tape.1,-1}]
-
-red return.l null +a+b red return.l' rigid +a+b[Bond left {checkend,tape.1}->{return,tape.1,-1}]
 
 s return.l null +a+b s return.l' rigid +a+b[Bond left {checkend,tape.1}->{return,tape.1,-1}]
 
 tape.0 return.l null +a+b tape.0 return.l' rigid +a+b[Bond left {checkend,tape.1}->{return,tape.1,-1}]
 
 tape.1 return.l null +a+b tape.1 return.l' rigid +a+b[Bond left {checkend,tape.1}->{return,tape.1,-1}]
+
+green return.l null +a+b green return.l' rigid +a+b[Bond left {checkend,tape.1}->{return,tape.1,-1}]
+
+orange return.l null +a+b orange return.l' rigid +a+b[Bond left {checkend,tape.1}->{return,tape.1,-1}]
+
+red return.l null +a+b red return.l' rigid +a+b[Bond left {checkend,tape.1}->{return,tape.1,-1}]
 
 yellow return.l null +a+b yellow return.l' rigid +a+b[Bond left {checkend,tape.1}->{return,tape.1,-1}]
 
@@ -332,19 +586,19 @@ e.2 return.l null +a+b e.2 return.l' rigid +a+b[Bond left {return,tape.0}->{retu
 
 e.3 return.l null +a+b e.3 return.l' rigid +a+b[Bond left {return,tape.0}->{return,tape.0,-1}]
 
-green return.l null +a+b green return.l' rigid +a+b[Bond left {return,tape.0}->{return,tape.0,-1}]
-
-orange return.l null +a+b orange return.l' rigid +a+b[Bond left {return,tape.0}->{return,tape.0,-1}]
-
 read return.l null +a+b read return.l' rigid +a+b[Bond left {return,tape.0}->{return,tape.0,-1}]
-
-red return.l null +a+b red return.l' rigid +a+b[Bond left {return,tape.0}->{return,tape.0,-1}]
 
 s return.l null +a+b s return.l' rigid +a+b[Bond left {return,tape.0}->{return,tape.0,-1}]
 
 tape.0 return.l null +a+b tape.0 return.l' rigid +a+b[Bond left {return,tape.0}->{return,tape.0,-1}]
 
 tape.1 return.l null +a+b tape.1 return.l' rigid +a+b[Bond left {return,tape.0}->{return,tape.0,-1}]
+
+green return.l null +a+b green return.l' rigid +a+b[Bond left {return,tape.0}->{return,tape.0,-1}]
+
+orange return.l null +a+b orange return.l' rigid +a+b[Bond left {return,tape.0}->{return,tape.0,-1}]
+
+red return.l null +a+b red return.l' rigid +a+b[Bond left {return,tape.0}->{return,tape.0,-1}]
 
 yellow return.l null +a+b yellow return.l' rigid +a+b[Bond left {return,tape.0}->{return,tape.0,-1}]
 
@@ -358,19 +612,19 @@ e.2 return.l null +a+b e.2 return.l' rigid +a+b[Bond left {return,1}->{return,1,
 
 e.3 return.l null +a+b e.3 return.l' rigid +a+b[Bond left {return,1}->{return,1,-1}]
 
-green return.l null +a+b green return.l' rigid +a+b[Bond left {return,1}->{return,1,-1}]
-
-orange return.l null +a+b orange return.l' rigid +a+b[Bond left {return,1}->{return,1,-1}]
-
 read return.l null +a+b read return.l' rigid +a+b[Bond left {return,1}->{return,1,-1}]
-
-red return.l null +a+b red return.l' rigid +a+b[Bond left {return,1}->{return,1,-1}]
 
 s return.l null +a+b s return.l' rigid +a+b[Bond left {return,1}->{return,1,-1}]
 
 tape.0 return.l null +a+b tape.0 return.l' rigid +a+b[Bond left {return,1}->{return,1,-1}]
 
 tape.1 return.l null +a+b tape.1 return.l' rigid +a+b[Bond left {return,1}->{return,1,-1}]
+
+green return.l null +a+b green return.l' rigid +a+b[Bond left {return,1}->{return,1,-1}]
+
+orange return.l null +a+b orange return.l' rigid +a+b[Bond left {return,1}->{return,1,-1}]
+
+red return.l null +a+b red return.l' rigid +a+b[Bond left {return,1}->{return,1,-1}]
 
 yellow return.l null +a+b yellow return.l' rigid +a+b[Bond left {return,1}->{return,1,-1}]
 
@@ -384,19 +638,19 @@ e.2 return.l null +a+b e.2 return.l' rigid +a+b[Bond left {return,read}->{return
 
 e.3 return.l null +a+b e.3 return.l' rigid +a+b[Bond left {return,read}->{return,read,-1}]
 
-green return.l null +a+b green return.l' rigid +a+b[Bond left {return,read}->{return,read,-1}]
-
-orange return.l null +a+b orange return.l' rigid +a+b[Bond left {return,read}->{return,read,-1}]
-
 read return.l null +a+b read return.l' rigid +a+b[Bond left {return,read}->{return,read,-1}]
-
-red return.l null +a+b red return.l' rigid +a+b[Bond left {return,read}->{return,read,-1}]
 
 s return.l null +a+b s return.l' rigid +a+b[Bond left {return,read}->{return,read,-1}]
 
 tape.0 return.l null +a+b tape.0 return.l' rigid +a+b[Bond left {return,read}->{return,read,-1}]
 
 tape.1 return.l null +a+b tape.1 return.l' rigid +a+b[Bond left {return,read}->{return,read,-1}]
+
+green return.l null +a+b green return.l' rigid +a+b[Bond left {return,read}->{return,read,-1}]
+
+orange return.l null +a+b orange return.l' rigid +a+b[Bond left {return,read}->{return,read,-1}]
+
+red return.l null +a+b red return.l' rigid +a+b[Bond left {return,read}->{return,read,-1}]
 
 yellow return.l null +a+b yellow return.l' rigid +a+b[Bond left {return,read}->{return,read,-1}]
 
@@ -410,19 +664,19 @@ e.2 read2.r null -a+b e.2 read2.r' rigid -a+b[Bond right {read1,read}->{read2,re
 
 e.3 read2.r null -a+b e.3 read2.r' rigid -a+b[Bond right {read1,read}->{read2,read,+1}]
 
-green read2.r null -a+b green read2.r' rigid -a+b[Bond right {read1,read}->{read2,read,+1}]
-
-orange read2.r null -a+b orange read2.r' rigid -a+b[Bond right {read1,read}->{read2,read,+1}]
-
 read read2.r null -a+b read read2.r' rigid -a+b[Bond right {read1,read}->{read2,read,+1}]
-
-red read2.r null -a+b red read2.r' rigid -a+b[Bond right {read1,read}->{read2,read,+1}]
 
 s read2.r null -a+b s read2.r' rigid -a+b[Bond right {read1,read}->{read2,read,+1}]
 
 tape.0 read2.r null -a+b tape.0 read2.r' rigid -a+b[Bond right {read1,read}->{read2,read,+1}]
 
 tape.1 read2.r null -a+b tape.1 read2.r' rigid -a+b[Bond right {read1,read}->{read2,read,+1}]
+
+green read2.r null -a+b green read2.r' rigid -a+b[Bond right {read1,read}->{read2,read,+1}]
+
+orange read2.r null -a+b orange read2.r' rigid -a+b[Bond right {read1,read}->{read2,read,+1}]
+
+red read2.r null -a+b red read2.r' rigid -a+b[Bond right {read1,read}->{read2,read,+1}]
 
 yellow read2.r null -a+b yellow read2.r' rigid -a+b[Bond right {read1,read}->{read2,read,+1}]
 
@@ -436,19 +690,19 @@ e.2 ended.r null -a+b e.2 ended.r' rigid -a+b[Bond right {read2,read}->{ended,re
 
 e.3 ended.r null -a+b e.3 ended.r' rigid -a+b[Bond right {read2,read}->{ended,read,+1}]
 
-green ended.r null -a+b green ended.r' rigid -a+b[Bond right {read2,read}->{ended,read,+1}]
-
-orange ended.r null -a+b orange ended.r' rigid -a+b[Bond right {read2,read}->{ended,read,+1}]
-
 read ended.r null -a+b read ended.r' rigid -a+b[Bond right {read2,read}->{ended,read,+1}]
-
-red ended.r null -a+b red ended.r' rigid -a+b[Bond right {read2,read}->{ended,read,+1}]
 
 s ended.r null -a+b s ended.r' rigid -a+b[Bond right {read2,read}->{ended,read,+1}]
 
 tape.0 ended.r null -a+b tape.0 ended.r' rigid -a+b[Bond right {read2,read}->{ended,read,+1}]
 
 tape.1 ended.r null -a+b tape.1 ended.r' rigid -a+b[Bond right {read2,read}->{ended,read,+1}]
+
+green ended.r null -a+b green ended.r' rigid -a+b[Bond right {read2,read}->{ended,read,+1}]
+
+orange ended.r null -a+b orange ended.r' rigid -a+b[Bond right {read2,read}->{ended,read,+1}]
+
+red ended.r null -a+b red ended.r' rigid -a+b[Bond right {read2,read}->{ended,read,+1}]
 
 yellow ended.r null -a+b yellow ended.r' rigid -a+b[Bond right {read2,read}->{ended,read,+1}]
 
@@ -462,19 +716,19 @@ e.2 return.l null +a+b e.2 return.l' rigid +a+b[Bond left {read1,tape.0}->{retur
 
 e.3 return.l null +a+b e.3 return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
 
-green return.l null +a+b green return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
-
-orange return.l null +a+b orange return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
-
 read return.l null +a+b read return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
-
-red return.l null +a+b red return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
 
 s return.l null +a+b s return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
 
 tape.0 return.l null +a+b tape.0 return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
 
 tape.1 return.l null +a+b tape.1 return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
+
+green return.l null +a+b green return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
+
+orange return.l null +a+b orange return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
+
+red return.l null +a+b red return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
 
 yellow return.l null +a+b yellow return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
 
@@ -488,19 +742,19 @@ e.2 return.l null +a+b e.2 return.l' rigid +a+b[Bond left {read2,tape.0}->{retur
 
 e.3 return.l null +a+b e.3 return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
 
-green return.l null +a+b green return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
-
-orange return.l null +a+b orange return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
-
 read return.l null +a+b read return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
-
-red return.l null +a+b red return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
 
 s return.l null +a+b s return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
 
 tape.0 return.l null +a+b tape.0 return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
 
 tape.1 return.l null +a+b tape.1 return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
+
+green return.l null +a+b green return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
+
+orange return.l null +a+b orange return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
+
+red return.l null +a+b red return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
 
 yellow return.l null +a+b yellow return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
 
@@ -514,19 +768,19 @@ e.2 return.l null +a+b e.2 return.l' rigid +a+b[Bond left {read1,tape.0}->{retur
 
 e.3 return.l null +a+b e.3 return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
 
-green return.l null +a+b green return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
-
-orange return.l null +a+b orange return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
-
 read return.l null +a+b read return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
-
-red return.l null +a+b red return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
 
 s return.l null +a+b s return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
 
 tape.0 return.l null +a+b tape.0 return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
 
 tape.1 return.l null +a+b tape.1 return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
+
+green return.l null +a+b green return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
+
+orange return.l null +a+b orange return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
+
+red return.l null +a+b red return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
 
 yellow return.l null +a+b yellow return.l' rigid +a+b[Bond left {read1,tape.0}->{return,read,-1}]
 
@@ -540,19 +794,19 @@ e.2 return.l null +a+b e.2 return.l' rigid +a+b[Bond left {read2,tape.0}->{retur
 
 e.3 return.l null +a+b e.3 return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
 
-green return.l null +a+b green return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
-
-orange return.l null +a+b orange return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
-
 read return.l null +a+b read return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
-
-red return.l null +a+b red return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
 
 s return.l null +a+b s return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
 
 tape.0 return.l null +a+b tape.0 return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
 
 tape.1 return.l null +a+b tape.1 return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
+
+green return.l null +a+b green return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
+
+orange return.l null +a+b orange return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
+
+red return.l null +a+b red return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
 
 yellow return.l null +a+b yellow return.l' rigid +a+b[Bond left {read2,tape.0}->{return,read,-1}]
 
@@ -566,19 +820,19 @@ e.2 shuttle1.r null -a+b e.2 shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{
 
 e.3 shuttle1.r null -a+b e.3 shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{shuttle1,read,+1}]
 
-green shuttle1.r null -a+b green shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{shuttle1,read,+1}]
-
-orange shuttle1.r null -a+b orange shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{shuttle1,read,+1}]
-
 read shuttle1.r null -a+b read shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{shuttle1,read,+1}]
-
-red shuttle1.r null -a+b red shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{shuttle1,read,+1}]
 
 s shuttle1.r null -a+b s shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{shuttle1,read,+1}]
 
 tape.0 shuttle1.r null -a+b tape.0 shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{shuttle1,read,+1}]
 
 tape.1 shuttle1.r null -a+b tape.1 shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{shuttle1,read,+1}]
+
+green shuttle1.r null -a+b green shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{shuttle1,read,+1}]
+
+orange shuttle1.r null -a+b orange shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{shuttle1,read,+1}]
+
+red shuttle1.r null -a+b red shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{shuttle1,read,+1}]
 
 yellow shuttle1.r null -a+b yellow shuttle1.r' rigid -a+b[Bond right {read1,tape.1}->{shuttle1,read,+1}]
 
@@ -592,19 +846,19 @@ e.2 shuttle2.r null -a+b e.2 shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{
 
 e.3 shuttle2.r null -a+b e.3 shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{shuttle2,read,+1}]
 
-green shuttle2.r null -a+b green shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{shuttle2,read,+1}]
-
-orange shuttle2.r null -a+b orange shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{shuttle2,read,+1}]
-
 read shuttle2.r null -a+b read shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{shuttle2,read,+1}]
-
-red shuttle2.r null -a+b red shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{shuttle2,read,+1}]
 
 s shuttle2.r null -a+b s shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{shuttle2,read,+1}]
 
 tape.0 shuttle2.r null -a+b tape.0 shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{shuttle2,read,+1}]
 
 tape.1 shuttle2.r null -a+b tape.1 shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{shuttle2,read,+1}]
+
+green shuttle2.r null -a+b green shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{shuttle2,read,+1}]
+
+orange shuttle2.r null -a+b orange shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{shuttle2,read,+1}]
+
+red shuttle2.r null -a+b red shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{shuttle2,read,+1}]
 
 yellow shuttle2.r null -a+b yellow shuttle2.r' rigid -a+b[Bond right {read2,tape.1}->{shuttle2,read,+1}]
 
@@ -618,19 +872,19 @@ e.2 shuttle1.r null -a+b e.2 shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}
 
 e.3 shuttle1.r null -a+b e.3 shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
 
-green shuttle1.r null -a+b green shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
-
-orange shuttle1.r null -a+b orange shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
-
 read shuttle1.r null -a+b read shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
-
-red shuttle1.r null -a+b red shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
 
 s shuttle1.r null -a+b s shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
 
 tape.0 shuttle1.r null -a+b tape.0 shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
 
 tape.1 shuttle1.r null -a+b tape.1 shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
+
+green shuttle1.r null -a+b green shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
+
+orange shuttle1.r null -a+b orange shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
+
+red shuttle1.r null -a+b red shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
 
 yellow shuttle1.r null -a+b yellow shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
 
@@ -644,19 +898,19 @@ e.2 shuttle1.r null -a+b e.2 shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}
 
 e.3 shuttle1.r null -a+b e.3 shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
 
-green shuttle1.r null -a+b green shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
-
-orange shuttle1.r null -a+b orange shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
-
 read shuttle1.r null -a+b read shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
-
-red shuttle1.r null -a+b red shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
 
 s shuttle1.r null -a+b s shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
 
 tape.0 shuttle1.r null -a+b tape.0 shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
 
 tape.1 shuttle1.r null -a+b tape.1 shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
+
+green shuttle1.r null -a+b green shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
+
+orange shuttle1.r null -a+b orange shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
+
+red shuttle1.r null -a+b red shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
 
 yellow shuttle1.r null -a+b yellow shuttle1.r' rigid -a+b[Bond right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
 
@@ -670,19 +924,19 @@ e.2 checkend.l null +a+b e.2 checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{c
 
 e.3 checkend.l null +a+b e.3 checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{checkend,e.1,-1}]
 
-green checkend.l null +a+b green checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{checkend,e.1,-1}]
-
-orange checkend.l null +a+b orange checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{checkend,e.1,-1}]
-
 read checkend.l null +a+b read checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{checkend,e.1,-1}]
-
-red checkend.l null +a+b red checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{checkend,e.1,-1}]
 
 s checkend.l null +a+b s checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{checkend,e.1,-1}]
 
 tape.0 checkend.l null +a+b tape.0 checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{checkend,e.1,-1}]
 
 tape.1 checkend.l null +a+b tape.1 checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{checkend,e.1,-1}]
+
+green checkend.l null +a+b green checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{checkend,e.1,-1}]
+
+orange checkend.l null +a+b orange checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{checkend,e.1,-1}]
+
+red checkend.l null +a+b red checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{checkend,e.1,-1}]
 
 yellow checkend.l null +a+b yellow checkend.l' rigid +a+b[Bond left {shuttle1,e.0}->{checkend,e.1,-1}]
 
@@ -696,19 +950,19 @@ e.2 checkend.l null +a+b e.2 checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{c
 
 e.3 checkend.l null +a+b e.3 checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{checkend,e.2,-1}]
 
-green checkend.l null +a+b green checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{checkend,e.2,-1}]
-
-orange checkend.l null +a+b orange checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{checkend,e.2,-1}]
-
 read checkend.l null +a+b read checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{checkend,e.2,-1}]
-
-red checkend.l null +a+b red checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{checkend,e.2,-1}]
 
 s checkend.l null +a+b s checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{checkend,e.2,-1}]
 
 tape.0 checkend.l null +a+b tape.0 checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{checkend,e.2,-1}]
 
 tape.1 checkend.l null +a+b tape.1 checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{checkend,e.2,-1}]
+
+green checkend.l null +a+b green checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{checkend,e.2,-1}]
+
+orange checkend.l null +a+b orange checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{checkend,e.2,-1}]
+
+red checkend.l null +a+b red checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{checkend,e.2,-1}]
 
 yellow checkend.l null +a+b yellow checkend.l' rigid +a+b[Bond left {shuttle2,e.0}->{checkend,e.2,-1}]
 
@@ -722,19 +976,19 @@ e.2 checkend.l null +a+b e.2 checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{c
 
 e.3 checkend.l null +a+b e.3 checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{checkend,e.3,-1}]
 
-green checkend.l null +a+b green checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{checkend,e.3,-1}]
-
-orange checkend.l null +a+b orange checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{checkend,e.3,-1}]
-
 read checkend.l null +a+b read checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{checkend,e.3,-1}]
-
-red checkend.l null +a+b red checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{checkend,e.3,-1}]
 
 s checkend.l null +a+b s checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{checkend,e.3,-1}]
 
 tape.0 checkend.l null +a+b tape.0 checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{checkend,e.3,-1}]
 
 tape.1 checkend.l null +a+b tape.1 checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{checkend,e.3,-1}]
+
+green checkend.l null +a+b green checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{checkend,e.3,-1}]
+
+orange checkend.l null +a+b orange checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{checkend,e.3,-1}]
+
+red checkend.l null +a+b red checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{checkend,e.3,-1}]
 
 yellow checkend.l null +a+b yellow checkend.l' rigid +a+b[Bond left {shuttle2,e.1}->{checkend,e.3,-1}]
 
@@ -748,19 +1002,19 @@ e.2 converted.r null -a+b e.2 converted.r' rigid -a+b[Bond right {ended,e.0}->{c
 
 e.3 converted.r null -a+b e.3 converted.r' rigid -a+b[Bond right {ended,e.0}->{converted,red,+1}]
 
-green converted.r null -a+b green converted.r' rigid -a+b[Bond right {ended,e.0}->{converted,red,+1}]
-
-orange converted.r null -a+b orange converted.r' rigid -a+b[Bond right {ended,e.0}->{converted,red,+1}]
-
 read converted.r null -a+b read converted.r' rigid -a+b[Bond right {ended,e.0}->{converted,red,+1}]
-
-red converted.r null -a+b red converted.r' rigid -a+b[Bond right {ended,e.0}->{converted,red,+1}]
 
 s converted.r null -a+b s converted.r' rigid -a+b[Bond right {ended,e.0}->{converted,red,+1}]
 
 tape.0 converted.r null -a+b tape.0 converted.r' rigid -a+b[Bond right {ended,e.0}->{converted,red,+1}]
 
 tape.1 converted.r null -a+b tape.1 converted.r' rigid -a+b[Bond right {ended,e.0}->{converted,red,+1}]
+
+green converted.r null -a+b green converted.r' rigid -a+b[Bond right {ended,e.0}->{converted,red,+1}]
+
+orange converted.r null -a+b orange converted.r' rigid -a+b[Bond right {ended,e.0}->{converted,red,+1}]
+
+red converted.r null -a+b red converted.r' rigid -a+b[Bond right {ended,e.0}->{converted,red,+1}]
 
 yellow converted.r null -a+b yellow converted.r' rigid -a+b[Bond right {ended,e.0}->{converted,red,+1}]
 
@@ -774,19 +1028,19 @@ e.2 converted.r null -a+b e.2 converted.r' rigid -a+b[Bond right {ended,e.1}->{c
 
 e.3 converted.r null -a+b e.3 converted.r' rigid -a+b[Bond right {ended,e.1}->{converted,orange,+1}]
 
-green converted.r null -a+b green converted.r' rigid -a+b[Bond right {ended,e.1}->{converted,orange,+1}]
-
-orange converted.r null -a+b orange converted.r' rigid -a+b[Bond right {ended,e.1}->{converted,orange,+1}]
-
 read converted.r null -a+b read converted.r' rigid -a+b[Bond right {ended,e.1}->{converted,orange,+1}]
-
-red converted.r null -a+b red converted.r' rigid -a+b[Bond right {ended,e.1}->{converted,orange,+1}]
 
 s converted.r null -a+b s converted.r' rigid -a+b[Bond right {ended,e.1}->{converted,orange,+1}]
 
 tape.0 converted.r null -a+b tape.0 converted.r' rigid -a+b[Bond right {ended,e.1}->{converted,orange,+1}]
 
 tape.1 converted.r null -a+b tape.1 converted.r' rigid -a+b[Bond right {ended,e.1}->{converted,orange,+1}]
+
+green converted.r null -a+b green converted.r' rigid -a+b[Bond right {ended,e.1}->{converted,orange,+1}]
+
+orange converted.r null -a+b orange converted.r' rigid -a+b[Bond right {ended,e.1}->{converted,orange,+1}]
+
+red converted.r null -a+b red converted.r' rigid -a+b[Bond right {ended,e.1}->{converted,orange,+1}]
 
 yellow converted.r null -a+b yellow converted.r' rigid -a+b[Bond right {ended,e.1}->{converted,orange,+1}]
 
@@ -800,19 +1054,19 @@ e.2 converted.r null -a+b e.2 converted.r' rigid -a+b[Bond right {ended,e.2}->{c
 
 e.3 converted.r null -a+b e.3 converted.r' rigid -a+b[Bond right {ended,e.2}->{converted,yellow,+1}]
 
-green converted.r null -a+b green converted.r' rigid -a+b[Bond right {ended,e.2}->{converted,yellow,+1}]
-
-orange converted.r null -a+b orange converted.r' rigid -a+b[Bond right {ended,e.2}->{converted,yellow,+1}]
-
 read converted.r null -a+b read converted.r' rigid -a+b[Bond right {ended,e.2}->{converted,yellow,+1}]
-
-red converted.r null -a+b red converted.r' rigid -a+b[Bond right {ended,e.2}->{converted,yellow,+1}]
 
 s converted.r null -a+b s converted.r' rigid -a+b[Bond right {ended,e.2}->{converted,yellow,+1}]
 
 tape.0 converted.r null -a+b tape.0 converted.r' rigid -a+b[Bond right {ended,e.2}->{converted,yellow,+1}]
 
 tape.1 converted.r null -a+b tape.1 converted.r' rigid -a+b[Bond right {ended,e.2}->{converted,yellow,+1}]
+
+green converted.r null -a+b green converted.r' rigid -a+b[Bond right {ended,e.2}->{converted,yellow,+1}]
+
+orange converted.r null -a+b orange converted.r' rigid -a+b[Bond right {ended,e.2}->{converted,yellow,+1}]
+
+red converted.r null -a+b red converted.r' rigid -a+b[Bond right {ended,e.2}->{converted,yellow,+1}]
 
 yellow converted.r null -a+b yellow converted.r' rigid -a+b[Bond right {ended,e.2}->{converted,yellow,+1}]
 
@@ -826,19 +1080,19 @@ e.2 converted.r null -a+b e.2 converted.r' rigid -a+b[Bond right {ended,e.3}->{c
 
 e.3 converted.r null -a+b e.3 converted.r' rigid -a+b[Bond right {ended,e.3}->{converted,green,+1}]
 
-green converted.r null -a+b green converted.r' rigid -a+b[Bond right {ended,e.3}->{converted,green,+1}]
-
-orange converted.r null -a+b orange converted.r' rigid -a+b[Bond right {ended,e.3}->{converted,green,+1}]
-
 read converted.r null -a+b read converted.r' rigid -a+b[Bond right {ended,e.3}->{converted,green,+1}]
-
-red converted.r null -a+b red converted.r' rigid -a+b[Bond right {ended,e.3}->{converted,green,+1}]
 
 s converted.r null -a+b s converted.r' rigid -a+b[Bond right {ended,e.3}->{converted,green,+1}]
 
 tape.0 converted.r null -a+b tape.0 converted.r' rigid -a+b[Bond right {ended,e.3}->{converted,green,+1}]
 
 tape.1 converted.r null -a+b tape.1 converted.r' rigid -a+b[Bond right {ended,e.3}->{converted,green,+1}]
+
+green converted.r null -a+b green converted.r' rigid -a+b[Bond right {ended,e.3}->{converted,green,+1}]
+
+orange converted.r null -a+b orange converted.r' rigid -a+b[Bond right {ended,e.3}->{converted,green,+1}]
+
+red converted.r null -a+b red converted.r' rigid -a+b[Bond right {ended,e.3}->{converted,green,+1}]
 
 yellow converted.r null -a+b yellow converted.r' rigid -a+b[Bond right {ended,e.3}->{converted,green,+1}]
 
@@ -902,19 +1156,19 @@ e.2 read1 rigid -a+b e.2 read1 rigid +b[Move right {return,s}->{read1,s,+1}]
 
 e.3 read1 rigid -a+b e.3 read1 rigid +b[Move right {return,s}->{read1,s,+1}]
 
-green read1 rigid -a+b green read1 rigid +b[Move right {return,s}->{read1,s,+1}]
-
-orange read1 rigid -a+b orange read1 rigid +b[Move right {return,s}->{read1,s,+1}]
-
 read read1 rigid -a+b read read1 rigid +b[Move right {return,s}->{read1,s,+1}]
-
-red read1 rigid -a+b red read1 rigid +b[Move right {return,s}->{read1,s,+1}]
 
 s read1 rigid -a+b s read1 rigid +b[Move right {return,s}->{read1,s,+1}]
 
 tape.0 read1 rigid -a+b tape.0 read1 rigid +b[Move right {return,s}->{read1,s,+1}]
 
 tape.1 read1 rigid -a+b tape.1 read1 rigid +b[Move right {return,s}->{read1,s,+1}]
+
+green read1 rigid -a+b green read1 rigid +b[Move right {return,s}->{read1,s,+1}]
+
+orange read1 rigid -a+b orange read1 rigid +b[Move right {return,s}->{read1,s,+1}]
+
+red read1 rigid -a+b red read1 rigid +b[Move right {return,s}->{read1,s,+1}]
 
 yellow read1 rigid -a+b yellow read1 rigid +b[Move right {return,s}->{read1,s,+1}]
 
@@ -928,19 +1182,19 @@ e.2 ended rigid -a+b e.2 ended rigid +b[Move right {checkend,read}->{ended,read,
 
 e.3 ended rigid -a+b e.3 ended rigid +b[Move right {checkend,read}->{ended,read,+1}]
 
-green ended rigid -a+b green ended rigid +b[Move right {checkend,read}->{ended,read,+1}]
-
-orange ended rigid -a+b orange ended rigid +b[Move right {checkend,read}->{ended,read,+1}]
-
 read ended rigid -a+b read ended rigid +b[Move right {checkend,read}->{ended,read,+1}]
-
-red ended rigid -a+b red ended rigid +b[Move right {checkend,read}->{ended,read,+1}]
 
 s ended rigid -a+b s ended rigid +b[Move right {checkend,read}->{ended,read,+1}]
 
 tape.0 ended rigid -a+b tape.0 ended rigid +b[Move right {checkend,read}->{ended,read,+1}]
 
 tape.1 ended rigid -a+b tape.1 ended rigid +b[Move right {checkend,read}->{ended,read,+1}]
+
+green ended rigid -a+b green ended rigid +b[Move right {checkend,read}->{ended,read,+1}]
+
+orange ended rigid -a+b orange ended rigid +b[Move right {checkend,read}->{ended,read,+1}]
+
+red ended rigid -a+b red ended rigid +b[Move right {checkend,read}->{ended,read,+1}]
 
 yellow ended rigid -a+b yellow ended rigid +b[Move right {checkend,read}->{ended,read,+1}]
 
@@ -954,19 +1208,19 @@ e.2 ended rigid -a+b e.2 ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
 
 e.3 ended rigid -a+b e.3 ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
 
-green ended rigid -a+b green ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
-
-orange ended rigid -a+b orange ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
-
 read ended rigid -a+b read ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
-
-red ended rigid -a+b red ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
 
 s ended rigid -a+b s ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
 
 tape.0 ended rigid -a+b tape.0 ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
 
 tape.1 ended rigid -a+b tape.1 ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
+
+green ended rigid -a+b green ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
+
+orange ended rigid -a+b orange ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
+
+red ended rigid -a+b red ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
 
 yellow ended rigid -a+b yellow ended rigid +b[Move right {checkend,s}->{ended,s,+1}]
 
@@ -980,19 +1234,19 @@ e.2 return rigid +a+b e.2 return rigid +b[Move left {checkend,tape.0}->{return,t
 
 e.3 return rigid +a+b e.3 return rigid +b[Move left {checkend,tape.0}->{return,tape.0,-1}]
 
-green return rigid +a+b green return rigid +b[Move left {checkend,tape.0}->{return,tape.0,-1}]
-
-orange return rigid +a+b orange return rigid +b[Move left {checkend,tape.0}->{return,tape.0,-1}]
-
 read return rigid +a+b read return rigid +b[Move left {checkend,tape.0}->{return,tape.0,-1}]
-
-red return rigid +a+b red return rigid +b[Move left {checkend,tape.0}->{return,tape.0,-1}]
 
 s return rigid +a+b s return rigid +b[Move left {checkend,tape.0}->{return,tape.0,-1}]
 
 tape.0 return rigid +a+b tape.0 return rigid +b[Move left {checkend,tape.0}->{return,tape.0,-1}]
 
 tape.1 return rigid +a+b tape.1 return rigid +b[Move left {checkend,tape.0}->{return,tape.0,-1}]
+
+green return rigid +a+b green return rigid +b[Move left {checkend,tape.0}->{return,tape.0,-1}]
+
+orange return rigid +a+b orange return rigid +b[Move left {checkend,tape.0}->{return,tape.0,-1}]
+
+red return rigid +a+b red return rigid +b[Move left {checkend,tape.0}->{return,tape.0,-1}]
 
 yellow return rigid +a+b yellow return rigid +b[Move left {checkend,tape.0}->{return,tape.0,-1}]
 
@@ -1006,19 +1260,19 @@ e.2 return rigid +a+b e.2 return rigid +b[Move left {checkend,tape.1}->{return,t
 
 e.3 return rigid +a+b e.3 return rigid +b[Move left {checkend,tape.1}->{return,tape.1,-1}]
 
-green return rigid +a+b green return rigid +b[Move left {checkend,tape.1}->{return,tape.1,-1}]
-
-orange return rigid +a+b orange return rigid +b[Move left {checkend,tape.1}->{return,tape.1,-1}]
-
 read return rigid +a+b read return rigid +b[Move left {checkend,tape.1}->{return,tape.1,-1}]
-
-red return rigid +a+b red return rigid +b[Move left {checkend,tape.1}->{return,tape.1,-1}]
 
 s return rigid +a+b s return rigid +b[Move left {checkend,tape.1}->{return,tape.1,-1}]
 
 tape.0 return rigid +a+b tape.0 return rigid +b[Move left {checkend,tape.1}->{return,tape.1,-1}]
 
 tape.1 return rigid +a+b tape.1 return rigid +b[Move left {checkend,tape.1}->{return,tape.1,-1}]
+
+green return rigid +a+b green return rigid +b[Move left {checkend,tape.1}->{return,tape.1,-1}]
+
+orange return rigid +a+b orange return rigid +b[Move left {checkend,tape.1}->{return,tape.1,-1}]
+
+red return rigid +a+b red return rigid +b[Move left {checkend,tape.1}->{return,tape.1,-1}]
 
 yellow return rigid +a+b yellow return rigid +b[Move left {checkend,tape.1}->{return,tape.1,-1}]
 
@@ -1032,19 +1286,19 @@ e.2 return rigid +a+b e.2 return rigid +b[Move left {return,tape.0}->{return,tap
 
 e.3 return rigid +a+b e.3 return rigid +b[Move left {return,tape.0}->{return,tape.0,-1}]
 
-green return rigid +a+b green return rigid +b[Move left {return,tape.0}->{return,tape.0,-1}]
-
-orange return rigid +a+b orange return rigid +b[Move left {return,tape.0}->{return,tape.0,-1}]
-
 read return rigid +a+b read return rigid +b[Move left {return,tape.0}->{return,tape.0,-1}]
-
-red return rigid +a+b red return rigid +b[Move left {return,tape.0}->{return,tape.0,-1}]
 
 s return rigid +a+b s return rigid +b[Move left {return,tape.0}->{return,tape.0,-1}]
 
 tape.0 return rigid +a+b tape.0 return rigid +b[Move left {return,tape.0}->{return,tape.0,-1}]
 
 tape.1 return rigid +a+b tape.1 return rigid +b[Move left {return,tape.0}->{return,tape.0,-1}]
+
+green return rigid +a+b green return rigid +b[Move left {return,tape.0}->{return,tape.0,-1}]
+
+orange return rigid +a+b orange return rigid +b[Move left {return,tape.0}->{return,tape.0,-1}]
+
+red return rigid +a+b red return rigid +b[Move left {return,tape.0}->{return,tape.0,-1}]
 
 yellow return rigid +a+b yellow return rigid +b[Move left {return,tape.0}->{return,tape.0,-1}]
 
@@ -1058,19 +1312,19 @@ e.2 return rigid +a+b e.2 return rigid +b[Move left {return,1}->{return,1,-1}]
 
 e.3 return rigid +a+b e.3 return rigid +b[Move left {return,1}->{return,1,-1}]
 
-green return rigid +a+b green return rigid +b[Move left {return,1}->{return,1,-1}]
-
-orange return rigid +a+b orange return rigid +b[Move left {return,1}->{return,1,-1}]
-
 read return rigid +a+b read return rigid +b[Move left {return,1}->{return,1,-1}]
-
-red return rigid +a+b red return rigid +b[Move left {return,1}->{return,1,-1}]
 
 s return rigid +a+b s return rigid +b[Move left {return,1}->{return,1,-1}]
 
 tape.0 return rigid +a+b tape.0 return rigid +b[Move left {return,1}->{return,1,-1}]
 
 tape.1 return rigid +a+b tape.1 return rigid +b[Move left {return,1}->{return,1,-1}]
+
+green return rigid +a+b green return rigid +b[Move left {return,1}->{return,1,-1}]
+
+orange return rigid +a+b orange return rigid +b[Move left {return,1}->{return,1,-1}]
+
+red return rigid +a+b red return rigid +b[Move left {return,1}->{return,1,-1}]
 
 yellow return rigid +a+b yellow return rigid +b[Move left {return,1}->{return,1,-1}]
 
@@ -1084,19 +1338,19 @@ e.2 return rigid +a+b e.2 return rigid +b[Move left {return,read}->{return,read,
 
 e.3 return rigid +a+b e.3 return rigid +b[Move left {return,read}->{return,read,-1}]
 
-green return rigid +a+b green return rigid +b[Move left {return,read}->{return,read,-1}]
-
-orange return rigid +a+b orange return rigid +b[Move left {return,read}->{return,read,-1}]
-
 read return rigid +a+b read return rigid +b[Move left {return,read}->{return,read,-1}]
-
-red return rigid +a+b red return rigid +b[Move left {return,read}->{return,read,-1}]
 
 s return rigid +a+b s return rigid +b[Move left {return,read}->{return,read,-1}]
 
 tape.0 return rigid +a+b tape.0 return rigid +b[Move left {return,read}->{return,read,-1}]
 
 tape.1 return rigid +a+b tape.1 return rigid +b[Move left {return,read}->{return,read,-1}]
+
+green return rigid +a+b green return rigid +b[Move left {return,read}->{return,read,-1}]
+
+orange return rigid +a+b orange return rigid +b[Move left {return,read}->{return,read,-1}]
+
+red return rigid +a+b red return rigid +b[Move left {return,read}->{return,read,-1}]
 
 yellow return rigid +a+b yellow return rigid +b[Move left {return,read}->{return,read,-1}]
 
@@ -1110,19 +1364,19 @@ e.2 read2 rigid -a+b e.2 read2 rigid +b[Move right {read1,read}->{read2,read,+1}
 
 e.3 read2 rigid -a+b e.3 read2 rigid +b[Move right {read1,read}->{read2,read,+1}]
 
-green read2 rigid -a+b green read2 rigid +b[Move right {read1,read}->{read2,read,+1}]
-
-orange read2 rigid -a+b orange read2 rigid +b[Move right {read1,read}->{read2,read,+1}]
-
 read read2 rigid -a+b read read2 rigid +b[Move right {read1,read}->{read2,read,+1}]
-
-red read2 rigid -a+b red read2 rigid +b[Move right {read1,read}->{read2,read,+1}]
 
 s read2 rigid -a+b s read2 rigid +b[Move right {read1,read}->{read2,read,+1}]
 
 tape.0 read2 rigid -a+b tape.0 read2 rigid +b[Move right {read1,read}->{read2,read,+1}]
 
 tape.1 read2 rigid -a+b tape.1 read2 rigid +b[Move right {read1,read}->{read2,read,+1}]
+
+green read2 rigid -a+b green read2 rigid +b[Move right {read1,read}->{read2,read,+1}]
+
+orange read2 rigid -a+b orange read2 rigid +b[Move right {read1,read}->{read2,read,+1}]
+
+red read2 rigid -a+b red read2 rigid +b[Move right {read1,read}->{read2,read,+1}]
 
 yellow read2 rigid -a+b yellow read2 rigid +b[Move right {read1,read}->{read2,read,+1}]
 
@@ -1136,19 +1390,19 @@ e.2 ended rigid -a+b e.2 ended rigid +b[Move right {read2,read}->{ended,read,+1}
 
 e.3 ended rigid -a+b e.3 ended rigid +b[Move right {read2,read}->{ended,read,+1}]
 
-green ended rigid -a+b green ended rigid +b[Move right {read2,read}->{ended,read,+1}]
-
-orange ended rigid -a+b orange ended rigid +b[Move right {read2,read}->{ended,read,+1}]
-
 read ended rigid -a+b read ended rigid +b[Move right {read2,read}->{ended,read,+1}]
-
-red ended rigid -a+b red ended rigid +b[Move right {read2,read}->{ended,read,+1}]
 
 s ended rigid -a+b s ended rigid +b[Move right {read2,read}->{ended,read,+1}]
 
 tape.0 ended rigid -a+b tape.0 ended rigid +b[Move right {read2,read}->{ended,read,+1}]
 
 tape.1 ended rigid -a+b tape.1 ended rigid +b[Move right {read2,read}->{ended,read,+1}]
+
+green ended rigid -a+b green ended rigid +b[Move right {read2,read}->{ended,read,+1}]
+
+orange ended rigid -a+b orange ended rigid +b[Move right {read2,read}->{ended,read,+1}]
+
+red ended rigid -a+b red ended rigid +b[Move right {read2,read}->{ended,read,+1}]
 
 yellow ended rigid -a+b yellow ended rigid +b[Move right {read2,read}->{ended,read,+1}]
 
@@ -1162,19 +1416,19 @@ e.2 return rigid +a+b e.2 return rigid +b[Move left {read1,tape.0}->{return,read
 
 e.3 return rigid +a+b e.3 return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
 
-green return rigid +a+b green return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
-
-orange return rigid +a+b orange return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
-
 read return rigid +a+b read return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
-
-red return rigid +a+b red return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
 
 s return rigid +a+b s return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
 
 tape.0 return rigid +a+b tape.0 return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
 
 tape.1 return rigid +a+b tape.1 return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
+
+green return rigid +a+b green return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
+
+orange return rigid +a+b orange return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
+
+red return rigid +a+b red return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
 
 yellow return rigid +a+b yellow return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
 
@@ -1188,19 +1442,19 @@ e.2 return rigid +a+b e.2 return rigid +b[Move left {read2,tape.0}->{return,read
 
 e.3 return rigid +a+b e.3 return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
 
-green return rigid +a+b green return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
-
-orange return rigid +a+b orange return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
-
 read return rigid +a+b read return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
-
-red return rigid +a+b red return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
 
 s return rigid +a+b s return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
 
 tape.0 return rigid +a+b tape.0 return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
 
 tape.1 return rigid +a+b tape.1 return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
+
+green return rigid +a+b green return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
+
+orange return rigid +a+b orange return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
+
+red return rigid +a+b red return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
 
 yellow return rigid +a+b yellow return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
 
@@ -1214,19 +1468,19 @@ e.2 return rigid +a+b e.2 return rigid +b[Move left {read1,tape.0}->{return,read
 
 e.3 return rigid +a+b e.3 return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
 
-green return rigid +a+b green return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
-
-orange return rigid +a+b orange return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
-
 read return rigid +a+b read return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
-
-red return rigid +a+b red return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
 
 s return rigid +a+b s return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
 
 tape.0 return rigid +a+b tape.0 return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
 
 tape.1 return rigid +a+b tape.1 return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
+
+green return rigid +a+b green return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
+
+orange return rigid +a+b orange return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
+
+red return rigid +a+b red return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
 
 yellow return rigid +a+b yellow return rigid +b[Move left {read1,tape.0}->{return,read,-1}]
 
@@ -1240,19 +1494,19 @@ e.2 return rigid +a+b e.2 return rigid +b[Move left {read2,tape.0}->{return,read
 
 e.3 return rigid +a+b e.3 return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
 
-green return rigid +a+b green return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
-
-orange return rigid +a+b orange return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
-
 read return rigid +a+b read return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
-
-red return rigid +a+b red return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
 
 s return rigid +a+b s return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
 
 tape.0 return rigid +a+b tape.0 return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
 
 tape.1 return rigid +a+b tape.1 return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
+
+green return rigid +a+b green return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
+
+orange return rigid +a+b orange return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
+
+red return rigid +a+b red return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
 
 yellow return rigid +a+b yellow return rigid +b[Move left {read2,tape.0}->{return,read,-1}]
 
@@ -1266,19 +1520,19 @@ e.2 shuttle1 rigid -a+b e.2 shuttle1 rigid +b[Move right {read1,tape.1}->{shuttl
 
 e.3 shuttle1 rigid -a+b e.3 shuttle1 rigid +b[Move right {read1,tape.1}->{shuttle1,read,+1}]
 
-green shuttle1 rigid -a+b green shuttle1 rigid +b[Move right {read1,tape.1}->{shuttle1,read,+1}]
-
-orange shuttle1 rigid -a+b orange shuttle1 rigid +b[Move right {read1,tape.1}->{shuttle1,read,+1}]
-
 read shuttle1 rigid -a+b read shuttle1 rigid +b[Move right {read1,tape.1}->{shuttle1,read,+1}]
-
-red shuttle1 rigid -a+b red shuttle1 rigid +b[Move right {read1,tape.1}->{shuttle1,read,+1}]
 
 s shuttle1 rigid -a+b s shuttle1 rigid +b[Move right {read1,tape.1}->{shuttle1,read,+1}]
 
 tape.0 shuttle1 rigid -a+b tape.0 shuttle1 rigid +b[Move right {read1,tape.1}->{shuttle1,read,+1}]
 
 tape.1 shuttle1 rigid -a+b tape.1 shuttle1 rigid +b[Move right {read1,tape.1}->{shuttle1,read,+1}]
+
+green shuttle1 rigid -a+b green shuttle1 rigid +b[Move right {read1,tape.1}->{shuttle1,read,+1}]
+
+orange shuttle1 rigid -a+b orange shuttle1 rigid +b[Move right {read1,tape.1}->{shuttle1,read,+1}]
+
+red shuttle1 rigid -a+b red shuttle1 rigid +b[Move right {read1,tape.1}->{shuttle1,read,+1}]
 
 yellow shuttle1 rigid -a+b yellow shuttle1 rigid +b[Move right {read1,tape.1}->{shuttle1,read,+1}]
 
@@ -1292,19 +1546,19 @@ e.2 shuttle2 rigid -a+b e.2 shuttle2 rigid +b[Move right {read2,tape.1}->{shuttl
 
 e.3 shuttle2 rigid -a+b e.3 shuttle2 rigid +b[Move right {read2,tape.1}->{shuttle2,read,+1}]
 
-green shuttle2 rigid -a+b green shuttle2 rigid +b[Move right {read2,tape.1}->{shuttle2,read,+1}]
-
-orange shuttle2 rigid -a+b orange shuttle2 rigid +b[Move right {read2,tape.1}->{shuttle2,read,+1}]
-
 read shuttle2 rigid -a+b read shuttle2 rigid +b[Move right {read2,tape.1}->{shuttle2,read,+1}]
-
-red shuttle2 rigid -a+b red shuttle2 rigid +b[Move right {read2,tape.1}->{shuttle2,read,+1}]
 
 s shuttle2 rigid -a+b s shuttle2 rigid +b[Move right {read2,tape.1}->{shuttle2,read,+1}]
 
 tape.0 shuttle2 rigid -a+b tape.0 shuttle2 rigid +b[Move right {read2,tape.1}->{shuttle2,read,+1}]
 
 tape.1 shuttle2 rigid -a+b tape.1 shuttle2 rigid +b[Move right {read2,tape.1}->{shuttle2,read,+1}]
+
+green shuttle2 rigid -a+b green shuttle2 rigid +b[Move right {read2,tape.1}->{shuttle2,read,+1}]
+
+orange shuttle2 rigid -a+b orange shuttle2 rigid +b[Move right {read2,tape.1}->{shuttle2,read,+1}]
+
+red shuttle2 rigid -a+b red shuttle2 rigid +b[Move right {read2,tape.1}->{shuttle2,read,+1}]
 
 yellow shuttle2 rigid -a+b yellow shuttle2 rigid +b[Move right {read2,tape.1}->{shuttle2,read,+1}]
 
@@ -1318,19 +1572,19 @@ e.2 shuttle1 rigid -a+b e.2 shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shu
 
 e.3 shuttle1 rigid -a+b e.3 shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
 
-green shuttle1 rigid -a+b green shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
-
-orange shuttle1 rigid -a+b orange shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
-
 read shuttle1 rigid -a+b read shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
-
-red shuttle1 rigid -a+b red shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
 
 s shuttle1 rigid -a+b s shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
 
 tape.0 shuttle1 rigid -a+b tape.0 shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
 
 tape.1 shuttle1 rigid -a+b tape.1 shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
+
+green shuttle1 rigid -a+b green shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
+
+orange shuttle1 rigid -a+b orange shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
+
+red shuttle1 rigid -a+b red shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
 
 yellow shuttle1 rigid -a+b yellow shuttle1 rigid +b[Move right {shuttle1,tape.0}->{shuttle1,tape.0,+1}]
 
@@ -1344,19 +1598,19 @@ e.2 shuttle1 rigid -a+b e.2 shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shu
 
 e.3 shuttle1 rigid -a+b e.3 shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
 
-green shuttle1 rigid -a+b green shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
-
-orange shuttle1 rigid -a+b orange shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
-
 read shuttle1 rigid -a+b read shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
-
-red shuttle1 rigid -a+b red shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
 
 s shuttle1 rigid -a+b s shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
 
 tape.0 shuttle1 rigid -a+b tape.0 shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
 
 tape.1 shuttle1 rigid -a+b tape.1 shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
+
+green shuttle1 rigid -a+b green shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
+
+orange shuttle1 rigid -a+b orange shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
+
+red shuttle1 rigid -a+b red shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
 
 yellow shuttle1 rigid -a+b yellow shuttle1 rigid +b[Move right {shuttle1,tape.1}->{shuttle1,tape.1,+1}]
 
@@ -1370,19 +1624,19 @@ e.2 checkend rigid +a+b e.2 checkend rigid +b[Move left {shuttle1,e.0}->{checken
 
 e.3 checkend rigid +a+b e.3 checkend rigid +b[Move left {shuttle1,e.0}->{checkend,e.1,-1}]
 
-green checkend rigid +a+b green checkend rigid +b[Move left {shuttle1,e.0}->{checkend,e.1,-1}]
-
-orange checkend rigid +a+b orange checkend rigid +b[Move left {shuttle1,e.0}->{checkend,e.1,-1}]
-
 read checkend rigid +a+b read checkend rigid +b[Move left {shuttle1,e.0}->{checkend,e.1,-1}]
-
-red checkend rigid +a+b red checkend rigid +b[Move left {shuttle1,e.0}->{checkend,e.1,-1}]
 
 s checkend rigid +a+b s checkend rigid +b[Move left {shuttle1,e.0}->{checkend,e.1,-1}]
 
 tape.0 checkend rigid +a+b tape.0 checkend rigid +b[Move left {shuttle1,e.0}->{checkend,e.1,-1}]
 
 tape.1 checkend rigid +a+b tape.1 checkend rigid +b[Move left {shuttle1,e.0}->{checkend,e.1,-1}]
+
+green checkend rigid +a+b green checkend rigid +b[Move left {shuttle1,e.0}->{checkend,e.1,-1}]
+
+orange checkend rigid +a+b orange checkend rigid +b[Move left {shuttle1,e.0}->{checkend,e.1,-1}]
+
+red checkend rigid +a+b red checkend rigid +b[Move left {shuttle1,e.0}->{checkend,e.1,-1}]
 
 yellow checkend rigid +a+b yellow checkend rigid +b[Move left {shuttle1,e.0}->{checkend,e.1,-1}]
 
@@ -1396,19 +1650,19 @@ e.2 checkend rigid +a+b e.2 checkend rigid +b[Move left {shuttle2,e.0}->{checken
 
 e.3 checkend rigid +a+b e.3 checkend rigid +b[Move left {shuttle2,e.0}->{checkend,e.2,-1}]
 
-green checkend rigid +a+b green checkend rigid +b[Move left {shuttle2,e.0}->{checkend,e.2,-1}]
-
-orange checkend rigid +a+b orange checkend rigid +b[Move left {shuttle2,e.0}->{checkend,e.2,-1}]
-
 read checkend rigid +a+b read checkend rigid +b[Move left {shuttle2,e.0}->{checkend,e.2,-1}]
-
-red checkend rigid +a+b red checkend rigid +b[Move left {shuttle2,e.0}->{checkend,e.2,-1}]
 
 s checkend rigid +a+b s checkend rigid +b[Move left {shuttle2,e.0}->{checkend,e.2,-1}]
 
 tape.0 checkend rigid +a+b tape.0 checkend rigid +b[Move left {shuttle2,e.0}->{checkend,e.2,-1}]
 
 tape.1 checkend rigid +a+b tape.1 checkend rigid +b[Move left {shuttle2,e.0}->{checkend,e.2,-1}]
+
+green checkend rigid +a+b green checkend rigid +b[Move left {shuttle2,e.0}->{checkend,e.2,-1}]
+
+orange checkend rigid +a+b orange checkend rigid +b[Move left {shuttle2,e.0}->{checkend,e.2,-1}]
+
+red checkend rigid +a+b red checkend rigid +b[Move left {shuttle2,e.0}->{checkend,e.2,-1}]
 
 yellow checkend rigid +a+b yellow checkend rigid +b[Move left {shuttle2,e.0}->{checkend,e.2,-1}]
 
@@ -1422,19 +1676,19 @@ e.2 checkend rigid +a+b e.2 checkend rigid +b[Move left {shuttle2,e.1}->{checken
 
 e.3 checkend rigid +a+b e.3 checkend rigid +b[Move left {shuttle2,e.1}->{checkend,e.3,-1}]
 
-green checkend rigid +a+b green checkend rigid +b[Move left {shuttle2,e.1}->{checkend,e.3,-1}]
-
-orange checkend rigid +a+b orange checkend rigid +b[Move left {shuttle2,e.1}->{checkend,e.3,-1}]
-
 read checkend rigid +a+b read checkend rigid +b[Move left {shuttle2,e.1}->{checkend,e.3,-1}]
-
-red checkend rigid +a+b red checkend rigid +b[Move left {shuttle2,e.1}->{checkend,e.3,-1}]
 
 s checkend rigid +a+b s checkend rigid +b[Move left {shuttle2,e.1}->{checkend,e.3,-1}]
 
 tape.0 checkend rigid +a+b tape.0 checkend rigid +b[Move left {shuttle2,e.1}->{checkend,e.3,-1}]
 
 tape.1 checkend rigid +a+b tape.1 checkend rigid +b[Move left {shuttle2,e.1}->{checkend,e.3,-1}]
+
+green checkend rigid +a+b green checkend rigid +b[Move left {shuttle2,e.1}->{checkend,e.3,-1}]
+
+orange checkend rigid +a+b orange checkend rigid +b[Move left {shuttle2,e.1}->{checkend,e.3,-1}]
+
+red checkend rigid +a+b red checkend rigid +b[Move left {shuttle2,e.1}->{checkend,e.3,-1}]
 
 yellow checkend rigid +a+b yellow checkend rigid +b[Move left {shuttle2,e.1}->{checkend,e.3,-1}]
 
@@ -1448,19 +1702,19 @@ e.2 converted rigid -a+b e.2 converted rigid +b[Move right {ended,e.0}->{convert
 
 e.3 converted rigid -a+b e.3 converted rigid +b[Move right {ended,e.0}->{converted,red,+1}]
 
-green converted rigid -a+b green converted rigid +b[Move right {ended,e.0}->{converted,red,+1}]
-
-orange converted rigid -a+b orange converted rigid +b[Move right {ended,e.0}->{converted,red,+1}]
-
 read converted rigid -a+b read converted rigid +b[Move right {ended,e.0}->{converted,red,+1}]
-
-red converted rigid -a+b red converted rigid +b[Move right {ended,e.0}->{converted,red,+1}]
 
 s converted rigid -a+b s converted rigid +b[Move right {ended,e.0}->{converted,red,+1}]
 
 tape.0 converted rigid -a+b tape.0 converted rigid +b[Move right {ended,e.0}->{converted,red,+1}]
 
 tape.1 converted rigid -a+b tape.1 converted rigid +b[Move right {ended,e.0}->{converted,red,+1}]
+
+green converted rigid -a+b green converted rigid +b[Move right {ended,e.0}->{converted,red,+1}]
+
+orange converted rigid -a+b orange converted rigid +b[Move right {ended,e.0}->{converted,red,+1}]
+
+red converted rigid -a+b red converted rigid +b[Move right {ended,e.0}->{converted,red,+1}]
 
 yellow converted rigid -a+b yellow converted rigid +b[Move right {ended,e.0}->{converted,red,+1}]
 
@@ -1474,19 +1728,19 @@ e.2 converted rigid -a+b e.2 converted rigid +b[Move right {ended,e.1}->{convert
 
 e.3 converted rigid -a+b e.3 converted rigid +b[Move right {ended,e.1}->{converted,orange,+1}]
 
-green converted rigid -a+b green converted rigid +b[Move right {ended,e.1}->{converted,orange,+1}]
-
-orange converted rigid -a+b orange converted rigid +b[Move right {ended,e.1}->{converted,orange,+1}]
-
 read converted rigid -a+b read converted rigid +b[Move right {ended,e.1}->{converted,orange,+1}]
-
-red converted rigid -a+b red converted rigid +b[Move right {ended,e.1}->{converted,orange,+1}]
 
 s converted rigid -a+b s converted rigid +b[Move right {ended,e.1}->{converted,orange,+1}]
 
 tape.0 converted rigid -a+b tape.0 converted rigid +b[Move right {ended,e.1}->{converted,orange,+1}]
 
 tape.1 converted rigid -a+b tape.1 converted rigid +b[Move right {ended,e.1}->{converted,orange,+1}]
+
+green converted rigid -a+b green converted rigid +b[Move right {ended,e.1}->{converted,orange,+1}]
+
+orange converted rigid -a+b orange converted rigid +b[Move right {ended,e.1}->{converted,orange,+1}]
+
+red converted rigid -a+b red converted rigid +b[Move right {ended,e.1}->{converted,orange,+1}]
 
 yellow converted rigid -a+b yellow converted rigid +b[Move right {ended,e.1}->{converted,orange,+1}]
 
@@ -1500,19 +1754,19 @@ e.2 converted rigid -a+b e.2 converted rigid +b[Move right {ended,e.2}->{convert
 
 e.3 converted rigid -a+b e.3 converted rigid +b[Move right {ended,e.2}->{converted,yellow,+1}]
 
-green converted rigid -a+b green converted rigid +b[Move right {ended,e.2}->{converted,yellow,+1}]
-
-orange converted rigid -a+b orange converted rigid +b[Move right {ended,e.2}->{converted,yellow,+1}]
-
 read converted rigid -a+b read converted rigid +b[Move right {ended,e.2}->{converted,yellow,+1}]
-
-red converted rigid -a+b red converted rigid +b[Move right {ended,e.2}->{converted,yellow,+1}]
 
 s converted rigid -a+b s converted rigid +b[Move right {ended,e.2}->{converted,yellow,+1}]
 
 tape.0 converted rigid -a+b tape.0 converted rigid +b[Move right {ended,e.2}->{converted,yellow,+1}]
 
 tape.1 converted rigid -a+b tape.1 converted rigid +b[Move right {ended,e.2}->{converted,yellow,+1}]
+
+green converted rigid -a+b green converted rigid +b[Move right {ended,e.2}->{converted,yellow,+1}]
+
+orange converted rigid -a+b orange converted rigid +b[Move right {ended,e.2}->{converted,yellow,+1}]
+
+red converted rigid -a+b red converted rigid +b[Move right {ended,e.2}->{converted,yellow,+1}]
 
 yellow converted rigid -a+b yellow converted rigid +b[Move right {ended,e.2}->{converted,yellow,+1}]
 
@@ -1526,19 +1780,19 @@ e.2 converted rigid -a+b e.2 converted rigid +b[Move right {ended,e.3}->{convert
 
 e.3 converted rigid -a+b e.3 converted rigid +b[Move right {ended,e.3}->{converted,green,+1}]
 
-green converted rigid -a+b green converted rigid +b[Move right {ended,e.3}->{converted,green,+1}]
-
-orange converted rigid -a+b orange converted rigid +b[Move right {ended,e.3}->{converted,green,+1}]
-
 read converted rigid -a+b read converted rigid +b[Move right {ended,e.3}->{converted,green,+1}]
-
-red converted rigid -a+b red converted rigid +b[Move right {ended,e.3}->{converted,green,+1}]
 
 s converted rigid -a+b s converted rigid +b[Move right {ended,e.3}->{converted,green,+1}]
 
 tape.0 converted rigid -a+b tape.0 converted rigid +b[Move right {ended,e.3}->{converted,green,+1}]
 
 tape.1 converted rigid -a+b tape.1 converted rigid +b[Move right {ended,e.3}->{converted,green,+1}]
+
+green converted rigid -a+b green converted rigid +b[Move right {ended,e.3}->{converted,green,+1}]
+
+orange converted rigid -a+b orange converted rigid +b[Move right {ended,e.3}->{converted,green,+1}]
+
+red converted rigid -a+b red converted rigid +b[Move right {ended,e.3}->{converted,green,+1}]
 
 yellow converted rigid -a+b yellow converted rigid +b[Move right {ended,e.3}->{converted,green,+1}]
 
@@ -1551,6 +1805,7 @@ s.unbound 1 null +a s 1.bound rigid +a
 0.bound return.l.news rigid +b 0 return null +b
 
 [sync]
+
 red converted rigid +b red syncstart rigid +b
 
 red converted.r rigid +b red syncstart rigid +b
@@ -1561,23 +1816,11 @@ syncstart sync null (1,0,0) syncstart' sync' rigid (1,0,0)
 
 sync sync null (1,0,0) sync sync' rigid (1,0,0)
 
-red syncstart rigid (1,0,1) red.delete empty null (1,0,1)
-
-red.delete read rigid (0,-1,0) red delete null (0,-1,0)
-
-delete read rigid (0,-1,0) empty delete null (0,-1,0)
-
-delete s rigid (0,-1,0) empty empty null (0,-1,0)
-
 orange converted rigid +b orange sync rigid +b
 
 orange converted.r rigid +b orange sync rigid +b
 
 orange sync' rigid +b orange sync flexible +b
-
-orange sync flexible (1,0,1) orange.delete empty null (1,0,1)
-
-orange.delete read rigid (0,-1,0) orange delete null (0,-1,0)
 
 yellow converted rigid +b yellow sync rigid +b
 
@@ -1585,19 +1828,13 @@ yellow converted.r rigid +b yellow sync rigid +b
 
 yellow sync' rigid +b yellow sync flexible +b
 
-yellow sync flexible (1,0,1) yellow.delete empty null (1,0,1)
-
-yellow.delete read rigid (0,-1,0) yellow delete null (0,-1,0)
-
 green converted rigid +b green sync rigid +b
 
 green converted.r rigid +b green sync rigid +b
 
 green sync' rigid +b green sync flexible +b
 
-green sync flexible (1,0,1) green.delete empty null (1,0,1)
 
-green.delete read rigid (0,-1,0) green delete null (0,-1,0)
 
 Aliases:
 E (1,0,0)

@@ -1,8 +1,5 @@
 States:
-0 -1.732 0 foot
--0.5 -0.866 0 torso.pause
-0 0 0 hand
--1 0 0 airport.fgh
+-1 0 0 airport.fgh.nohand
 -1.5 -0.433 -0.7 🐔
 -1.5 0.866 0 🦊
 -1.5 -0.433 0.7 🌾
@@ -11,8 +8,6 @@ States:
 5 -5 0 frame
 
 Bonds:
-0 -1.732 0 -0.5 -0.866 0 rigid [foot to torso]
--0.5 -0.866 0 0 0 0 flexible [torso to hand]
 0 0 0 -1 0 0 rigid [hand to airport]
 -1 0 0 -1 -5 0 rigid [airport to frame]
 -1 -5 0 5 -5 0 rigid [frame to frame]
